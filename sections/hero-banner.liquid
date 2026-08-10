@@ -1,0 +1,133 @@
+{%- style -%}
+  .main-container {
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: center;
+    max-width: 1136px;
+  }
+  .hero-section {
+    max-width: 1116px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 427px;
+    background: #EAEEEF;
+    border-radius: 30px;
+    padding: 53px;
+  }
+  .right-image-container {
+    max-width: 490px;
+    width: 100%;
+    max-height: 321px;
+  }
+  .right-image-container img {
+    width: 100%;
+    height: 100%;
+  }
+  .left-text-container h2 {
+    font-weight: 900;
+    font-style: Bold;
+    font-size: 48px;
+    leading-trim: NONE;
+    line-height: 56px;
+    letter-spacing: -1px;
+    color: #EC5E2A;
+    margin: 11px 0 0;
+    text-align:left;
+  }
+  .left-text-container h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 64px;
+    leading-trim: NONE;
+    line-height: 73px;
+    letter-spacing: -1px;
+    margin: 8px 0 0;
+    text-align:left;
+  }
+  .left-text-container p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 30px;
+    letter-spacing: 0;
+    margin: 20px 0 48px;
+  }
+  .left-text-container button {
+    border-radius: 10px;
+    padding: 20px 80px;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    background: #201B21;
+    border:none;
+  }
+{%- endstyle -%}
+
+{% if section.settings.hero_image != blank %}
+  <div class="main-container">
+    <div class="hero-section">
+      <div class="left-text-container">
+        {% if section.settings.discount_amount != blank %}
+          <h2>{{ section.settings.discount_amount }} OFF</h2>
+        {% endif %}
+        {% if section.settings.hero_heading != blank %}
+          <h1>{{ section.settings.hero_heading }}</h1>
+        {% endif %}
+        {% if section.settings.hero_description != blank %}
+          <p>{{ section.settings.hero_description }}</p>
+        {% endif %}
+        {% if section.settings.button_text != blank %}
+          <button>{{ section.settings.button_text }}</button>
+        {% endif %}
+      </div>
+      <div class="right-image-container">
+        {% if section.settings.hero_image != blank %}
+          {{ section.settings.hero_image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: section.settings.hero_heading }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Custom Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Choose Image"
+      },
+      {
+        "type": "text",
+        "id": "discount_amount",
+        "label": "Add discount"
+      },
+      {
+        "type": "text",
+        "id": "hero_heading",
+        "label": "Add a Heading"
+      },
+      {
+        "type": "text",
+        "id": "hero_description",
+        "label": "Add hero tagline"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Add Button Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Hero Section"
+      }
+    ]
+  }
+{% endschema %}

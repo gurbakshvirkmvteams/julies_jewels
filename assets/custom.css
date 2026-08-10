@@ -1,0 +1,8 @@
+.header-wide {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: clamp(40px, 6vw, 120px);
+    padding-right: clamp(40px, 6vw, 120px);
+}
