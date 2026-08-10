@@ -9,21 +9,22 @@
  */
 {
   "current": {
-    "logo_width": 210,
+    "logo": "shopify://shop_images/image_3.png",
+    "logo_width": 230,
     "colors_solid_button_labels": "#ffffff",
-    "colors_accent_1": "#121212",
-    "gradient_accent_1": "",
+    "colors_accent_1": "#4A4D4F",
+    "gradient_accent_1": "linear-gradient(90deg, rgba(81, 161, 151, 1) 17.86%, rgba(102, 197, 186, 1) 89.29%)",
     "colors_accent_2": "#45c0b6",
     "gradient_accent_2": "",
     "colors_text": "#000000",
-    "colors_outline_button_labels": "#121212",
+    "colors_outline_button_labels": "#51A197",
     "colors_background_1": "#fafaf9",
     "gradient_background_1": "",
-    "colors_background_2": "#6b6b6b",
+    "colors_background_2": "#4A4D4F",
     "gradient_background_2": "",
-    "type_header_font": "dm_sans_n4",
+    "type_header_font": "playfair_display_n5",
     "heading_scale": 100,
-    "type_body_font": "inter_n4",
+    "type_body_font": "nunito_n4",
     "body_scale": 100,
     "page_width": 1600,
     "spacing_sections": 0,
@@ -149,7 +150,19 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "7110496643821552954": {
+        "type": "shopify://apps/magic-wishlist/blocks/wishlist-heart-embed/019b422a-85d2-7fa5-95fe-ffc817b2f1e2",
+        "disabled": false,
+        "settings": {
+          "header_selector": "",
+          "cart_section_ids": "",
+          "cart_section_ids_mode": "merge",
+          "custom_js": ""
+        }
+      }
+    }
   },
   "presets": {
     "Default": {

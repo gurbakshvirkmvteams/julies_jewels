@@ -13,7 +13,6 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "disabled": true,
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
@@ -28,26 +27,63 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {}
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "appointment_button_FBCEng": {
+          "type": "appointment_button",
+          "settings": {
+            "text": "Book an Appointment",
+            "link": "",
+            "show_icon": true,
+            "icon_size": 18,
+            "icon_color": "#4a4d4f",
+            "font_size": 12,
+            "font_weight": "400",
+            "text_color": "#4a4d4f",
+            "gap": 8,
+            "margin_left": 8,
+            "padding_horizontal": 0,
+            "padding_vertical": 0,
+            "background_color": "rgba(0,0,0,0)",
+            "border_color": "rgba(0,0,0,0)",
+            "border_width": 0,
+            "border_radius": 0,
+            "hover_text_color": "#4a4d4f",
+            "hover_icon_color": "#4a4d4f",
+            "hover_background_color": "rgba(0,0,0,0)",
+            "desktop_visibility": "show",
+            "mobile_visibility": "hide"
+          }
+        },
+        "magic_wishlist_wishlist_header_button_Kr4ywz": {
+          "type": "shopify://apps/magic-wishlist/blocks/wishlist-header-button/019b422a-85d2-7fa5-95fe-ffc817b2f1e2",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "appointment_button_FBCEng",
+        "magic_wishlist_wishlist_header_button_Kr4ywz"
+      ],
       "custom_css": [
         ".header__heading-link .h2 {font-size: 16px;}"
       ],
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "top-center",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "always",
+        "sticky_header_type": "none",
         "show_line_separator": true,
-        "color_scheme": "inverse",
+        "color_scheme": "background-1",
         "enable_country_selector": false,
         "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 8,
-        "padding_bottom": 8
+        "padding_top": 4,
+        "padding_bottom": 4
       }
     }
   },

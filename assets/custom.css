@@ -3,6 +3,127 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    padding-left: clamp(40px, 6vw, 120px);
-    padding-right: clamp(40px, 6vw, 120px);
+    padding-left: clamp(40px, 3vw, 120px);
+    padding-right: clamp(40px, 3vw, 120px);
+}
+:root{
+
+}
+
+/* header css  */
+.header-appointment-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--appointment-gap);
+  margin-left: var(--appointment-margin-left);
+
+  padding:
+    var(--appointment-padding-y)
+    var(--appointment-padding-x);
+
+  color: var(--appointment-text-color);
+  background: var(--appointment-background);
+
+  border:
+    var(--appointment-border-width)
+    solid
+    var(--appointment-border-color);
+
+  border-radius: var(--appointment-border-radius);
+
+  font-size: var(--appointment-font-size);
+  font-weight: var(--appointment-font-weight);
+
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.header-appointment-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--appointment-icon-size);
+  height: var(--appointment-icon-size);
+
+  flex-shrink: 0;
+
+  color: var(--appointment-icon-color);
+}
+
+.header-appointment-button__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.header-appointment-button__text {
+  display: inline-block;
+}
+
+.header-appointment-button:hover {
+  color: var(--appointment-hover-text-color);
+  background: var(--appointment-hover-background);
+}
+
+.header-appointment-button:hover .header-appointment-button__icon {
+  color: var(--appointment-hover-icon-color);
+}
+
+
+/* Desktop visibility */
+@media screen and (min-width: 750px) {
+  .appointment-desktop-hidden {
+    display: none;
+  }
+}
+
+
+/* Mobile visibility */
+@media screen and (max-width: 749px) {
+  .appointment-mobile-hidden {
+    display: none;
+  }
+}
+
+
+.header__left-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  grid-area: left-actions;
+}
+
+.header__left-actions .header__search {
+  display: flex;
+  align-items: center;
+}
+
+.header__left-actions .header__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  padding: 0;
+}
+
+.header {
+  grid-template-areas:
+    "left-actions heading icons"
+    "navigation navigation navigation";
+}
+
+.header__left-actions {
+  grid-area: left-actions;
 }
