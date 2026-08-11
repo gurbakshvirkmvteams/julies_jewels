@@ -43,6 +43,7 @@
         "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-1",
         "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-2"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/theme_cover_image.jpg",
@@ -60,6 +61,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "<strong>Featured products</strong>",
         "heading_size": "h1",
@@ -115,6 +117,7 @@
         "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1",
         "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/theme_cover_image.jpg",
         "height": "adapt",
@@ -150,6 +153,7 @@
         "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0",
         "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1"
       ],
+      "disabled": true,
       "settings": {
         "title": "<strong>Collections</strong>",
         "heading_size": "h1",
@@ -165,6 +169,7 @@
     },
     "hero_banner_Eb6tKc": {
       "type": "hero-banner",
+      "disabled": true,
       "name": "Custom Hero Section",
       "settings": {
         "hero_image": "shopify://shop_images/hero_banner.png",
@@ -173,6 +178,418 @@
         "hero_description": "Discover our summer styles with discount",
         "button_text": "Shop Now"
       }
+    },
+    "hero_slider_HnkHBB": {
+      "type": "hero-slider",
+      "blocks": {
+        "slide_fwVLLP": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/196859762_949342009185913_568901916394291794_n_1.png",
+            "mobile_image": "shopify://shop_images/Rectangle_202.png",
+            "text_position": "right",
+            "text_alignment": "left",
+            "content_width": 360,
+            "content_offset": 150,
+            "heading": "Where Greenville Gets Engaged!",
+            "heading_color": "#4a4d4f",
+            "heading_size": 36,
+            "heading_weight": "500",
+            "heading_max_width": 500,
+            "heading_margin_bottom": 18,
+            "description": "<p>Choose the symbol designed for your love, to wear for the rest of your life</p>",
+            "description_color": "#4d4d4d",
+            "description_size": 14,
+            "description_weight": "400",
+            "description_max_width": 320,
+            "description_margin_bottom": 28,
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_background": "#ffffff",
+            "button_color": "#5caaaa",
+            "button_border_color": "#b9d8d7",
+            "button_width": 120,
+            "button_height": 44,
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "button_padding_x": 22,
+            "button_padding_y": 10,
+            "button_radius": 0,
+            "gradient_color": "#ffffff",
+            "gradient_opacity": 80,
+            "gradient_start": 0,
+            "gradient_end": 15,
+            "gradient_angle": 180
+          }
+        },
+        "slide_FGnbyz": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Group_37.png",
+            "mobile_image": "shopify://shop_images/196859762_949342009185913_568901916394291794_n_1_1.png",
+            "text_position": "right",
+            "text_alignment": "left",
+            "content_width": 360,
+            "content_offset": 20,
+            "heading": "Where Greenville Gets Engaged!",
+            "heading_color": "#4d4d4d",
+            "heading_size": 36,
+            "heading_weight": "500",
+            "heading_max_width": 500,
+            "heading_margin_bottom": 18,
+            "description": "<p>Choose the symbol designed for your love, to wear for the rest of your life</p>",
+            "description_color": "#4d4d4d",
+            "description_size": 14,
+            "description_weight": "400",
+            "description_max_width": 320,
+            "description_margin_bottom": 28,
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_background": "#ffffff",
+            "button_color": "#5caaaa",
+            "button_border_color": "#b9d8d7",
+            "button_width": 120,
+            "button_height": 44,
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "button_padding_x": 22,
+            "button_padding_y": 10,
+            "button_radius": 0,
+            "gradient_color": "#8bd0cb",
+            "gradient_opacity": 90,
+            "gradient_start": 0,
+            "gradient_end": 15,
+            "gradient_angle": 180
+          }
+        },
+        "slide_RLihkw": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Group_288.jpg",
+            "mobile_image": "shopify://shop_images/Rectangle_22.png",
+            "text_position": "right",
+            "text_alignment": "left",
+            "content_width": 360,
+            "content_offset": 150,
+            "heading": "Where Greenville Gets Engaged!",
+            "heading_color": "#4d4d4d",
+            "heading_size": 36,
+            "heading_weight": "500",
+            "heading_max_width": 500,
+            "heading_margin_bottom": 18,
+            "description": "<p>Choose the symbol designed for your love, to wear for the rest of your life</p>",
+            "description_color": "#4d4d4d",
+            "description_size": 14,
+            "description_weight": "400",
+            "description_max_width": 320,
+            "description_margin_bottom": 28,
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_background": "#ffffff",
+            "button_color": "#5caaaa",
+            "button_border_color": "#b9d8d7",
+            "button_width": 120,
+            "button_height": 44,
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "button_padding_x": 22,
+            "button_padding_y": 10,
+            "button_radius": 0,
+            "gradient_color": "#65c9c8",
+            "gradient_opacity": 60,
+            "gradient_start": 0,
+            "gradient_end": 15,
+            "gradient_angle": 180
+          }
+        }
+      },
+      "block_order": [
+        "slide_fwVLLP",
+        "slide_FGnbyz",
+        "slide_RLihkw"
+      ],
+      "name": "Hero Slider Section",
+      "settings": {}
+    },
+    "image_text_cards_mUULpi": {
+      "type": "image-text-cards",
+      "blocks": {
+        "content_row_bjc8By": {
+          "type": "content_row",
+          "settings": {
+            "desktop_layout": "text-first",
+            "main_image": "shopify://shop_images/Rectangle_16.png",
+            "image_fit": "cover",
+            "image_position": "center center",
+            "eyebrow": "",
+            "heading": "Engagement Ring",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>",
+            "button_text": "Explore Collection",
+            "button_link": "",
+            "text_alignment": "left",
+            "content_width": 65,
+            "text_background": "#f8f8f6",
+            "text_color": "#444444",
+            "decorative_image_1": "shopify://shop_images/image_8.png",
+            "decorative_image_1_width": 22,
+            "decorative_image_1_horizontal": "left",
+            "decorative_image_1_vertical": "top",
+            "decorative_image_1_offset_x": 0,
+            "decorative_image_1_offset_y": 8,
+            "decorative_image_2": "shopify://shop_images/image_9.png",
+            "decorative_image_2_width": 30,
+            "decorative_image_2_horizontal": "right",
+            "decorative_image_2_vertical": "bottom",
+            "decorative_image_2_offset_x": 0,
+            "decorative_image_2_offset_y": 8,
+            "content_max_width": 440,
+            "content_offset_x": 0,
+            "content_offset_y": 0,
+            "eyebrow_font": "system_ui_n4",
+            "eyebrow_size": 11,
+            "eyebrow_weight": "400",
+            "eyebrow_line_height": 1.3,
+            "eyebrow_letter_spacing": 1,
+            "eyebrow_color": "#444444",
+            "eyebrow_transform": "uppercase",
+            "eyebrow_margin": 12,
+            "heading_size": 48,
+            "heading_weight": "500",
+            "heading_line_height": 1.2,
+            "heading_letter_spacing": 0,
+            "heading_color": "#454545",
+            "heading_transform": "none",
+            "heading_margin": 18,
+            "description_size": 16,
+            "description_weight": "400",
+            "description_line_height": 1.7,
+            "description_letter_spacing": 0.8,
+            "description_color": "#555555",
+            "description_max_width": 390,
+            "description_margin": 24,
+            "button_font_size": 14,
+            "button_font_weight": "500",
+            "button_letter_spacing": 0.5,
+            "button_transform": "none",
+            "button_width": 230,
+            "button_height": 47,
+            "button_padding_x": 18,
+            "button_padding_y": 8,
+            "button_border_width": 1,
+            "button_border_style": "solid",
+            "button_radius": 0,
+            "button_background": "rgba(0,0,0,0)",
+            "button_text_color": "#6ab7b7",
+            "button_border_color": "#9ed1d1",
+            "button_hover_background": "#9ed1d1",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#9ed1d1"
+          }
+        }
+      },
+      "block_order": [
+        "content_row_bjc8By"
+      ],
+      "name": "Image Text Cards",
+      "settings": {
+        "section_width": 1800,
+        "card_height": 670,
+        "mobile_card_height": 390,
+        "row_gap": 0,
+        "mobile_gap": 0,
+        "margin_top": 40,
+        "margin_bottom": 2
+      }
+    },
+    "custom_product_slider_tLaiAK": {
+      "type": "custom-product-slider",
+      "blocks": {
+        "product_nednGh": {
+          "type": "product",
+          "settings": {
+            "product": "azulene-moisturizing-ampoules"
+          }
+        },
+        "product_baXtGA": {
+          "type": "product",
+          "settings": {
+            "product": "cluster-flower-drop-earrings"
+          }
+        },
+        "product_9WjfJX": {
+          "type": "product",
+          "settings": {
+            "product": "inside-out-hoop-earrings"
+          }
+        },
+        "product_a3pbCG": {
+          "type": "product",
+          "settings": {
+            "product": "marquise-and-rounds-bezel-eternity"
+          }
+        },
+        "product_8tJtb8": {
+          "type": "product",
+          "settings": {
+            "product": "baguette-dangle-earrings"
+          }
+        }
+      },
+      "block_order": [
+        "product_nednGh",
+        "product_baXtGA",
+        "product_9WjfJX",
+        "product_a3pbCG",
+        "product_8tJtb8"
+      ],
+      "name": "Product Slider",
+      "settings": {
+        "heading": "",
+        "margin_top": 10,
+        "margin_bottom": 0,
+        "gap": 10,
+        "loop": true
+      }
+    },
+    "image_text_cards_66hRHF": {
+      "type": "image-text-cards",
+      "blocks": {
+        "content_row_jrcU67": {
+          "type": "content_row",
+          "settings": {
+            "desktop_layout": "image-first",
+            "main_image": "shopify://shop_images/Rectangle_22_1.png",
+            "image_fit": "cover",
+            "image_position": "center center",
+            "eyebrow": "",
+            "heading": "Engagement Ring",
+            "description": "<p>Discover beautiful jewelry designed to celebrate your special moments.</p>",
+            "button_text": "Explore Collection",
+            "button_link": "",
+            "text_alignment": "center",
+            "content_width": 65,
+            "text_background": "#f8f8f6",
+            "text_color": "#444444",
+            "decorative_image_1": "shopify://shop_images/image_6.png",
+            "decorative_image_1_width": 27,
+            "decorative_image_1_horizontal": "right",
+            "decorative_image_1_vertical": "top",
+            "decorative_image_1_offset_x": 15,
+            "decorative_image_1_offset_y": 15,
+            "decorative_image_2": "shopify://shop_images/image_6_1.png",
+            "decorative_image_2_width": 40,
+            "decorative_image_2_horizontal": "right",
+            "decorative_image_2_vertical": "bottom",
+            "decorative_image_2_offset_x": 4,
+            "decorative_image_2_offset_y": 8,
+            "content_max_width": 440,
+            "content_offset_x": 0,
+            "content_offset_y": 0,
+            "eyebrow_font": "system_ui_n4",
+            "eyebrow_size": 11,
+            "eyebrow_weight": "400",
+            "eyebrow_line_height": 1.3,
+            "eyebrow_letter_spacing": 1,
+            "eyebrow_color": "#444444",
+            "eyebrow_transform": "uppercase",
+            "eyebrow_margin": 12,
+            "heading_size": 32,
+            "heading_weight": "400",
+            "heading_line_height": 1.2,
+            "heading_letter_spacing": 0,
+            "heading_color": "#454545",
+            "heading_transform": "none",
+            "heading_margin": 18,
+            "description_size": 13,
+            "description_weight": "400",
+            "description_line_height": 1.7,
+            "description_letter_spacing": 0,
+            "description_color": "#555555",
+            "description_max_width": 390,
+            "description_margin": 24,
+            "button_font_size": 11,
+            "button_font_weight": "400",
+            "button_letter_spacing": 0.5,
+            "button_transform": "none",
+            "button_width": 160,
+            "button_height": 34,
+            "button_padding_x": 18,
+            "button_padding_y": 8,
+            "button_border_width": 1,
+            "button_border_style": "solid",
+            "button_radius": 0,
+            "button_background": "rgba(0,0,0,0)",
+            "button_text_color": "#6ab7b7",
+            "button_border_color": "#9ed1d1",
+            "button_hover_background": "#9ed1d1",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#9ed1d1"
+          }
+        }
+      },
+      "block_order": [
+        "content_row_jrcU67"
+      ],
+      "name": "Image Text Cards",
+      "settings": {
+        "section_width": 1800,
+        "card_height": 670,
+        "mobile_card_height": 500,
+        "row_gap": 20,
+        "mobile_gap": 10,
+        "margin_top": 20,
+        "margin_bottom": 20
+      }
+    },
+    "custom_product_slider_V4fKyf": {
+      "type": "custom-product-slider",
+      "blocks": {
+        "product_EfQLNP": {
+          "type": "product",
+          "settings": {
+            "product": "azulene-moisturizing-ampoules"
+          }
+        },
+        "product_F7YWqP": {
+          "type": "product",
+          "settings": {
+            "product": "cluster-flower-drop-earrings"
+          }
+        },
+        "product_TGVrwq": {
+          "type": "product",
+          "settings": {
+            "product": "inside-out-hoop-earrings"
+          }
+        },
+        "product_b4kiQ9": {
+          "type": "product",
+          "settings": {
+            "product": "marquise-and-rounds-bezel-eternity"
+          }
+        },
+        "product_XULkX4": {
+          "type": "product",
+          "settings": {
+            "product": "baguette-dangle-earrings"
+          }
+        }
+      },
+      "block_order": [
+        "product_EfQLNP",
+        "product_F7YWqP",
+        "product_TGVrwq",
+        "product_b4kiQ9",
+        "product_XULkX4"
+      ],
+      "name": "Product Slider",
+      "settings": {
+        "heading": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "gap": 10,
+        "loop": true
+      }
     }
   },
   "order": [
@@ -180,6 +597,11 @@
     "featured_collection",
     "f1552b18-6017-4231-810d-74e61da22c37",
     "38cdf60f-e431-43b5-aac3-7e6215447d67",
-    "hero_banner_Eb6tKc"
+    "hero_banner_Eb6tKc",
+    "hero_slider_HnkHBB",
+    "image_text_cards_mUULpi",
+    "custom_product_slider_tLaiAK",
+    "image_text_cards_66hRHF",
+    "custom_product_slider_V4fKyf"
   ]
 }

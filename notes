@@ -11,3 +11,15 @@
   -- Customized header according to figma design 
   -- added custom buttons to header
   -- added logo, color variables and margin paddings
+
+
+
+# Today's update:
+# Julie's Jewels & Gifts
+  -- Added custom buttons to header grid
+  -- Adjusted header design acording to figma
+  -- Custom hero silder section with swiperjs
+  -- added mobile images support for hero swiper silder
+  -- Created product slider section for product cards
+  -- Created card text with image banner section
+  -- Added font settings for texts descriptions and buttons
