@@ -1,0 +1,1212 @@
+{% style %}
+  #promo-banner--{{ section.id }} {
+    --promo-scale: 1;
+    /* --promo-overlap: clamp(30px, 5vw, 90px); */
+    /* --promo-overlap: clamp(30px, 30vw, 328px); */
+    --promo-overlap: clamp({{ section.settings.gradient_overlap_min_range }}%, 26vw, {{ section.settings.gradient_overlap_max_range }}%);
+    
+
+    padding-top: clamp(0px,{{ section.settings.padding_top | divided_by: 14.4 }}vw,calc({{ section.settings.padding_top }}px * var(--promo-scale)));
+
+    padding-bottom: clamp(0px,{{ section.settings.padding_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.padding_bottom }}px * var(--promo-scale)));
+
+    padding-left: clamp(0px,{{ section.settings.padding_left | divided_by: 14.4 }}vw,calc({{ section.settings.padding_left }}px * var(--promo-scale)));
+
+    padding-right: clamp(0px,{{ section.settings.padding_right | divided_by: 14.4 }}vw,calc({{ section.settings.padding_right }}px * var(--promo-scale)));
+  }
+
+  /*
+   * Figma is based on 1440px.
+   * Scale numeric dimensions by 1.25 above 1440px.
+   */
+  @media screen and (min-width: 1441px) {
+    #promo-banner--{{ section.id }} {--promo-scale: 1.25;
+    }
+  }
+
+  /* =====================================================
+     WRAPPER
+     ===================================================== */
+
+  #promo-banner--{{ section.id }} .promo-banner__wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    max-width: clamp(280px,100vw,calc(1440px * var(--promo-scale)));
+
+    margin: 0 auto;
+
+    background: {{ section.settings.wrapper_background }};
+
+    overflow: hidden;
+  }
+
+  /* =====================================================
+     DESKTOP ORDER
+     ===================================================== */
+
+  /*
+   * The actual order is controlled with flex order.
+   * This is why Text First / Image First now works.
+   */
+
+  #promo-banner--{{ section.id }}
+  .promo-banner__text {
+    order: 1;
+  }
+
+  #promo-banner--{{ section.id }}
+  .promo-banner__image {
+    order: 2;
+  }
+
+  #promo-banner--{{ section.id }}
+  .promo-banner__wrapper--image-first
+  .promo-banner__image {
+    order: 1;
+  }
+
+  #promo-banner--{{ section.id }}
+  .promo-banner__wrapper--image-first
+  .promo-banner__text {
+    order: 2;
+  }
+
+  /* =====================================================
+     IMAGE
+     ===================================================== */
+
+  
+
+  #promo-banner--{{ section.id }} .promo-banner__image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* =====================================================
+     TEXT CONTAINER
+     ===================================================== */
+#promo-banner--{{ section.id }} .promo-banner__image {
+  position: relative;
+  z-index: 1;
+
+  flex: 0 0 {{ section.settings.image_width }}%;
+  width: {{ section.settings.image_width }}%;
+  min-width: 0;
+
+  aspect-ratio: 727 / 498;
+
+  overflow: hidden;
+}
+
+#promo-banner--{{ section.id }} .promo-banner__text {
+  position: relative;
+  z-index: 2;
+
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  /* keep all your existing alignment/padding rules here */
+}
+  #promo-banner--{{ section.id }} .promo-banner__text {
+    justify-content:
+      {% case section.settings.content_vertical_alignment %}
+        {% when 'top' %}flex-start
+        {% when 'bottom' %}flex-end
+        {% else %}center
+      {% endcase %};
+
+    align-items:
+      {% case section.settings.content_horizontal_alignment %}
+        {% when 'left' %}flex-start
+        {% when 'right' %}flex-end
+        {% else %}center
+      {% endcase %};
+      text-align: {{ section.settings.text_alignment }};
+
+    /* text-align: {{ section.settings.content_horizontal_alignment }}; */
+
+    padding-top: clamp(20px,{{ section.settings.padding_top | divided_by: 14.4 }}vw,calc({{ section.settings.padding_top }}px * var(--promo-scale)));
+
+    padding-bottom: clamp(20px,{{ section.settings.padding_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.padding_bottom }}px * var(--promo-scale)));
+
+    padding-left: clamp(20px,{{ section.settings.padding_left | divided_by: 14.4 }}vw, calc({{ section.settings.padding_left }}px * var(--promo-scale)));
+
+    padding-right: clamp(20px,{{ section.settings.padding_right | divided_by: 14.4 }}vw,calc({{ section.settings.padding_right }}px * var(--promo-scale)));
+  }
+
+  /* =====================================================
+     TEXT BACKGROUND / GRADIENT
+     ===================================================== */
+
+  /*
+   * IMPORTANT:
+   *
+   * This gradient belongs to the TEXT CONTAINER.
+   *
+   * It is wider than the text container and extends
+   * over the image.
+   */
+
+  #promo-banner--{{ section.id }} .promo-banner__text::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+
+    top: 0;
+    bottom: 0;
+
+    width: calc(100% + var(--promo-overlap));
+
+    pointer-events: none;
+
+    opacity: {{ section.settings.gradient_opacity | divided_by: 100.0 }};
+  }
+
+  /* =====================================================
+     TEXT FIRST
+     Gradient flows from text -> image
+     ===================================================== */
+
+  #promo-banner--{{ section.id }}
+  .promo-banner__wrapper--text-first
+  .promo-banner__text::before {
+
+    left: 0;
+
+    background:
+      linear-gradient(90deg,{{ section.settings.banner_gradient }} 0%,{{ section.settings.banner_gradient }} 65%,rgba(0, 0, 0, 0) 100%
+      );
+  }
+
+  /* =====================================================
+     IMAGE FIRST
+     Gradient flows from text -> image on the LEFT
+     ===================================================== */
+
+  #promo-banner--{{ section.id }}
+  .promo-banner__wrapper--image-first
+  .promo-banner__text::before {
+
+    right: 0;
+
+    background:
+      linear-gradient(270deg,{{ section.settings.banner_gradient }} 0%,{{ section.settings.banner_gradient }} 60%,rgba(0, 0, 0, 0) 100%
+      );
+  }
+
+  /* =====================================================
+     CONTENT
+     ===================================================== */
+
+  #promo-banner--{{ section.id }} .promo-banner__content {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: clamp(260px,{{ section.settings.content_max_width | divided_by: 14.4 }}vw,calc({{ section.settings.content_max_width }}px * var(--promo-scale))
+    );
+  }
+
+  /* =====================================================
+     LOGO
+     ===================================================== */
+
+  #promo-banner--{{ section.id }} .promo-banner__logo {
+    display: block;
+
+    width: auto;
+
+    max-width: clamp(40px,{{ section.settings.logo_max_width | divided_by: 14.4 }}vw,calc({{ section.settings.logo_max_width }}px * var(--promo-scale))
+    );
+
+    height: auto;
+
+    margin-bottom: clamp(0px,{{ section.settings.logo_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.logo_margin_bottom }}px * var(--promo-scale))
+    );
+  }
+
+  /* =====================================================
+     HEADING
+     ===================================================== */
+
+  #promo-banner--{{ section.id }} .promo-banner__heading {
+    margin: 0;
+
+    margin-bottom: clamp(0px,{{ section.settings.heading_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.heading_margin_bottom }}px * var(--promo-scale))
+    );
+
+    color: {{ section.settings.heading_color }};
+
+    font-size: clamp(16px,{{ section.settings.heading_font_size | divided_by: 14.4 }}vw,calc({{ section.settings.heading_font_size }}px * var(--promo-scale))
+    );
+
+    font-weight: {{ section.settings.heading_weight }};
+    line-height: {{ section.settings.heading_line_height }};
+  }
+
+  #promo-banner--{{ section.id }} .promo-banner__heading p {
+    margin: 0;
+  }
+
+  /* =====================================================
+     DESCRIPTION
+     ===================================================== */
+
+  #promo-banner--{{ section.id }} .promo-banner__description {
+    margin: 0;
+
+    margin-bottom: clamp(0px,{{ section.settings.description_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.description_margin_bottom }}px * var(--promo-scale))
+    );
+
+    color: {{ section.settings.description_color }};
+
+    font-size: clamp(12px,{{ section.settings.description_font_size | divided_by: 14.4 }}vw,calc({{ section.settings.description_font_size }}px * var(--promo-scale))
+    );
+
+    font-weight: {{ section.settings.description_weight }};
+    line-height: {{ section.settings.description_line_height }};
+  }
+
+  #promo-banner--{{ section.id }} .promo-banner__description p {
+    margin: 0;
+  }
+
+  /* =====================================================
+     BUTTON
+     ===================================================== */
+
+  #promo-banner--{{ section.id }} .promo-banner__button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+gap:10px;
+    margin-top: clamp(0px,{{ section.settings.button_margin_top | divided_by: 14.4 }}vw,calc({{ section.settings.button_margin_top }}px * var(--promo-scale))
+    );
+
+    padding-top: clamp(14px,{{ section.settings.button_padding_vertical | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_vertical }}px * var(--promo-scale))
+    );
+
+    padding-bottom: clamp(14px,{{ section.settings.button_padding_vertical | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_vertical }}px * var(--promo-scale))
+    );
+
+    padding-left: clamp(24px,{{ section.settings.button_padding_horizontal | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_horizontal }}px * var(--promo-scale))
+    );
+
+    padding-right: clamp(24px,{{ section.settings.button_padding_horizontal | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_horizontal }}px * var(--promo-scale))
+    );
+
+    background: linear-gradient(
+        {{ section.settings.button_gradient_direction }},
+        {{ section.settings.button_gradient_start }} 0%,
+        {{ section.settings.button_gradient_end }} 100%
+    );
+    color: {{ section.settings.button_text_color }};
+
+    border:calc({{ section.settings.button_border_width }}px * var(--promo-scale))solid{{ section.settings.button_border_color }};
+
+    border-radius:
+      calc({{ section.settings.button_border_radius }}px * var(--promo-scale));
+
+    font-size: clamp(10px,{{ section.settings.button_font_size | divided_by: 14.4 }}vw,calc({{ section.settings.button_font_size }}px * var(--promo-scale))
+    );
+
+    font-weight: {{ section.settings.button_font_weight }};
+
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  /* =====================================================
+     MOBILE
+     ===================================================== */
+
+  @media screen and (max-width: 749px) {
+
+    #promo-banner--{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      padding-left: {{ section.settings.mobile_padding_left }}px;
+      padding-right: {{ section.settings.mobile_padding_right }}px;
+    }
+
+    #promo-banner--{{ section.id }} .promo-banner__wrapper {
+      display: flex;
+
+      flex-direction:
+        {% if section.settings.mobile_layout == 'image-first' %}
+          column
+        {% else %}
+          column-reverse
+        {% endif %};
+
+      max-width: none;
+
+      width: 100%;
+
+      overflow: hidden;
+    }
+
+    /*
+     * Mobile image remains a completely separate block.
+     */
+    #promo-banner--{{ section.id }} .promo-banner__image,
+    #promo-banner--{{ section.id }}
+    .promo-banner__wrapper--image-first
+    .promo-banner__image {
+
+      order: 1;
+
+      width: 100%;
+      flex: 0 0 auto;
+
+      aspect-ratio: 1 / 1.02;
+    }
+
+    /*
+     * Mobile text is underneath/above image depending
+     * on mobile_layout.
+     */
+    #promo-banner--{{ section.id }} .promo-banner__text {
+
+      order: 2;
+    padding: clamp(40px, 25vw, 78px) 0 !important;
+      width: 100%;
+      flex: 0 0 auto;
+
+      min-height: auto;
+
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      padding-left: {{ section.settings.mobile_padding_left }}px;
+      padding-right: {{ section.settings.mobile_padding_right }}px;
+     text-align: {{ section.settings.mobile_text_alignment }};
+    align-items:
+    {% case section.settings.mobile_content_position %}
+        {% when 'left' %}flex-start
+        {% when 'right' %}flex-end
+        {% else %}center
+    {% endcase %};
+    }
+
+    /*
+     * On mobile the gradient stays INSIDE the text box.
+     * It no longer overlaps the image.
+     */
+    #promo-banner--{{ section.id }} .promo-banner__text::before,
+    #promo-banner--{{ section.id }}
+    .promo-banner__wrapper--text-first
+    .promo-banner__text::before,
+    #promo-banner--{{ section.id }}
+    .promo-banner__wrapper--image-first
+    .promo-banner__text::before {
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+
+      background:
+        linear-gradient(
+          180deg,
+          {{ section.settings.banner_gradient }} 0%,
+          {{ section.settings.banner_gradient }} 100%
+        );
+
+      opacity: {{ section.settings.gradient_opacity | divided_by: 100.0 }};
+    }
+
+    #promo-banner--{{ section.id }} .promo-banner__content {
+      max-width: 100%;
+    }
+
+    #promo-banner--{{ section.id }} .promo-banner__heading {
+      font-size: {{ section.settings.mobile_heading_font_size }}px;
+    }
+
+    #promo-banner--{{ section.id }} .promo-banner__description {
+      font-size: {{ section.settings.mobile_description_font_size }}px;
+    }
+
+    #promo-banner--{{ section.id }} .promo-banner__button {
+      font-size: {{ section.settings.mobile_button_font_size }}px;
+
+    padding-left: clamp(100px,{{ section.settings.button_padding_horizontal | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_horizontal }}px * var(--promo-scale))
+    );
+
+    padding-right: clamp(100px,{{ section.settings.button_padding_horizontal | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_horizontal }}px * var(--promo-scale))
+    );
+
+    }
+
+    #promo-banner--{{ section.id }} .promo-banner__logo {
+      max-width: {{ section.settings.logo_max_width }}px;
+    }
+  }
+{% endstyle %}
+
+{% if section.settings.banner_image != blank %}
+  <section
+    id="promo-banner--{{ section.id }}"
+    class="promo-banner-section"
+  >
+    <div
+      class="
+        promo-banner__wrapper
+        promo-banner__wrapper--{{ section.settings.desktop_layout }}
+      "
+    >
+
+      <div class="promo-banner__text">
+        <div class="promo-banner__content">
+
+          {% if section.settings.logo != blank %}
+            {{
+              section.settings.logo
+              | image_url: width: 800
+              | image_tag:
+                class: 'promo-banner__logo',
+                loading: 'lazy'
+            }}
+          {% endif %}
+
+          {% if section.settings.heading != blank %}
+            <h1 class="promo-banner__heading">
+              {{ section.settings.heading }}
+            </h1>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <div class="promo-banner__description">
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.button_text != blank
+            and section.settings.button_link != blank
+          %}
+            <a
+              href="{{ section.settings.button_link }}"
+              class="promo-banner__button"
+            >
+              {{ section.settings.button_text }}
+
+<svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.5441 0C13.4197 3.033e-05 13.2981 0.0371698 13.195 0.106667C13.0918 0.176164 13.0117 0.274858 12.965 0.390122C12.9182 0.505385 12.9069 0.631976 12.9325 0.753697C12.9581 0.875419 13.0195 0.986736 13.1087 1.07341L16.2084 4.17318H0.633902C0.551082 4.17201 0.468855 4.18731 0.392 4.21819C0.315145 4.24907 0.245194 4.29492 0.186213 4.35308C0.127232 4.41123 0.0803967 4.48053 0.0484294 4.55694C0.016462 4.63335 0 4.71535 0 4.79818C0 4.88101 0.016462 4.96301 0.0484294 5.03942C0.0803967 5.11583 0.127232 5.18512 0.186213 5.24328C0.245194 5.30143 0.315145 5.34728 0.392 5.37816C0.468855 5.40905 0.551082 5.42435 0.633902 5.42318H16.2084L13.1087 8.52295C13.0487 8.58054 13.0008 8.64952 12.9678 8.72585C12.9348 8.80218 12.9174 8.88433 12.9166 8.96748C12.9157 9.05063 12.9315 9.13311 12.9629 9.21009C12.9943 9.28708 13.0408 9.35702 13.0996 9.41582C13.1584 9.47462 13.2283 9.52109 13.3053 9.55252C13.3823 9.58395 13.4648 9.5997 13.5479 9.59886C13.6311 9.59801 13.7132 9.58059 13.7896 9.5476C13.8659 9.51461 13.9349 9.46672 13.9925 9.40674L18.1591 5.24007C18.2763 5.12286 18.3421 4.96391 18.3421 4.79818C18.3421 4.63245 18.2763 4.4735 18.1591 4.35628L13.9925 0.189616C13.9342 0.129622 13.8645 0.0819272 13.7875 0.049357C13.7105 0.0167869 13.6277 3.32453e-06 13.5441 0Z" fill="white"/>
+</svg>
+
+            </a>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <div class="promo-banner__image">
+        {{
+          section.settings.banner_image
+          | image_url: width: 1800
+          | image_tag:
+            class: 'promo-banner__image-element',
+            loading: 'lazy',
+            widths: '375, 550, 750, 1000, 1300, 1600, 1800'
+        }}
+      </div>
+
+
+    </div>
+  </section>
+{% endif %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('promo-banner--{{ section.id }}');
+      if (!header) return;
+      function updateHeaderClass() {
+        if (window.innerWidth < 1441) {
+          header.classList.add('page-width');
+          header.classList.remove('header-wide');
+        } else {
+          header.classList.remove('page-width');
+          header.classList.add('header-wide');
+        }
+      }
+      updateHeaderClass();
+      window.addEventListener('resize', updateHeaderClass);
+    });
+  </script>
+{% schema %}
+{
+  "name": "Promo Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Desktop image"
+    },
+    // {
+    //   "type": "image_picker",
+    //   "id": "mobile_banner_image",
+    //   "label": "Mobile image",
+    //   "info": "Optional. If blank, the desktop image will be used."
+    // },
+    {
+      "type": "color",
+      "id": "banner_gradient",
+      "label": "Image gradient color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "gradient_opacity",
+      "label": "Gradient opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },{
+        "type":"range",
+      "id": "gradient_overlap_max_range",
+      "label": "Gradient overlap max",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 60
+    },{
+        "type":"range",
+      "id": "gradient_overlap_min_range",
+      "label": "Gradient overlap Min",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "wrapper_background",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "Desktop order",
+      "options": [
+        {
+          "value": "text-first",
+          "label": "Text first"
+        },
+        {
+          "value": "image-first",
+          "label": "Image first"
+        }
+      ],
+      "default": "text-first"
+    },
+    {
+      "type": "select",
+      "id": "content_horizontal_alignment",
+      "label": "Content horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_alignment",
+      "label": "Content vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },{
+  "type": "select",
+  "id": "text_alignment",
+  "label": "Text alignment",
+  "options": [
+    {
+      "value": "left",
+      "label": "Left"
+    },
+    {
+      "value": "center",
+      "label": "Center"
+    },
+    {
+      "value": "right",
+      "label": "Right"
+    }
+  ],
+  "default": "left"
+},
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 300,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image width",
+      "min": 30,
+      "max": 70,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Add a heading</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Add a description</p>"
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": "Logo width",
+      "min": 40,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_bottom",
+      "label": "Logo bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Font size",
+      "min": 16,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "label": "Line height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.1
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "description_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "description_line_height",
+      "label": "Line height",
+      "min": 0.8,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "description_margin_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+  "type": "color",
+  "id": "button_gradient_start",
+  "label": "Gradient start color",
+  "default": "#51A197"
+},
+{
+  "type": "color",
+  "id": "button_gradient_end",
+  "label": "Gradient end color",
+  "default": "#66C5BA"
+},
+{
+  "type": "select",
+  "id": "button_gradient_direction",
+  "label": "Gradient direction",
+  "options": [
+    {
+      "value": "90deg",
+      "label": "Left to right"
+    },
+    {
+      "value": "180deg",
+      "label": "Top to bottom"
+    },
+    {
+      "value": "135deg",
+      "label": "Diagonal"
+    },
+    {
+      "value": "45deg",
+      "label": "Diagonal reverse"
+    }
+  ],
+  "default": "90deg"
+},
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Banner Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Left padding",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Right padding",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "image-first",
+          "label": "Image first"
+        },
+        {
+          "value": "text-first",
+          "label": "Text first"
+        }
+      ],
+      "default": "image-first"
+    },
+  {
+  "type": "select",
+  "id": "mobile_content_position",
+  "label": "Text card horizontal position",
+  "options": [
+    {
+      "value": "left",
+      "label": "Left"
+    },
+    {
+      "value": "center",
+      "label": "Center"
+    },
+    {
+      "value": "right",
+      "label": "Right"
+    }
+  ],
+  "default": "center"
+},
+{
+  "type": "select",
+  "id": "mobile_text_alignment",
+  "label": "Text alignment",
+  "options": [
+    {
+      "value": "left",
+      "label": "Left"
+    },
+    {
+      "value": "center",
+      "label": "Center"
+    },
+    {
+      "value": "right",
+      "label": "Right"
+    }
+  ],
+  "default": "center"
+},
+    {
+      "type": "range",
+      "id": "mobile_heading_font_size",
+      "label": "Heading font size",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_font_size",
+      "label": "Description font size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_font_size",
+      "label": "Button font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_left",
+      "label": "Left padding",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_right",
+      "label": "Right padding",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+        "name":  "Promo Banner"
+    }
+  ]
+}
+{% endschema %}

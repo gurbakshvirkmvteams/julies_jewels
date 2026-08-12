@@ -1,0 +1,217 @@
+{{ 'custom-contact.css' | asset_url | stylesheet_tag }}
+
+
+<section  id="appointment-section--{{ section.id }}" class="appointment-section page-width">
+  <div  class="appointment-wrapper">
+
+    {% if section.settings.image != blank %}
+      <div class="appointment-image">
+        <img
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+
+    <div class="appointment-form-panel">
+      <h2 class="appointment-heading">{{ section.settings.heading }}</h2>
+
+      {% if section.settings.subheading != blank %}
+        <p class="appointment-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p class="appointment-description">{{ section.settings.description }}</p>
+      {% endif %}
+
+      {% form 'contact', class: 'appointment-form' %}
+
+        {% if form.posted_successfully? %}
+          <p class="appointment-success">Thanks — your appointment request has been sent. We'll be in touch shortly.</p>
+        {% endif %}
+
+        {% if form.errors %}
+          <ul class="appointment-errors">
+            {% for field in form.errors %}
+              <li>
+                {% if field == 'form' %}
+                  {{ form.errors.messages[field] }}
+                {% else %}
+                  {{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="AppointmentFirstName">First Name*</label>
+            <input
+              type="text"
+              id="AppointmentFirstName"
+              name="contact[first_name]"
+              value="{{ form.first_name }}"
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="AppointmentLastName">Last Name</label>
+            <input
+              type="text"
+              id="AppointmentLastName"
+              name="contact[last_name]"
+              value="{{ form.last_name }}"
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="AppointmentEmail">Email address*</label>
+            <input
+              type="email"
+              id="AppointmentEmail"
+              name="contact[email]"
+              value="{{ form.email }}"
+              autocomplete="email"
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="AppointmentPhone">Phone number*</label>
+            <input
+              type="tel"
+              id="AppointmentPhone"
+              name="contact[phone]"
+              value="{{ form.phone }}"
+              autocomplete="tel"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="AppointmentDate">Date*</label>
+            <input
+              type="date"
+              id="AppointmentDate"
+              name="contact[date]"
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="AppointmentTime">Time*</label>
+            <select id="AppointmentTime" name="contact[time]" required>
+              <option value="" selected disabled>Select time</option>
+              {% assign start_hour = section.settings.start_hour | default: 10 %}
+              {% assign end_hour = section.settings.end_hour | default: 18 %}
+              {% for hour in (start_hour..end_hour) %}
+                {% assign display_hour = hour %}
+                {% assign meridiem = 'AM' %}
+                {% if hour >= 12 %}
+                  {% assign meridiem = 'PM' %}
+                  {% if hour > 12 %}
+                    {% assign display_hour = hour | minus: 12 %}
+                  {% endif %}
+                {% endif %}
+                <option value="{{ hour }}:00">{{ display_hour }}:00 {{ meridiem }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field form-field--full">
+          <label for="AppointmentInterest">Interested in*</label>
+          <p class="form-field-hint">
+            {{ section.settings.interest_hint | default: "To help us better serve you during your visit, please tell us a little bit about what you're interested in:" }}
+          </p>
+          <select id="AppointmentInterest" name="contact[interested_in]" required>
+            {% for block in section.blocks %}
+              {% if block.type == 'interest_option' %}
+                <option value="{{ block.settings.label }}">{{ block.settings.label }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-field form-field--full">
+          <label for="AppointmentNotes">Additional notes</label>
+          <textarea
+            id="AppointmentNotes"
+            name="contact[body]"
+            rows="3"
+          >{{ form.body }}</textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="appointment-submit">
+            Submit
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      {% endform %}
+    </div>
+
+  </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('appointment-section--{{ section.id }}');
+      if (!header) return;
+      function updateHeaderClass() {
+        if (window.innerWidth < 1441) {
+          header.classList.add('page-width');
+          header.classList.remove('header-wide');
+        } else {
+          header.classList.remove('page-width');
+          header.classList.add('header-wide');
+        }
+      }
+      updateHeaderClass();
+      window.addEventListener('resize', updateHeaderClass);
+    });
+  </script>
+{% schema %}
+{
+  "name": "Make an appointment",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Side image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Make An Appointment" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Visit our showroom for all your jewelry needs" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Please complete the required fields below to make an appointment." },
+    { "type": "textarea", "id": "interest_hint", "label": "Interested-in hint text" },
+    { "type": "number", "id": "start_hour", "label": "Earliest hour (24h)", "default": 10 },
+    { "type": "number", "id": "end_hour", "label": "Latest hour (24h)", "default": 18 }
+  ],
+  "blocks": [
+    {
+      "type": "interest_option",
+      "name": "Interest option",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Diamonds" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Make an appointment",
+      "blocks": [
+        { "type": "interest_option", "settings": { "label": "Diamonds" } },
+        { "type": "interest_option", "settings": { "label": "Engagement Rings" } },
+        { "type": "interest_option", "settings": { "label": "Wedding Bands" } },
+        { "type": "interest_option", "settings": { "label": "Custom Design" } },
+        { "type": "interest_option", "settings": { "label": "Repairs & Services" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
