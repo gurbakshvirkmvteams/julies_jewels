@@ -72,7 +72,7 @@
                 </div>
               {% endif %}
               {% if block.settings.heading != blank %}
-                <h2
+                <div
                   class="image-text-card__heading"
                   style="
                     --heading-size: clamp(26px,5vw,{{ block.settings.heading_size }}px);
@@ -85,7 +85,7 @@
                   "
                 >
                   {{ block.settings.heading }}
-                </h2>
+                </div>
               {% endif %}
               {% if block.settings.description != blank %}
                 <div
@@ -327,7 +327,8 @@
   </section>
   <style>
     #image-text-cards-{{ section.id }} {
-      --scale: 1;
+      /* --scale: 1; */
+      --scale: clamp(1, calc(1 + (100vw - 1400px) / 2400px), 1.25);
       --section-width: {{ section.settings.section_width }}px;
       --card-height: clamp(400px, 45vw ,{{ section.settings.card_height }}px);
       --row-gap: {{ section.settings.row_gap }}px;
@@ -412,17 +413,19 @@
       text-transform: var(--eyebrow-transform) !important;
       margin: 0 0 calc(var(--eyebrow-margin) * var(--scale)) !important;
     }
-
+#image-text-cards-{{ section.id }} .image-text-card__heading * {
+      font-size: calc(var(--heading-size) * var(--scale)) !important;
+      font-weight: var(--heading-weight) !important;
+      line-height: calc(var(--heading-line-height) * var(--scale)) !important;
+      letter-spacing: calc(var(--heading-letter-spacing) * var(--scale)) !important;
+      color: var(--heading-color) !important;
+      text-transform: var(--heading-transform) !important;
+      margin: 0;
+}
     #image-text-cards-{{ section.id }} .image-text-card__heading {
       display: block !important;
       margin: 0 0 calc(var(--heading-margin) * var(--scale)) !important;
       padding: 0 !important;
-      font-size: calc(var(--heading-size) * var(--scale)) !important;
-      font-weight: var(--heading-weight) !important;
-      line-height: var(--heading-line-height) !important;
-      letter-spacing: calc(var(--heading-letter-spacing) * var(--scale)) !important;
-      color: var(--heading-color) !important;
-      text-transform: var(--heading-transform) !important;
     }
 
     #image-text-cards-{{ section.id }} .image-text-card__description {
@@ -514,7 +517,8 @@
 
     @media screen and (min-width: 1441px) {
       #image-text-cards-{{ section.id }} {
-        --scale: 1.25;
+        /* --scale: 1.25; */
+            --desktop-top: 0%;
       }
     }
 
@@ -770,10 +774,10 @@
             "label": "Eyebrow"
           },
           {
-            "type": "text",
+            "type": "richtext",
             "id": "heading",
             "label": "Heading",
-            "default": "Engagement Ring"
+            "default": "<p>Engagement Ring</p>"
           },
           {
             "type": "richtext",
