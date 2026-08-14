@@ -766,6 +766,7 @@
         "banner_gradient": "#e2e1db",
         "gradient_opacity": 100,
         "gradient_overlap_max_range": 50,
+        "gradient_spread": 100,
         "gradient_overlap_min_range": 45,
         "wrapper_background": "#ffffff",
         "desktop_layout": "text-first",
@@ -787,7 +788,7 @@
         "description_font_size": 16,
         "description_weight": "500",
         "description_line_height": 1.5,
-        "description_margin_bottom": 20,
+        "description_margin_bottom": 40,
         "button_text": "Browse Now",
         "button_link": "shopify://collections/best-sellers",
         "button_gradient_start": "#51a197",
@@ -801,11 +802,13 @@
         "button_padding_horizontal": 24,
         "button_border_width": 1,
         "button_border_radius": 0,
-        "button_margin_top": 40,
+        "button_margin_top": 0,
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
         "padding_right": 0,
+        "section_margin_top": 0,
+        "section_margin_bottom": 0,
         "mobile_layout": "image-first",
         "mobile_content_position": "center",
         "mobile_text_alignment": "center",
@@ -815,7 +818,9 @@
         "mobile_padding_top": 35,
         "mobile_padding_bottom": 60,
         "mobile_padding_left": 5,
-        "mobile_padding_right": 5
+        "mobile_padding_right": 5,
+        "mobile_section_margin_top": 0,
+        "mobile_section_margin_bottom": 0
       }
     },
     "custom_contact_section_pdCrKC": {

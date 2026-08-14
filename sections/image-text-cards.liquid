@@ -394,7 +394,7 @@
 
     #image-text-cards-{{ section.id }} .image-text-card__content {
       position: relative;
-      z-index: 5;
+      z-index: 0;
       width: var(--content-width);
       max-width: calc(var(--content-max-width) * var(--scale));
       transform: translate(
@@ -450,7 +450,7 @@
 
     #image-text-cards-{{ section.id }} .image-text-card__button {
       position: relative;
-      z-index: 6;
+      z-index: 1;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -491,7 +491,7 @@
 
     #image-text-cards-{{ section.id }} .decorative-image {
       position: absolute;
-      z-index: 10;
+      z-index: 2;
       pointer-events: none;
       width: var(--decorative-width);
       max-width: none;

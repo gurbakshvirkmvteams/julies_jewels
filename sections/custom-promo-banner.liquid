@@ -122,12 +122,12 @@ margin-bottom: clamp(0px,{{ section.settings.section_margin_bottom | divided_by:
       width: auto;
       max-width: clamp(40px,{{ section.settings.logo_max_width | divided_by: 14.4 }}vw,calc({{ section.settings.logo_max_width }}px * var(--promo-scale)));
       height: auto;
-  width:100%;
+      width:100%;
       margin-bottom: clamp(0px,{{ section.settings.logo_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.logo_margin_bottom }}px * var(--promo-scale)));
     }
     #promo-banner--{{ section.id }} .promo-banner__heading {
       margin: 0;
-      margin-bottom: clamp(0px,{{ section.settings.heading_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.heading_margin_bottom }}px * var(--promo-scale)));
+      margin-bottom: clamp(17px,{{ section.settings.heading_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.heading_margin_bottom }}px * var(--promo-scale)));
       color: {{ section.settings.heading_color }};
       font-size: clamp(16px,{{ section.settings.heading_font_size | divided_by: 14.4 }}vw,calc({{ section.settings.heading_font_size }}px * var(--promo-scale)));
       font-weight: {{ section.settings.heading_weight }};
@@ -138,7 +138,7 @@ margin-bottom: clamp(0px,{{ section.settings.section_margin_bottom | divided_by:
     }
     #promo-banner--{{ section.id }} .promo-banner__description {
       margin: 0;
-      margin-bottom: clamp(0px,{{ section.settings.description_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.description_margin_bottom }}px * var(--promo-scale)));
+      margin-bottom: clamp(32px,{{ section.settings.description_margin_bottom | divided_by: 14.4 }}vw,calc({{ section.settings.description_margin_bottom }}px * var(--promo-scale)));
       color: {{ section.settings.description_color }};
       font-size: clamp(12px,{{ section.settings.description_font_size | divided_by: 14.4 }}vw,calc({{ section.settings.description_font_size }}px * var(--promo-scale)));
       font-weight: {{ section.settings.description_weight }};
@@ -151,7 +151,7 @@ margin-bottom: clamp(0px,{{ section.settings.section_margin_bottom | divided_by:
       display: inline-flex;
       align-items: center;
       justify-content: center;
-  gap:10px;
+      gap:10px;
       margin-top: clamp(0px,{{ section.settings.button_margin_top | divided_by: 14.4 }}vw,calc({{ section.settings.button_margin_top }}px * var(--promo-scale)));
       padding-top: clamp(14px,{{ section.settings.button_padding_vertical | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_vertical }}px * var(--promo-scale)));
       padding-bottom: clamp(14px,{{ section.settings.button_padding_vertical | divided_by: 14.4 }}vw,calc({{ section.settings.button_padding_vertical }}px * var(--promo-scale)));
@@ -170,10 +170,10 @@ margin-bottom: clamp(0px,{{ section.settings.section_margin_bottom | divided_by:
       #promo-banner--{{ section.id }} {
         padding-top: {{ section.settings.mobile_padding_top }}px;
         padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
-        /* padding-left: {{ section.settings.mobile_padding_left }}px;
-        padding-right: {{ section.settings.mobile_padding_right }}px; */
-          margin-top: {{ section.settings.mobile_section_margin_top }}px;
-  margin-bottom: {{ section.settings.mobile_section_margin_bottom }}px;
+        padding-left:0px;
+        padding-right: 0px;
+        margin-top: {{ section.settings.mobile_section_margin_top }}px;
+        margin-bottom: {{ section.settings.mobile_section_margin_bottom }}px;
       }
       #promo-banner--{{ section.id }} .promo-banner__wrapper {
         display: flex;
@@ -248,6 +248,11 @@ margin-bottom: clamp(0px,{{ section.settings.section_margin_bottom | divided_by:
         max-width: {{ section.settings.logo_max_width }}px;
       }
     }
+    @media screen and (max-width: 391px) {
+     #promo-banner--{{ section.id }} .promo-banner__text {
+        padding: clamp(20px, 12vw, 43px) 0 !important;
+    }
+}
 {% endstyle %}
 {% if section.settings.banner_image != blank %}
   <section
@@ -488,7 +493,7 @@ margin-bottom: clamp(0px,{{ section.settings.section_margin_bottom | divided_by:
       "id": "image_width",
       "label": "Image width",
       "min": 30,
-      "max": 70,
+      "max": 80,
       "step": 1,
       "unit": "%",
       "default": 50
