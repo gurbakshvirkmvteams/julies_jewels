@@ -1,0 +1,312 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+<section
+  id="testimonials--{{ section.id }}"
+  class="testimonials-section"
+  style="
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  ">
+  <div class="testimonials-wrapper">
+    <!-- Left Image -->
+    <div class="testimonials-banner">
+      {% if section.settings.testimonial_banner != blank %}
+        {{
+          section.settings.testimonial_banner | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '400, 600, 800, 1000', sizes: '(min-width: 750px) 50vw, 100vw', class: 'testimonials-banner-image'
+        }}
+      {% endif %}
+    </div>
+    <!-- Right Side -->
+    <div class="testimonials-content">
+      <!-- Heading -->
+      <div class="testimonials-heading">
+        <svg
+          class="testimonials-quote"
+          width="67"
+          height="53"
+          viewBox="0 0 67 53"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M50.4 -0.000110149C53.4666 -0.000110149 56 0.59989 58 1.79989C60 2.99989 61.6666 4.59989 63 6.5999C64.4666 8.73323 65.4 11.1332 65.8 13.7999C66.3333 16.4666 66.6 18.8666 66.6 20.9999C66.6 27.5332 64.9333 33.5332 61.6 38.9999C58.2666 44.4666 53.0666 48.8666 46 52.1999L44.2 48.5999C48.2 46.8666 51.6666 44.1999 54.6 40.5999C57.5333 36.9999 59.1333 33.3332 59.4 29.5999C59.5333 27.5999 59.4 25.7332 59 23.9999C56.6 26.2666 53.6666 27.3999 50.2 27.3999C46.3333 27.3999 43.0666 26.1999 40.4 23.7999C37.7333 21.3999 36.4 18.0666 36.4 13.7999C36.4 9.66656 37.7333 6.33323 40.4 3.7999C43.2 1.26656 46.5333 -0.000110149 50.4 -0.000110149ZM14 -0.000110149C17.0666 -0.000110149 19.6 0.59989 21.6 1.79989C23.6 2.99989 25.2666 4.5999 26.6 6.5999C28.0666 8.73323 29 11.1332 29.4 13.7999C29.9333 16.4666 30.2 18.8666 30.2 20.9999C30.2 27.5332 28.5333 33.5332 25.2 38.9999C21.8666 44.4666 16.6666 48.8666 9.59995 52.1999L7.79995 48.5999C11.8 46.8666 15.2666 44.1999 18.2 40.5999C21.1333 36.9999 22.7333 33.3332 23 29.5999C23.1333 27.5999 23 25.7332 22.6 23.9999C20.2 26.2666 17.2666 27.3999 13.8 27.3999C9.93329 27.3999 6.66662 26.1999 3.99995 23.7999C1.33329 21.3999 -4.83394e-05 18.0666 -4.83394e-05 13.7999C-4.83394e-05 9.66656 1.33329 6.33323 3.99995 3.7999C6.79995 1.26656 10.1333 -0.000110149 14 -0.000110149Z" fill="#66C5BA" />
+        </svg>
+        <h2>Our Clients Say</h2>
+      </div>
+      <!-- Testimonials Slide -->
+      <div class="swiper testimonials-swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide testimonial-slide" {{ block.shopify_attributes }}>
+              <div class="testimonial-description">
+                {{ block.settings.description }}
+              </div>
+              <div class="testimonial-author">
+                {{ block.settings.author_name }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector(
+      '#testimonials--{{ section.id }}'
+    );
+    if (!section) return;
+    const swiperElement = section.querySelector('.testimonials-swiper');
+    if (!swiperElement) return;
+    function initTestimonials() {
+      if (typeof Swiper === 'undefined') {
+        setTimeout(initTestimonials, 100);
+        return;
+      }
+      if (swiperElement.swiper) return;
+      new Swiper(swiperElement, {
+        direction: 'horizontal',
+        loop: {{ section.blocks.size }} > 1,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        autoHeight: true,
+        pagination: {
+          el: section.querySelector('.swiper-pagination'),
+          clickable: true
+        }
+      });
+    }
+    initTestimonials();
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('testimonials--{{ section.id }}');
+    if (!section) return;
+    function updateSectionClass() {
+      if (window.innerWidth < 1441) {
+        section.classList.add('page-width');
+        section.classList.remove('header-wide');
+      } else {
+        section.classList.remove('page-width');
+        section.classList.add('header-wide');
+      }
+    }
+    updateSectionClass();
+    window.addEventListener('resize', updateSectionClass);
+  });
+</script>
+{% style %}
+  #testimonials--{{ section.id }} {
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-banner {
+    max-width: 493px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-banner-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-content {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: clamp(14px , 5vw ,20px);
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-heading * {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-quote {
+    width: 67px;
+    height: 53px;
+    margin-bottom: 15px;
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-heading h2 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  #testimonials--{{ section.id }}
+  .testimonials-swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+  #testimonials--{{ section.id }}
+  .testimonial-slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 208px;
+  }
+  #testimonials--{{ section.id }}
+  .testimonial-description {
+    max-width: 610px;
+    font-size: clamp(12px, 5vw, 14px);
+    line-height: 1.5;
+  }
+  #testimonials--{{ section.id }}
+  .testimonial-description p {
+    margin: 0;
+  }
+  #testimonials--{{ section.id }}
+  .testimonial-author {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-top: 33px;
+  }
+  #testimonials--{{ section.id }}
+  .testimonial-author p {
+    margin: 0;
+  }
+  #testimonials--{{ section.id }}
+  .swiper-pagination {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  #testimonials--{{ section.id }}
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    margin: 0 !important;
+    background: #777;
+    opacity: 0.5;
+  }
+  #testimonials--{{ section.id }}
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+  @media screen and (max-width: 749px) {
+     #testimonials--{{ section.id }} {
+    padding-left:0;
+    padding-right:0;
+  }
+    #testimonials--{{ section.id }} .testimonials-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    #testimonials--{{ section.id }}
+    .testimonials-banner {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    #testimonials--{{ section.id }}
+    .testimonials-heading {
+      margin-bottom: 25px;
+    }
+    #testimonials--{{ section.id }}
+    .testimonials-quote {
+      width: 48px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+    #testimonials--{{ section.id }}
+    .testimonials-heading h2 {
+      font-size: 28px;
+    }
+    #testimonials--{{ section.id }}
+    .testimonial-description {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    #testimonials--{{ section.id }}
+    .testimonial-author {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Testimonials section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 20
+      }, {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "image_picker",
+        "id": "testimonial_banner",
+        "label": "Testimonial Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>I was very pleased with the selection of merchandise offered. The service was excellent and the team was very helpful and friendly.</p>"
+          }, {
+            "type": "richtext",
+            "id": "author_name",
+            "label": "Author Name",
+            "default": "<p>Donna</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with Testimonials"
+      }
+    ]
+  }
+{% endschema %}

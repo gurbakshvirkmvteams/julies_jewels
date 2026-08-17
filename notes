@@ -41,3 +41,27 @@
 # Sergio's project
  -- Worked on #Sergio's project 
  -- Added metafields to 65 Products
+
+
+# Today's update:
+# Julie's Jewels & Gifts
+  -- adjusted mobile responsiveness of "Designers page"
+
+# Sergio's project
+ -- Worked on #Sergio's project 
+ -- Added 109 menu items (Images, Title, Descriptions)
+
+
+background: linear-gradient(360deg, #ffe1e9 29%, #ffe1e9 79%, rgba(0, 0, 0, 0) 89%);
+
+
+# Today's update:
+# Julie's Jewels & Gifts
+  -- adjusted mobile linear-gradients of "Designers page"
+  -- created a new services page 
+  -- added blogposts section and adjusted accordingto figma
+  -- created a cards section for services page
+  -- added custom card block section in page
+  -- craeted custom testimonials section for page with swiper js and adjusted it according to figma 
+  -- added appointment section 
+  -- created a new page birthstones of the month
