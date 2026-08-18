@@ -1,99 +1,267 @@
 {% style %}
-    
+  #birthstone-section--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+
+  #birthstone-section--{{ section.id }}
+  .birthstone-container {}
+
+#birthstone-section--{{ section.id }}
+.birthstone-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 5vw, 40px);
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-image-wrapper {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-content {
+  width: 60%;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-image {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-heading {
+  margin: 0 0 20px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #4A4D4F;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-description {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 5%;
+  color: #4A4D4F;
+  max-width: 715px;
+
+}
+#birthstone-section--{{ section.id }}
+.birthstone-description p {
+  margin: 0;
+
+}
+#birthstone-section--{{ section.id }}
+.birthstone-description {
+;
+/* margin: 0 0 15px; */
+}
+
+#birthstone-section--{{ section.id }}.birthstone-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Image first */
+#birthstone-section--{{ section.id }} .birthstone-item.image-first {
+  flex-direction: row;
+}
+
+/* Image second */
+#birthstone-section--{{ section.id }} .birthstone-item.image-second {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 749px) {
+  #birthstone-section--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+
+  #birthstone-section--{{ section.id }}
+  .birthstone-container {
+  ;
+  /* padding: 0 16px; */
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-item
+, #birthstone-section--{{ section.id }}
+.birthstone-item.image-first
+, #birthstone-section--{{ section.id }}
+.birthstone-item.image-second {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-image-wrapper
+, #birthstone-section--{{ section.id }}
+.birthstone-content {
+  width: 100%;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-image {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-heading {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+#birthstone-section--{{ section.id }}
+.birthstone-description {
+  font-size: 14px;
+}
+}
 {% endstyle %}
 
-{% schema %}
-{
-    "name": "Add Birthstone",
-    "settings": [
-        {
-        "type": "image_picker",
-        "id": "banner_image",
-        "label": "Desktop image"
-      },{
-        "type": "color",
-        "id": "heading_color",
-        "label": "Heading color",
-        "default": "#000000"
-      }, {
-        "type": "range",
-        "id": "heading_font_size",
-        "label": "Font size",
-        "min": 16,
-        "max": 100,
-        "step": 1,
-        "unit": "px",
-        "default": 48
-      }, {
-        "type": "select",
-        "id": "heading_weight",
-        "label": "Font weight",
-        "options": [
-          {
-            "value": "400",
-            "label": "Regular"
-          }, {
-            "value": "500",
-            "label": "Medium"
-          }, {
-            "value": "600",
-            "label": "Semi bold"
-          }, {
-            "value": "700",
-            "label": "Bold"
-          }
-        ],
-        "default": "400"
-      }, {
-        "type": "range",
-        "id": "heading_margin_bottom",
-        "label": "Bottom spacing",
-        "min": 0,
-        "max": 60,
-        "step": 2,
-        "unit": "px",
-        "default": 20
-      }, {
-        "type": "header",
-        "content": "Description"
-      }, {
-        "type": "color",
-        "id": "description_color",
-        "label": "Text color",
-        "default": "#000000"
-      }, {
-        "type": "range",
-        "id": "description_font_size",
-        "label": "Font size",
-        "min": 12,
-        "max": 40,
-        "step": 1,
-        "unit": "px",
-        "default": 18
-      }, {
-        "type": "select",
-        "id": "description_weight",
-        "label": "Font weight",
-        "options": [
-          {
-            "value": "400",
-            "label": "Regular"
-          }, {
-            "value": "500",
-            "label": "Medium"
-          }, {
-            "value": "600",
-            "label": "Semi bold"
-          }, {
-            "value": "700",
-            "label": "Bold"
-          }
-        ],
-        "default": "400"
+<section id="birthstone-section--{{ section.id }}">
+  <div class="birthstone-container">
+
+    <div class="birthstone-item {% if section.settings.image_position == 'first' %}image-first{% else %}image-second{% endif %}">
+
+      <div class="birthstone-image-wrapper">
+        {% if section.settings.image != blank %}
+          {{
+            section.settings.image | image_url: width: 800 | image_tag: class: 'birthstone-image', loading: 'lazy'
+          }}
+        {% endif %}
+      </div>
+
+      <div class="birthstone-content">
+
+        {% if section.settings.heading != blank %}
+          <h2 class="birthstone-heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="birthstone-description">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('birthstone-section--{{ section.id }}');
+    if (!header) return;
+    function updateHeaderClass() {
+      if (window.innerWidth < 1441) {
+        header.classList.add('page-width');
+        header.classList.remove('header-wide');
+      } else {
+        header.classList.remove('page-width');
+        header.classList.add('header-wide');
       }
+    }
+    updateHeaderClass();
+    window.addEventListener('resize', updateHeaderClass);
+  });
+</script>
+{% schema %}
+  {
+    "name": "Birthstones",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "January: Garnet"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p>Enter the birthstone description here.</p>"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Image position",
+        "options": [
+          {
+            "value": "first",
+            "label": "1st"
+          }, {
+            "value": "second",
+            "label": "2nd"
+          }
         ],
-        "presets": [
-            {"name": "Add a Birthstone"}
-        ]
-}
+        "default": "first"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Section padding top",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Section padding bottom",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Section margin top",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 75
+      }, {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Section margin bottom",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Birthstones"
+      }
+    ]
+  }
 {% endschema %}
