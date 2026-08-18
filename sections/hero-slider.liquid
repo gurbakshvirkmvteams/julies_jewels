@@ -3,7 +3,7 @@
   id="hero-slider-{{ section.id }}"
   class="hero-slider-section"
   style="        --header-desktop-scale: 1;"
->
+  >
   <div class="hero-slider swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
@@ -53,8 +53,8 @@
           <div
             class="hero-slide__content"
             style="
-              --content-width: {{ block.settings.content_width }}px;
-              --content-offset: {{ block.settings.content_offset }}px;
+              --content-width: clamp(calc({{ block.settings.content_width }}px / 1.25), 28vw , {{ block.settings.content_width }}px);
+              --content-offset: clamp(calc({{ block.settings.content_offset }}px /1.25), 28vw, {{ block.settings.content_offset }}px);
               --heading-color: {{ block.settings.heading_color }};
               --heading-size: {{ block.settings.heading_size }}px;
               --heading-weight: {{ block.settings.heading_weight }};
@@ -116,10 +116,13 @@
 <style>
       #hero-slider-{{ section.id }} {
           width: 100%;
+          margin-top:{{ section.settings.margin_top }}px;
+          margin-bottom:{{ section.settings.margin_bottom }}px;
+
       }
       #hero-slider-{{ section.id }}
       .hero-slider {
-          width: calc(100% - (96px * var(--header-desktop-scale)));
+          width: 100%;
           max-width: calc(1440px * var(--header-desktop-scale));
           margin: 0 auto;
           position: relative;
@@ -131,6 +134,9 @@
           aspect-ratio: 1440 / 696;
           overflow: hidden;
       }
+       #hero-slider-{{ section.id }} .hero-slide__desktop-image{
+        object-fit: contain;
+       }
       #hero-slider-{{ section.id }} .hero-slide__image {
           position: absolute;
           inset: 0;
@@ -193,7 +199,7 @@
     margin: 0 0 calc(var(--heading-margin-bottom) * var(--header-desktop-scale));
     max-width: calc(var(--heading-max-width) * var(--header-desktop-scale));
     font-size: calc(var(--heading-size) * var(--header-desktop-scale));
-    line-height: 1.12;
+    line-height: 1.4;
     font-weight: var(--heading-weight);
     color: var(--heading-color);
   }
@@ -251,7 +257,7 @@ transition:
 }
 #hero-slider-{{ section.id }} .hero-slider__pagination {
     position: absolute;
-    bottom: calc(20px * var(--header-desktop-scale));
+    bottom: calc(45px * var(--header-desktop-scale));
     left: 0;
     width: 100%;
     z-index: 5;
@@ -265,16 +271,22 @@ transition:
     width: calc(5px * var(--header-desktop-scale));
     height: calc(5px * var(--header-desktop-scale));
     margin: 0 !important;
-    background: #ffffff;
+    background: #909396;
     opacity: .6;
 }
 #hero-slider-{{ section.id }}
 .swiper-pagination-bullet-active {
     opacity: 1;
+    background: #ffffff;
+
 }
 @media screen and (max-width: 749px) {
     #hero-slider-{{ section.id }} {
     --header-desktop-scale: 1;
+    margin-top:0;
+    margin-bottom:0;
+    padding-left:0;
+    padding-right:0;
     }
     #hero-slider-{{ section.id }} .hero-slider {
     width: 100%;
@@ -331,48 +343,30 @@ transition:
     width: 100%;
     min-height: 207px;
     box-sizing: border-box;
-    padding: 32px 25px 38px;
+    padding: 42px 34px 34px;
     margin-top: -40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center !important;
+    text-align: center !important;
     background: linear-gradient(var(--gradient-angle),transparent var(--gradient-start), var(--gradient-color) var(--gradient-end));
     z-index: 3;
+    align-items: center !important;
     }
-    #hero-slider-{{ section.id }} .hero-slide--left .hero-slide__content {
-    align-items: flex-start;
-    }
-    #hero-slider-{{ section.id }}
-    .hero-slide--center .hero-slide__content {
-    align-items: center;
-    }
-    #hero-slider-{{ section.id }}
-    .hero-slide--right .hero-slide__content {
-    align-items: flex-end;
-    }
-    #hero-slider-{{ section.id }} .hero-slide--text-left .hero-slide__content {
-    text-align: left;
-    }
-    #hero-slider-{{ section.id }}
-    .hero-slide--text-center .hero-slide__content {
-    text-align: center;
-    }
-    #hero-slider-{{ section.id }}
-    .hero-slide--text-right .hero-slide__content {
-    text-align: right;
-    }
+  
     #hero-slider-{{ section.id }} .hero-slide__heading {
     width: 100%;
-    max-width: 280px;
-    margin: 0 0 14px;
-    font-size: 28px;
-    line-height: 1.15;
+    max-width: 260px;
+    margin: 0 0 18px;
+    font-size: 26px;
+    line-height: 1.5;
+    font-weight: 500;
     }
     #hero-slider-{{ section.id }} .hero-slide__description {
     width: 100%;
     max-width: 290px;
     margin: 0 0 22px;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.45;
     }
     #hero-slider-{{ section.id }}
@@ -380,15 +374,15 @@ transition:
     margin: 0;
     }
     #hero-slider-{{ section.id }} .hero-slide__button {
-    width: min(var(--button-width), 100%);
-    max-width: 245px;
+    width: clamp(322px, 5vw, 100%);
+    max-width: 100%;
     min-height: 38px;
-    padding: 10px 20px;
-    font-size: 13px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 500;
     }
     #hero-slider-{{ section.id }} .hero-slider__pagination {
-    bottom: 185px;
-    z-index: 10;
+    display: none;
     }
 }
 @media screen and (min-width: 1441px) {
@@ -411,10 +405,10 @@ transition:
           spaceBetween: 0,
           loop: {% if section.blocks.size > 1 %}true{% else %}false{% endif %},
           speed: 700,
-         // autoplay: {
-         // delay: 5000,
-         // disableOnInteraction: false
-         // },
+        //  autoplay: {
+        //  delay: 5000,
+        //  disableOnInteraction: false
+        //  },
           pagination: {
           el:
               '#hero-slider-{{ section.id }} .hero-slider__pagination',
@@ -426,10 +420,46 @@ transition:
       }
   );
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('hero-slider-{{ section.id }}');
+      if (!header) return;
+      function updateHeaderClass() {
+        if (window.innerWidth < 1441) {
+          header.classList.add('page-width');
+          header.classList.remove('header-wide');
+        } else {
+          header.classList.remove('page-width');
+          header.classList.add('header-wide');
+        }
+      }
+      updateHeaderClass();
+      window.addEventListener('resize', updateHeaderClass);
+    });
+  </script>
 {% schema %}
 {
   "name": "Hero Slider Section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "max": 100,
+      "min": 0,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "max": 100,
+      "min": 0,
+      "step": 1,
+      "default": 40
+    }
+  ],
   "blocks": [
     {
       "type": "slide",

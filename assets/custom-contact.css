@@ -1,184 +1,180 @@
-/* Default: 1440px and below */
 .appointment-wrapper {
   --desktop-scale: 1;
-
+  --vw-scale: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: calc(700px * var(--desktop-scale));
+  gap: calc(10px * var(--desktop-scale));
 }
-
 .appointment-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 .appointment-form-panel {
-  background: #FAFAFA;
-  padding: calc(68px * var(--desktop-scale))
-           calc(51px * var(--desktop-scale));
-  border: calc(1px * var(--desktop-scale)) solid #E5E5E5;
+  background: #fafafa;
+  padding: clamp(
+      calc(28px * var(--desktop-scale)),
+      calc(4vw * var(--vw-scale)),
+      calc(68px * var(--desktop-scale))
+    )
+    clamp(
+      calc(20px * var(--desktop-scale)),
+      calc(3.5vw * var(--vw-scale)),
+      calc(51px * var(--desktop-scale))
+    )
+    clamp(
+      calc(16px * var(--desktop-scale)),
+      calc(4vw * var(--vw-scale)),
+      calc(37px * var(--desktop-scale))
+    );
+  border: calc(1px * var(--desktop-scale)) solid #e5e5e5;
 }
-
 .appointment-heading {
-  font-size: calc(48px * var(--desktop-scale));
+  font-size: clamp(
+    calc(28px * var(--desktop-scale)),
+    calc(4vw * var(--vw-scale)),
+    calc(48px * var(--desktop-scale))
+  );
+  color:#4A4D4F;
   font-weight: 400;
   margin: 0 0 calc(18px * var(--desktop-scale));
-  white-space: nowrap;
 }
-
 .appointment-subheading {
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 calc(8px * var(--desktop-scale));
-    font-size: calc(14px * var(--desktop-scale));
+  font-size: calc(14px * var(--desktop-scale));
+  color: #4A4D4F;
 }
-
 .appointment-description {
-  color: #666;
+  color:#4A4D4F;
   margin: 0 0 calc(36px * var(--desktop-scale));
-  font-size: calc(12px * var(--desktop-scale));
+  font-size: clamp(
+    calc(10px * var(--desktop-scale)),
+    calc(3vw * var(--vw-scale)),
+    calc(12px * var(--desktop-scale))
+  );
 }
-
 .appointment-form .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: calc(23px * var(--desktop-scale));
-  margin-bottom: calc(20px * var(--desktop-scale));
+  gap: clamp(
+    calc(10px * var(--desktop-scale)),
+    calc(2vw * var(--vw-scale)),
+    calc(23px * var(--desktop-scale))
+  );
+  margin-bottom: calc(34px * var(--desktop-scale));
 }
-
 .appointment-form .form-field {
   display: flex;
   flex-direction: column;
 }
-
 .appointment-form .form-field--full {
-  margin-bottom: calc(20px * var(--desktop-scale));
+  margin-bottom: calc(34px * var(--desktop-scale));
 }
-
 .appointment-form label {
   font-size: calc(14px * var(--desktop-scale));
   margin-bottom: calc(8px * var(--desktop-scale));
+  color: #4A4D4F;
 }
-
 .appointment-form input,
 .appointment-form select,
 .appointment-form textarea {
   border: none;
-  border-bottom: calc(1px * var(--desktop-scale)) solid #C9C9C9;
+  border-bottom: calc(1px * var(--desktop-scale)) solid #DFDFDF;
   background: transparent;
-  padding: calc(6px * var(--desktop-scale))
-           calc(2px * var(--desktop-scale));
+  padding: calc(6px * var(--desktop-scale)) calc(2px * var(--desktop-scale));
   font-size: calc(14px * var(--desktop-scale));
   font-family: inherit;
   color: #222;
 }
-
+.appointment-form select {
+  color: #5B5B5B;
+  max-width: calc(264px * var(--desktop-scale));
+}
 .appointment-form input:focus,
 .appointment-form select:focus,
 .appointment-form textarea:focus {
   outline: none;
   border-bottom-color: #222;
 }
-
 .form-field-hint {
   font-size: calc(12px * var(--desktop-scale));
   color: #777;
   margin: 0 0 calc(18px * var(--desktop-scale));
 }
-
 .form-submit-row {
   display: flex;
   justify-content: flex-end;
   margin-top: calc(38px * var(--desktop-scale));
 }
-
 .appointment-submit {
   display: inline-flex;
   align-items: center;
   gap: calc(10px * var(--desktop-scale));
+  color: #51A197;
   background: transparent;
-  border: calc(1px * var(--desktop-scale)) solid var();
-  padding: calc(14.5px * var(--desktop-scale))
-           calc(24px * var(--desktop-scale));
+  border: calc(1px * var(--desktop-scale)) solid #51A197;
+  padding: calc(14.5px * var(--desktop-scale)) calc(24px * var(--desktop-scale));
   font-size: calc(14px * var(--desktop-scale));
-  letter-spacing: calc(0.1em * var(--desktop-scale));
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
-
 .appointment-submit:hover {
   background: #222;
   color: #fff;
 }
-
 .appointment-errors {
-  background: #FFF4F4;
-  border: calc(1px * var(--desktop-scale)) solid #E8B4B4;
-  padding: calc(12px * var(--desktop-scale))
-           calc(16px * var(--desktop-scale));
+  background: #fff4f4;
+  border: calc(1px * var(--desktop-scale)) solid #e8b4b4;
+  padding: calc(12px * var(--desktop-scale)) calc(16px * var(--desktop-scale));
   margin: 0 0 calc(20px * var(--desktop-scale));
   font-size: calc(13px * var(--desktop-scale));
   list-style: disc;
   padding-left: calc(32px * var(--desktop-scale));
 }
-
 .appointment-success {
-  background: #F0F8F0;
-  border: calc(1px * var(--desktop-scale)) solid #B4E0B4;
-  padding: calc(12px * var(--desktop-scale))
-           calc(16px * var(--desktop-scale));
+  background: #f0f8f0;
+  border: calc(1px * var(--desktop-scale)) solid #b4e0b4;
+  padding: calc(12px * var(--desktop-scale)) calc(16px * var(--desktop-scale));
   margin: 0 0 calc(20px * var(--desktop-scale));
   font-size: calc(13px * var(--desktop-scale));
 }
-
-
-/* =========================================
-   DESKTOP SCALE
-   1440px design → 1.25x above 1440px
-   ========================================= */
-
 @media screen and (min-width: 1441px) {
   .appointment-wrapper {
     --desktop-scale: 1.25;
+    --vw-scale: 1.25;
   }
 }
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
 @media screen and (max-width: 749px) {
   .appointment-wrapper {
     --desktop-scale: 1;
-
+    --vw-scale: 1;
+    gap: 20px;
     grid-template-columns: 1fr;
   }
-
   .appointment-form-panel {
     padding: 32px 24px;
     text-align: center;
   }
-
   .appointment-form {
     text-align: left;
   }
-
   .appointment-form .form-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
-
   .appointment-form .form-field {
     margin-bottom: 20px;
   }
-
   .appointment-heading {
-    font-size: 26px;
+    font-size: clamp(18px, 8vw, 28px);
   }
-
   .form-submit-row {
     justify-content: flex-start;
   }

@@ -1,0 +1,99 @@
+{% style %}
+    
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "Add Birthstone",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Desktop image"
+      },{
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading color",
+        "default": "#000000"
+      }, {
+        "type": "range",
+        "id": "heading_font_size",
+        "label": "Font size",
+        "min": 16,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 48
+      }, {
+        "type": "select",
+        "id": "heading_weight",
+        "label": "Font weight",
+        "options": [
+          {
+            "value": "400",
+            "label": "Regular"
+          }, {
+            "value": "500",
+            "label": "Medium"
+          }, {
+            "value": "600",
+            "label": "Semi bold"
+          }, {
+            "value": "700",
+            "label": "Bold"
+          }
+        ],
+        "default": "400"
+      }, {
+        "type": "range",
+        "id": "heading_margin_bottom",
+        "label": "Bottom spacing",
+        "min": 0,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "default": 20
+      }, {
+        "type": "header",
+        "content": "Description"
+      }, {
+        "type": "color",
+        "id": "description_color",
+        "label": "Text color",
+        "default": "#000000"
+      }, {
+        "type": "range",
+        "id": "description_font_size",
+        "label": "Font size",
+        "min": 12,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "default": 18
+      }, {
+        "type": "select",
+        "id": "description_weight",
+        "label": "Font weight",
+        "options": [
+          {
+            "value": "400",
+            "label": "Regular"
+          }, {
+            "value": "500",
+            "label": "Medium"
+          }, {
+            "value": "600",
+            "label": "Semi bold"
+          }, {
+            "value": "700",
+            "label": "Bold"
+          }
+        ],
+        "default": "400"
+      }
+        ],
+        "presets": [
+            {"name": "Add a Birthstone"}
+        ]
+}
+{% endschema %}

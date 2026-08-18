@@ -1,0 +1,416 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_promo_banner_TQanid": {
+      "type": "custom-promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Diamonds_LooseDiamonds-gigapixel-low_res-scale-2_00x-gigapixel-standard-scale-2_00x_1_1.png",
+        "banner_gradient": "#321b0d",
+        "gradient_opacity": 100,
+        "gradient_overlap_max_range": 60,
+        "gradient_spread": 75,
+        "gradient_overlap_min_range": 65,
+        "wrapper_background": "#ffffff",
+        "desktop_layout": "text-first",
+        "content_horizontal_alignment": "right",
+        "content_vertical_alignment": "center",
+        "text_alignment": "left",
+        "content_max_width": 400,
+        "image_width": 60,
+        "desktop_banner_height": 500,
+        "heading": "",
+        "description": "<p>We take pride not only in our work, but also in the</p><p> reputation we have within our community. Old friends</p><p> and new friends alike bring us their precious jewelry</p><p> for a myriad of reasons. We are experts at jewelry</p><p> repair, restoration and design. Does an important </p><p>occasion in your near future require a piece of jewelry </p><p>that is extraordinary? Allow us to help build this </p><p>precious memory together ...</p>",
+        "logo": "shopify://shop_images/Services.svg",
+        "logo_max_width": 150,
+        "logo_margin_bottom": 20,
+        "heading_color": "#000000",
+        "heading_font_size": 48,
+        "heading_weight": "400",
+        "heading_line_height": 1.1,
+        "heading_margin_bottom": 0,
+        "description_color": "#ffffff",
+        "description_font_size": 14,
+        "description_weight": "500",
+        "description_line_height": 1.5,
+        "description_margin_bottom": 0,
+        "button_text": "Shop now",
+        "button_link": "",
+        "button_gradient_start": "#51a197",
+        "button_gradient_end": "#66c5ba",
+        "button_gradient_direction": "90deg",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#000000",
+        "button_font_size": 14,
+        "button_font_weight": "500",
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 24,
+        "button_border_width": 1,
+        "button_border_radius": 0,
+        "button_margin_top": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 50,
+        "padding_right": 50,
+        "section_margin_top": 30,
+        "section_margin_bottom": 0,
+        "mobile_gradient_enable": true,
+        "mobile_layout": "image-first",
+        "mobile_content_position": "center",
+        "mobile_text_alignment": "center",
+        "mobile_heading_font_size": 32,
+        "mobile_description_font_size": 14,
+        "mobile_button_font_size": 14,
+        "mobile_padding_top": 30,
+        "mobile_padding_bottom": 30,
+        "mobile_padding_left": 20,
+        "mobile_padding_right": 20,
+        "mobile_section_margin_top": 0,
+        "mobile_section_margin_bottom": 0
+      }
+    },
+    "image_with_text_cards_MkzaT9": {
+      "type": "image-with-text-cards",
+      "blocks": {
+        "card_eyka4r": {
+          "type": "card",
+          "settings": {
+            "background_image": "shopify://shop_images/Diamonds_LooseDiamonds-gigapixel-low_res-scale-2_00x-gigapixel-standard-scale-2_00x_4.png",
+            "background_position": "center center",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0,
+            "card_max_width": 658,
+            "card_max_height": 384,
+            "card_radius": 0,
+            "content_horizontal": "center",
+            "content_vertical": "center",
+            "content_width": 80,
+            "content_padding": 0,
+            "mobile_content_width": 80,
+            "mobile_content_padding": 24,
+            "logo": "shopify://shop_images/Repair.svg",
+            "logo_width": 96,
+            "logo_margin_bottom": 20,
+            "mobile_logo_width": 100,
+            "mobile_logo_margin_bottom": 6,
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": 32,
+            "heading_weight": "400",
+            "heading_line_height": 1.1,
+            "heading_margin_bottom": 14,
+            "mobile_heading_margin_bottom": 10,
+            "description": "<p>Julie's Jewels & Gifts established in 1939, has</p><p> worked hard to earn a reputation as a leader in</p><p> jewelry repair, and building the trust and loyalty </p><p>of numerous customers. </p>",
+            "description_color": "#ffffff",
+            "description_size": 14,
+            "description_weight": "500",
+            "description_line_height": 1.4,
+            "description_margin_bottom": 36,
+            "mobile_description_margin_bottom": 18,
+            "button_text": "Know More",
+            "button_link": "shopify://blogs/jewelry",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#51a197",
+            "button_font_size": 14,
+            "button_font_weight": "600",
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 24,
+            "button_radius": 0,
+            "button_border_color": "#5cc2b8",
+            "button_border_width": 0,
+            "button_icon_gap": 8,
+            "button_icon_size": 19
+          }
+        },
+        "card_jy96Mh": {
+          "type": "card",
+          "settings": {
+            "background_image": "shopify://shop_images/Diamonds_LooseDiamonds-gigapixel-low_res-scale-2_00x-gigapixel-standard-scale-2_00x_2.png",
+            "background_position": "center center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "card_max_width": 658,
+            "card_max_height": 384,
+            "card_radius": 0,
+            "content_horizontal": "center",
+            "content_vertical": "center",
+            "content_width": 80,
+            "content_padding": 48,
+            "mobile_content_width": 80,
+            "mobile_content_padding": 24,
+            "logo": "shopify://shop_images/Appraisals_1.svg",
+            "logo_width": 200,
+            "logo_margin_bottom": 20,
+            "mobile_logo_width": 100,
+            "mobile_logo_margin_bottom": 20,
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": 32,
+            "heading_weight": "400",
+            "heading_line_height": 1.1,
+            "heading_margin_bottom": 14,
+            "mobile_heading_margin_bottom": 10,
+            "description": "<p>We offer insurance Appraisals for </p><p>jewelry and watches, regardless of </p><p>where the item was purchased. </p>",
+            "description_color": "#ffffff",
+            "description_size": 14,
+            "description_weight": "500",
+            "description_line_height": 1.4,
+            "description_margin_bottom": 36,
+            "mobile_description_margin_bottom": 18,
+            "button_text": "Know More",
+            "button_link": "shopify://collections/all",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#5cc2b8",
+            "button_font_size": 14,
+            "button_font_weight": "600",
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 20,
+            "button_radius": 0,
+            "button_border_color": "rgba(0,0,0,0)",
+            "button_border_width": 0,
+            "button_icon_gap": 8,
+            "button_icon_size": 19
+          }
+        },
+        "card_8zADkg": {
+          "type": "card",
+          "settings": {
+            "background_image": "shopify://shop_images/Group_286.png",
+            "background_position": "center center",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0,
+            "card_max_width": 658,
+            "card_max_height": 384,
+            "card_radius": 0,
+            "content_horizontal": "center",
+            "content_vertical": "center",
+            "content_width": 80,
+            "content_padding": 48,
+            "mobile_content_width": 80,
+            "mobile_content_padding": 24,
+            "logo": "shopify://shop_images/Watch_Repair.svg",
+            "logo_width": 188,
+            "logo_margin_bottom": 20,
+            "mobile_logo_width": 100,
+            "mobile_logo_margin_bottom": 20,
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": 32,
+            "heading_weight": "400",
+            "heading_line_height": 1.1,
+            "heading_margin_bottom": 14,
+            "mobile_heading_margin_bottom": 10,
+            "description": "<p>Julie's Jewels & Gifts s offers a</p><p> wide range of watch repair </p><p>services. We offer preliminary </p><p>estimates on repair at the intake </p><p>of your timepiece and upon</p><p> further inspection, contact you </p><p>with the final estimate. If the </p><p>actual cost of the repair is more </p><p>than you would like to spend we </p><p>will return your watch unrepaired</p><p> and your deposit in full. </p>",
+            "description_color": "#4a4d4f",
+            "description_size": 14,
+            "description_weight": "500",
+            "description_line_height": 1.3,
+            "description_margin_bottom": 0,
+            "mobile_description_margin_bottom": 0,
+            "button_text": "Know More",
+            "button_link": "",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#51a197",
+            "button_font_size": 14,
+            "button_font_weight": "600",
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 20,
+            "button_radius": 0,
+            "button_border_color": "#5cc2b8",
+            "button_border_width": 0,
+            "button_icon_gap": 8,
+            "button_icon_size": 19
+          }
+        },
+        "card_TMGqXp": {
+          "type": "card",
+          "settings": {
+            "background_image": "shopify://shop_images/Group_287_1.png",
+            "background_position": "center center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "card_max_width": 658,
+            "card_max_height": 384,
+            "card_radius": 0,
+            "content_horizontal": "center",
+            "content_vertical": "center",
+            "content_width": 89,
+            "content_padding": 0,
+            "mobile_content_width": 100,
+            "mobile_content_padding": 0,
+            "logo": "shopify://shop_images/Diamond_Buying.svg",
+            "logo_width": 256,
+            "logo_margin_bottom": 20,
+            "mobile_logo_width": 100,
+            "mobile_logo_margin_bottom": 12,
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": 32,
+            "heading_weight": "400",
+            "heading_line_height": 1.1,
+            "heading_margin_bottom": 0,
+            "mobile_heading_margin_bottom": 0,
+            "description": "<p>Julie's Jewels & Gifts  offers a diamond concierge service. If you have </p><p>something particulary special in mind Julie will scour the world to find you </p><p>the perfect diamond. Julie will hand select the perfect diamond to meet your </p><p>contracted specifications.<br/><br/>Whether you send Julie on a personal buying mission, or purchase one of </p><p>the diamonds she has already hand-selected, you can rest assured that </p><p>you’ll be getting stunning quality at very reasonable prices any time of year.</p><p><br/> To take advantage of the concierge diamond buying service, please make an </p><p>appointment with Julie to enjoy her undivided attention. Contact Julie today! </p>",
+            "description_color": "#4a4d4f",
+            "description_size": 14,
+            "description_weight": "500",
+            "description_line_height": 1.3,
+            "description_margin_bottom": 0,
+            "mobile_description_margin_bottom": 0,
+            "button_text": "Know More",
+            "button_link": "",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#51a197",
+            "button_font_size": 14,
+            "button_font_weight": "500",
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 20,
+            "button_radius": 0,
+            "button_border_color": "#5cc2b8",
+            "button_border_width": 0,
+            "button_icon_gap": 8,
+            "button_icon_size": 19
+          }
+        }
+      },
+      "block_order": [
+        "card_eyka4r",
+        "card_jy96Mh",
+        "card_8zADkg",
+        "card_TMGqXp"
+      ],
+      "name": "Image Text Cards",
+      "settings": {
+        "gap": 20,
+        "margin_top": 20,
+        "margin_bottom": 20
+      }
+    },
+    "testimonials_NjJ3K7": {
+      "type": "testimonials",
+      "blocks": {
+        "card_haRw7H": {
+          "type": "card",
+          "settings": {
+            "testimonial_image": "shopify://shop_images/8852ac7fb51a7ad36077b55edb6479c092e5862c.png",
+            "description": "<p>I was very pleased with the selection of merchandise offered. The service was excellent and the team was very helpful and friendly.</p>",
+            "author_name": "<p>Donna</p>"
+          }
+        },
+        "card_nX9wB7": {
+          "type": "card",
+          "settings": {
+            "testimonial_image": "shopify://shop_images/authorf_2.jpg",
+            "description": "<p>I was very pleased with the selection of merchandise offered. I found just what i was </p><p>looking for and more! The customer service was excellent. I found the staff very</p><p> helpful and friendly. My neice loved the Salisbury Pewter  baby cup. It was beautiful! </p><p>Thank you again for the wonderful service.</p>",
+            "author_name": "<p>Lilly</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_haRw7H",
+        "card_nX9wB7"
+      ],
+      "name": "Image with Testimonials",
+      "settings": {
+        "margin_top": 41,
+        "margin_bottom": 30
+      }
+    },
+    "featured_blog_Qwnr89": {
+      "type": "featured-blog",
+      "custom_css": [],
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "heading": "The Blog",
+        "heading_alignment": "center",
+        "heading_size": "h1",
+        "blog": "julies",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 60
+      }
+    },
+    "custom_contact_section_eFdJA3": {
+      "type": "custom-contact-section",
+      "blocks": {
+        "interest_option_Kpqi99": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Diamonds"
+          }
+        },
+        "interest_option_axQXnq": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Engagement Rings"
+          }
+        },
+        "interest_option_6JwEHR": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Wedding Bands"
+          }
+        },
+        "interest_option_RWDUUd": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Custom Design"
+          }
+        },
+        "interest_option_L6MdNn": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Repairs & Services"
+          }
+        }
+      },
+      "block_order": [
+        "interest_option_Kpqi99",
+        "interest_option_axQXnq",
+        "interest_option_6JwEHR",
+        "interest_option_RWDUUd",
+        "interest_option_L6MdNn"
+      ],
+      "name": "Make an appointment",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_26.png",
+        "heading": "Make An Appointment",
+        "subheading": "Visit our showroom for all your jewelry needs",
+        "description": "Please complete the required fields below to make an appointment.",
+        "interest_hint": "",
+        "start_hour": 10,
+        "end_hour": 18
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_promo_banner_TQanid",
+    "image_with_text_cards_MkzaT9",
+    "testimonials_NjJ3K7",
+    "featured_blog_Qwnr89",
+    "custom_contact_section_eFdJA3"
+  ]
+}

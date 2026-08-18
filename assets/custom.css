@@ -6,7 +6,6 @@
   padding-left: clamp(40px, 3vw, 120px) !important;
   padding-right: clamp(40px, 3vw, 120px) !important;
 }
-
 :root {
   --header-desktop-scale: 1;
   --grid-desktop-horizontal-spacing: 36px;
@@ -176,6 +175,8 @@
   .header-left-action--hide-mobile {
     display: none;
   }
+  
+
 }
 
 .header__menu-item.custom-list-menu__item {
@@ -203,7 +204,7 @@ line-height: 55px;
 letter-spacing: 0%;
 }
 .custom-title-wrapper-with-link.title-wrapper-with-link{
-margin-bottom: 4rem;
+margin-bottom: clamp(1.5rem, 5vw, 4rem);
 
 }
 .custom-card__heading.card__heading {
