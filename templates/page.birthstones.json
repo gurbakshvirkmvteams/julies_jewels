@@ -65,7 +65,7 @@
         "button_margin_top": 0,
         "padding_top": 0,
         "padding_bottom": 0,
-        "padding_left": 0,
+        "padding_left": 60,
         "padding_right": 0,
         "section_margin_top": 0,
         "section_margin_bottom": 0,
@@ -86,6 +86,7 @@
     },
     "custom_promo_banner_itn74i": {
       "type": "custom-promo-banner",
+      "disabled": true,
       "name": "Promo Banner",
       "settings": {
         "banner_image": "shopify://shop_images/9c317fa1dadc7408c22e0e1f15e85e3cc22ba38d.png",
@@ -106,7 +107,7 @@
         "description": "<p>As far back as 3,100 B.C., there are historical references that the Egyptians used garnets in their </p><p>inlaid jewelry. The word garnet comes from the word granatum, which means seed based on some </p><p>garnet varieties’ close resemblance to the color of a pomegranate seed. Garnet signifies eternal</p><p> friendship and trust, making it the perfect gift for a friend.</p><p><br/>The current leading sources for garnet include Africa, Sri Lanka, and India. Garnet naturally occurs in</p><p> a number of colors from reddish Pyrope Garnet to Green Garnet from Africa, namely Tsavorite Garnet </p><p>from Kenya. Garnet is the birthstone of January babies, and is the primary gemstone gift for a second </p><p>wedding anniversary and an alternate gemstone gift for those celebrating six years of marriage.</p>",
         "logo_max_width": 150,
         "logo_margin_bottom": 20,
-        "heading_color": "#4A4D4F",
+        "heading_color": "#4a4d4f",
         "heading_font_size": 36,
         "heading_weight": "500",
         "heading_line_height": 1.1,
@@ -118,10 +119,10 @@
         "description_margin_bottom": 0,
         "button_text": "Shop now",
         "button_link": "",
-        "button_gradient_start": "#51A197",
-        "button_gradient_end": "#66C5BA",
+        "button_gradient_start": "#51a197",
+        "button_gradient_end": "#66c5ba",
         "button_gradient_direction": "90deg",
-        "button_text_color": "#FFFFFF",
+        "button_text_color": "#ffffff",
         "button_border_color": "#000000",
         "button_font_size": 14,
         "button_font_weight": "500",
@@ -150,11 +151,191 @@
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
       }
+    },
+    "birthstones_section_XLJHa6": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/9c317fa1dadc7408c22e0e1f15e85e3cc22ba38d.png",
+        "heading": "January: Garnet",
+        "description": "<p>As far back as 3,100 B.C., there are historical references that the Egyptians used garnets in their inlaid jewelry. The word garnet comes from the word granatum, which means seed based on some</p><p> garnet varieties’ close resemblance to the color of a pomegranate seed. Garnet signifies eternal </p><p>friendship and trust, making it the perfect gift for a friend.</p><p><br/>The current leading sources for garnet include Africa, Sri Lanka, and India. Garnet naturally occurs in a number of colors from reddish Pyrope Garnet to Green Garnet from Africa, namely Tsavorite Garnetrom Kenya. Garnet is the birthstone of January babies, and is the primary gemstone gift for a second wedding anniversary and an alternate gemstone gift for those celebrating six years of marriage.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 95,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_BU6HNx": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_41_1.png",
+        "heading": "February: Amethyst",
+        "description": "<p>The Bible mentions amethyst as one of the 12 gemstones adorning the breastplate of the high priests of Yahweh. Other references to amethyst in early history include Pliny the Elder that wrote the color of amethyst is similar to the color of wine. Coincidentally, ancient Greeks and Romans believed amethyst could ward off the intoxicating powers of Bacchus, the God of Wine.</p><p><br/>Amethyst is the purple variety quartz that has a strong violet primary color complemented by a red secondary color. The color combinations produce an exquisite deep purple. Although amethyst is found throughout the world, Brazil and Uruguay are the world’s leading sources in terms of quantity and quality brought to market. Amethyst is the perfect gift for February babies, those born under the zodiac sign of Pisces, and couples celebrating their 4th, 6th and 17th wedding anniversaries.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_jNBiBY": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_45.png",
+        "heading": "March: Aquamarine",
+        "description": "<p>Aquamarine is the blue member of the beryl family of gemstones. The name aquamarine comes from the Latin word aqua, meaning water, and marina, from the sea. Given this history to the gemstone’s name, it’s no surprise that the gemstone was believed to protect sailors, as well as to guarantee a safe voyage.</p><p><br/>Aquamarine is most often light in tone and ranges from greenish blue to blue-green; the color usually is more intense in larger stones.  This gemstone is mined mainly in Brazil, but also is found in Nigeria, Madagascar, Zambia, Pakistan, and Mozambique. The most popular cut for a larger aquamarine is an emerald cut. The birthstone for March babies, aquamarine is an alternate gift for those celebrating 16 years of marriage, and a primary gemstone gift for couples celebrating their 19th anniversary.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_9DVPHn": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_118.png",
+        "heading": "April: Diamond",
+        "description": "<p>April has the King of Birthstones: Diamond. The earliest references to diamonds have been found in Sanskrit documents dating from 300 B.C. Early Greeks believed diamonds were tears of the gods. Diamonds are considered by many to be a modern symbol of love. But the first recorded diamond engagement ring was given to Mary of Burgundy by her fiancé, the Archduke Maximilian of Austria.</p><p><br/>The world's largest gem diamond ever found is the 3,106-carat (about 1.3 pounds) Cullinan Diamond. Fancy-color diamonds are natural, rare and truly exotic gem of the earth.  Diamonds in hues of yellow, red, pink, blue, and green range in intensity from faint to vivid and generally the more saturated the color, the higher the value. Diamonds are for April babies and those celebrating 10th, 60th, and 75th wedding anniversaries.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_PVcVgF": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_51.png",
+        "heading": "May: Emerald",
+        "description": "<p>Emeralds were mined in Egypt as early as 330 B.C. Today, most of the world’s emeralds are mined in Colombia, Brazil, Afghanistan, and Zambia. The Colombian material is considered by many experts to be the world’s top-grade emeralds, particularly goods sourced from the legendary Muzo Mines. Some believe wearing an emerald brings wisdom, growth, and patience. </p><p><br/>The emerald, a symbol of rebirth, is believed to grant the owner foresight, good fortune, and youth. Give an emerald to those born in May, to couples celebrating their 20th anniversary and emerald is a secondary gemstone gift for those together for 55 years of marriage. Emerald is symbolic of love and fidelity.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_wUeNj9": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Group_171.png",
+        "heading": "June: Pearl & Alexandrite",
+        "description": "<p>Some months have more than one birthstone, which is the case for June.</p><p><br/>Pearls are the original organic fashion accessory, dating back thousands of years in many countries and cultures. According to ancient Chinese mythology, pearls came from the tears of dragons when the fabled beasts fought. In the Book of Matthew, he writes about “casting pearls before swine.” And, many know of Cleopatra’s famous bet with Marc Anthony when the queen of Egypt crushed a pearl and put it in her drink, proving she could spend the most on a single meal. These lustrous gems are the birthstone for June babies. And, pearls are the primary gift for those celebrating their 3rd and 30th anniversaries, and, are the alternate gifts for couples celebrating their 1st and 12th anniversaries.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_XpACjc": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Group_168.png",
+        "heading": "July: Ruby",
+        "description": "<p>Ruby is known as the “King of Gemstones” for Hindus. And, the Burmese, like some other cultures, believed that rubies came like fruit in nature, either grown in the ground or ripened on trees branches, maturing to a fiery red. Ruby is a favorite gemstone for those in power and in love. Second in hardness to diamonds, rubies inspire boldness and bring success in business. </p><p><br/>Ancient warriors implanted rubies under their skin to bring valor in battle. For lovers, rubies attract and maintain love and inspire more passion than any other gemstone. And who needs a doctor when rubies are associated with curing diseases of the blood and bleeding as well as relieving pain. Get discounts on your insurance policy as rubies guard homes and fields against storms and catastrophe. For those born in July, ruby makes a great gift. It’s also the most appropriate gift for those celebrating their second and eighteenth anniversaries.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_eVJ9LM": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_72.png",
+        "heading": "August: Peridot",
+        "description": "<p>As a member of the olivine family, Peridot is named after the French word for gold (peritot) as some The radiance of peridot allowed workers in ancient times (as far back as 1,500 B.C.) to mine the gemstone at night. Cleopatra’s emeralds were actually peridot mined in Egypt. Peridot promotes friendship and is said to free the mind of envious thoughts. </p><p><br/>Today, most of the peridot supply comes from Arizona; other sources are China, Burma, and Pakistan.  This gemstone comes in several color variations ranging from yellowish green to brown, but most consumers are attracted to the bright lime greens and olive greens. Peridot can naturally occur slightly gold in color.  The birthstone for August babies, Peridot is also an appropriate gift for couples celebrating their 16th anniversary.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_6L8t9b": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_86.png",
+        "heading": "September: Sapphire",
+        "description": "<p>Enter the birthstone desRuby and sapphire come from the corundum family of gemstones, second only to diamonds in hardness. Ruby is the red variety of corundum and sapphire blue. Sapphires occur naturally in a variety of colors, including yellow, green, white, colorless, pink, orange, brown, purple, and padparadscha (a rare orange-pink variety of sapphire). </p><p><br/>Wearing a sapphire can bring spiritual enlightenment and inner peace. It’s also believed that sapphires possess healing properties for rheumatism, colic, and mental illness and can enhance powers of psychokinesis, telepathy, clairvoyance and astral projection. More gift-giving options: Sapphire is given as a gem for the 5th, 23rd and 45th wedding anniversaries while a star sapphire is given on the 65th wedding anniversary.cription here.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_Mr9MhK": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_66.png",
+        "heading": "October: Opal",
+        "description": "<p>The name opal, October's birthstone, is associated with three main sources: Sanskrit (upala, “precious stone”); Greek (Opallios, “to see a change of color”); and Latin (opalus, “seeing jewel”). In some ancient civilizations, opal was said to have fallen from heaven in flashes of lightening, thus producing opal’s fiery color play.</p><p><br/>History, for the most part, has been kind to opals with the Ancient Romans calling it the “Queens of Gems,” a symbol of hope and prized second only to emerald; Queen Victoria gave opals as wedding presents while her daughters popularized opals in fashion jewelry; and Napoleon gave Josephine a beautiful opal with brilliant red flashes called “The Burning of Troy.” Opal’s mystical qualities include: being a symbol of hope; opal is linked to invisibility and astral projection; and is able to ward off lightening. Opals can also be given as a gift on a couple’s 14th wedding anniversary.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_dTzBMX": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_92.png",
+        "heading": "November: Citirine",
+        "description": "<p>The yellow or orange variety of quartz – it's the November birthstone. Here are some factoids about citrine: It’s an alternate Zodiac stone for Scorpio; Citrine-set jewelry is given as the gemstone gift for the 13th and 17th wedding anniversaries; and, it is associated with the values of hope, cheerfulness, youth, health, and fidelity.</p><p><br/>Topaz can be found in a large variety of colors such as vivid blue, lush green, soft pink, earthy brown and even transparent. Topaz can be found in many countries throughout the world including the United States.</p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
+    },
+    "birthstones_section_kp86BW": {
+      "type": "birthstones-section",
+      "name": "Birthstones",
+      "settings": {
+        "image": "shopify://shop_images/image_18.png",
+        "heading": "December: Blue Topaz",
+        "description": "<p>Soothing and Cool are words often associated with December's birthstone. Blue Topaz was considered by ancient civilizations to have cooling properties.   It was believed that it could be added to a pot of boiling water and it would cool it.  Others thought that it helped to calm hot tempers as well!</p><p><br/>In addition to hot tempers, Blue Topaz was believed to cure insanity, asthma, weak vision and insomnia. These gifted gemstones are found predominately in Brazil, Nigeria, Sri Lanka, Mexico, Pakistan, China, and the United States. </p>",
+        "image_position": "first",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 75,
+        "margin_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "custom_promo_banner_6HkT9e",
-    "custom_promo_banner_itn74i"
+    "custom_promo_banner_itn74i",
+    "birthstones_section_XLJHa6",
+    "birthstones_section_BU6HNx",
+    "birthstones_section_jNBiBY",
+    "birthstones_section_9DVPHn",
+    "birthstones_section_PVcVgF",
+    "birthstones_section_wUeNj9",
+    "birthstones_section_XpACjc",
+    "birthstones_section_eVJ9LM",
+    "birthstones_section_6L8t9b",
+    "birthstones_section_Mr9MhK",
+    "birthstones_section_dTzBMX",
+    "birthstones_section_kp86BW"
   ]
 }

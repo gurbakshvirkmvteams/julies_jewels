@@ -11,13 +11,145 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_kJnnik": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_h4Pj4D": {
+          "type": "heading",
+          "settings": {
+            "heading": "About  Julie",
+            "heading_size": "h1"
+          }
+        },
+        "text_ikwJf3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Julie Brashier started working at a local department store when she was 16, learning customer service, retail sales and engraving before graduating from Furman University and taking a job as a probation and parole officer. After only six months, she was told that the job was not customer service - that she was “the worst probation officer Greenville County has ever had” - and that she should think of something else to do. Her next job, working at a jewelry store, turned out to be a providential one. She has been in jewelry sales ever since.</p><p><br/>“A day at Julie’s jewels and Gifts is another opportunity for me to help someone make a special occasion memorable, ” she said. “The store is my dream of having jewelry and gifts for every occasion and at every price. It was created from my dream of old Main Street Jewelry stores, and like those stores, Julie’s can make an inexpensive gift memorable or we can create jewelry from pictures, drawings or ideals</p><p><br/>”Brashier says her favorite thing about the Upstate is the people, and that while there are plenty of places to live, it is hard to find a hometown - “I plan to stay here the rest of my life.</p><p><br/>”A day off will find her at Shane’s Distinctive Southern Cuisine, her boyfriend’s restaurant, where she pitches in regularly.</p><p><br/>She says she has learned one very important thing from her customers, a thought that explains her success.</p><p><br/>“Ask questions and listen. Try to find out what is important to people and help them achieve it.”</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_h4Pj4D",
+        "text_ikwJf3"
+      ],
+      "name": "Custom Rich Text",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_text_cards_iLkfVx": {
+      "type": "image-text-cards",
+      "blocks": {
+        "content_row_zHJjXf": {
+          "type": "content_row",
+          "settings": {
+            "desktop_layout": "text-first",
+            "image_fit": "cover",
+            "image_position": "center center",
+            "mobile_card_height": 390,
+            "eyebrow": "",
+            "heading": "<p>Engagement Ring</p>",
+            "description": "<p>Discover beautiful jewelry designed to celebrate your special moments.</p>",
+            "button_text": "Explore Collection",
+            "button_link": "",
+            "text_alignment": "center",
+            "content_width": 65,
+            "mobile_text_padding_top": 80,
+            "mobile_text_padding_bottom": 118,
+            "text_background": "#f8f8f6",
+            "text_color": "#444444",
+            "decorative_image_1_width": 20,
+            "decorative_image_1_horizontal": "left",
+            "decorative_image_1_vertical": "top",
+            "decorative_image_1_offset_x": 0,
+            "decorative_image_1_offset_y": 0,
+            "decorative_image_1_mobile_horizontal": "right",
+            "decorative_image_1_mobile_vertical": "top",
+            "decorative_image_1_mobile_offset_x": 0,
+            "decorative_image_1_mobile_offset_y": 0,
+            "decorative_image_2_width": 20,
+            "decorative_image_2_horizontal": "right",
+            "decorative_image_2_vertical": "bottom",
+            "decorative_image_2_offset_x": 0,
+            "decorative_image_2_offset_y": 0,
+            "decorative_image_2_mobile_horizontal": "right",
+            "decorative_image_2_mobile_vertical": "bottom",
+            "decorative_image_2_mobile_offset_x": 0,
+            "decorative_image_2_mobile_offset_y": 0,
+            "content_max_width": 440,
+            "content_offset_x": 0,
+            "content_offset_y": 0,
+            "eyebrow_font": "sans_serif_n4",
+            "eyebrow_size": 11,
+            "eyebrow_weight": "400",
+            "eyebrow_line_height": 1.3,
+            "eyebrow_letter_spacing": 1,
+            "eyebrow_color": "#444444",
+            "eyebrow_transform": "uppercase",
+            "eyebrow_margin": 12,
+            "heading_size": 32,
+            "heading_weight": "400",
+            "heading_line_height": 1.2,
+            "heading_letter_spacing": 0,
+            "heading_color": "#454545",
+            "heading_transform": "none",
+            "heading_margin": 18,
+            "description_size": 13,
+            "description_weight": "400",
+            "description_line_height": 1.7,
+            "description_letter_spacing": 0,
+            "description_color": "#555555",
+            "description_max_width": 390,
+            "description_margin": 24,
+            "button_font": "sans_serif_n4",
+            "button_font_size": 11,
+            "button_font_weight": "400",
+            "button_letter_spacing": 0.5,
+            "button_transform": "none",
+            "button_width": 160,
+            "button_height": 34,
+            "button_padding_x": 18,
+            "button_padding_y": 8,
+            "button_border_width": 1,
+            "button_border_style": "solid",
+            "button_radius": 0,
+            "button_background": "transparent",
+            "button_text_color": "#6ab7b7",
+            "button_border_color": "#9ed1d1",
+            "button_hover_background": "#9ed1d1",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#9ed1d1"
+          }
+        }
+      },
+      "block_order": [
+        "content_row_zHJjXf"
+      ],
+      "name": "Image Text Cards",
+      "settings": {
+        "section_width": 1400,
+        "card_height": 670,
+        "row_gap": 20,
+        "mobile_gap": 10,
+        "margin_top": 20,
+        "margin_bottom": 20
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_kJnnik",
+    "image_text_cards_iLkfVx"
   ]
 }

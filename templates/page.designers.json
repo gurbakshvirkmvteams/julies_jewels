@@ -1169,7 +1169,7 @@
         "mobile_padding_bottom": 0,
         "mobile_padding_left": 20,
         "mobile_padding_right": 20,
-        "mobile_section_margin_top": 30,
+        "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
       }
     }

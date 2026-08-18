@@ -12,31 +12,12 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-   .custom-rich-text__text.rich-text__text{
-    max-width:1115px;
-    margin-left:auto;
-    margin-right:auto;
-   }
-  .custom-rich-text__text.rich-text__text p{
-font-weight: 500;
-font-size: 16px;
-line-height: 28px;
-letter-spacing: 5%;
-margin:0;
-
-  }
-  .custom-rich-text__blocks{
-    max-width:100%;
-  }
-  .custom-rich-text__blocks .rich-text__heading{
-    margin-bottom:28px;
-  }
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
   <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
     <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
-      <div class="custom-rich-text__blocks rich-text__blocks {{ section.settings.content_alignment }}">
+      <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'heading' -%}
@@ -54,7 +35,7 @@ margin:0;
                 {{ block.settings.caption | escape }}
               </p>
             {%- when 'text' -%}
-              <div class="custom-rich-text__text rich-text__text rte" {{ block.shopify_attributes }}>
+              <div class="rich-text__text rte" {{ block.shopify_attributes }}>
                 {{ block.settings.text }}
               </div>
             {%- when 'button' -%}
@@ -96,7 +77,7 @@ margin:0;
 
 {% schema %}
 {
-  "name": "Custom Rich Text",
+  "name": "t:sections.rich-text.name",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -348,13 +329,16 @@ margin:0;
   ],
   "presets": [
     {
-      "name": "Custom Rich Text",
+      "name": "t:sections.rich-text.presets.name",
       "blocks": [
         {
           "type": "heading"
         },
         {
           "type": "text"
+        },
+        {
+          "type": "button"
         }
       ]
     }
