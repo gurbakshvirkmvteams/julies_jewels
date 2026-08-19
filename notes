@@ -74,4 +74,16 @@ background: linear-gradient(360deg, #ffe1e9 29%, #ffe1e9 79%, rgba(0, 0, 0, 0) 8
 -- made newsletter section responsive for mobile and added in about page 
 -- created new page "Special Events" added hero seciton and newsletter section
 -- added 12 sections into " birthstones Of the month Page"
--- 
+-- added sections in about page 
+-- adjusted decorative images of image text card section 
+
+
+# Today's update:
+# Neurobiologix pro
+-- added metaobjects to "sergio's website" 
+
+# Julie's Jewels & Gifts
+-- added remaining sections to about page
+-- made birthstones of the month page match figma for screens larger than 1440px
+-- adjusted about section texts to match figma for larger screens
+-- Created and added map embed section for contact us page 

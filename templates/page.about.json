@@ -48,27 +48,28 @@
         "padding_bottom": 52
       }
     },
-    "image_text_cards_iLkfVx": {
+    "image_text_cards_Q9rWtR": {
       "type": "image-text-cards",
       "blocks": {
-        "content_row_zHJjXf": {
+        "content_row_A6xXXL": {
           "type": "content_row",
           "settings": {
-            "desktop_layout": "text-first",
+            "desktop_layout": "image-first",
+            "main_image": "shopify://shop_images/Rectangle_22_2.png",
             "image_fit": "cover",
             "image_position": "center center",
             "mobile_card_height": 390,
             "eyebrow": "",
-            "heading": "<p>Engagement Ring</p>",
-            "description": "<p>Discover beautiful jewelry designed to celebrate your special moments.</p>",
-            "button_text": "Explore Collection",
+            "heading": "<h1>Valued  Accomplishments</h1>",
+            "description": "<ul><li>Julie's Jewels & Gifts was voted Best Jewelry in the Upstate for 7 years straight!</li><li>Julie is a proud member of the board of directors for Senior Action</li><li>Honored as a Palmetto Patriot in 2010 by Lt. Gov Andre Bauer. 2nd highest honor in the state.</li><li>Volunteer of the year at Boys Home of the South in 2008</li></ul>",
+            "button_text": "",
             "button_link": "",
-            "text_alignment": "center",
+            "text_alignment": "left",
             "content_width": 65,
             "mobile_text_padding_top": 80,
             "mobile_text_padding_bottom": 118,
             "text_background": "#f8f8f6",
-            "text_color": "#444444",
+            "text_color": "#4A4D4F",
             "decorative_image_1_width": 20,
             "decorative_image_1_horizontal": "left",
             "decorative_image_1_vertical": "top",
@@ -98,18 +99,18 @@
             "eyebrow_color": "#444444",
             "eyebrow_transform": "uppercase",
             "eyebrow_margin": 12,
-            "heading_size": 32,
-            "heading_weight": "400",
+            "heading_size": 48,
+            "heading_weight": "500",
             "heading_line_height": 1.2,
             "heading_letter_spacing": 0,
-            "heading_color": "#454545",
+            "heading_color": "#4A4D4F",
             "heading_transform": "none",
-            "heading_margin": 18,
-            "description_size": 13,
+            "heading_margin": 27,
+            "description_size": 16,
             "description_weight": "400",
             "description_line_height": 1.7,
             "description_letter_spacing": 0,
-            "description_color": "#555555",
+            "description_color": "#4A4D4F",
             "description_max_width": 390,
             "description_margin": 24,
             "button_font": "sans_serif_n4",
@@ -134,14 +135,14 @@
         }
       },
       "block_order": [
-        "content_row_zHJjXf"
+        "content_row_A6xXXL"
       ],
       "name": "Image Text Cards",
       "settings": {
-        "section_width": 1400,
+        "section_width": 1800,
         "card_height": 670,
-        "row_gap": 20,
-        "mobile_gap": 10,
+        "row_gap": 0,
+        "mobile_gap": 0,
         "margin_top": 20,
         "margin_bottom": 20
       }
@@ -150,6 +151,6 @@
   "order": [
     "main",
     "rich_text_kJnnik",
-    "image_text_cards_iLkfVx"
+    "image_text_cards_Q9rWtR"
   ]
 }

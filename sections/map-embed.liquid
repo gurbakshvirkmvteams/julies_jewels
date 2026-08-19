@@ -1,0 +1,51 @@
+<style>
+  #mapembed-section--{{ section.id }} .embed-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 224 / 99;
+  }
+</style>
+<section id="mapembed-section--{{ section.id }}">
+  <div class="embed-wrapper">
+    <iframe
+      src={{ section.settings.embed_link }}
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('mapembed-section--{{ section.id }}');
+    if (!header) return;
+    function updateHeaderClass() {
+      if (window.innerWidth < 1441) {
+        header.classList.add('page-width');
+        header.classList.remove('header-wide');
+      } else {
+        header.classList.remove('page-width');
+        header.classList.add('header-wide');
+      }
+    }
+    updateHeaderClass();
+    window.addEventListener('resize', updateHeaderClass);
+  });
+</script>
+{% schema %}
+  {
+    "name": "Map Enbed",
+    "settings": [
+      {
+        "type": "text",
+        "id": "embed_link",
+        "label": "Add Embed Link",
+        "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13708.438020625652!2d76.02204141315961!3d30.79956327429121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3910745de9c53d75%3A0xcc904a49fc054a1e!2sDoraha%2C%20Punjab%20141421!5e0!3m2!1sen!2sin!4v1787124653065!5m2!1sen!2sin"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Map Embed"
+      }
+    ]
+  }
+{% endschema %}

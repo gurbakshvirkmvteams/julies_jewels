@@ -1,145 +1,152 @@
 {% style %}
+
+  /* =========================================
+     BIRTHSTONE SECTION
+     1440px = BASELINE
+     ========================================= */
+
   #birthstone-section--{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    margin-top: {{ section.settings.margin_top }}px;
-    margin-bottom: {{ section.settings.margin_bottom }}px;
+    --desktop-scale: 1;
+
+    padding-top: calc({{ section.settings.padding_top }}px * var(--desktop-scale));
+    padding-bottom: calc({{ section.settings.padding_bottom }}px * var(--desktop-scale));
+    margin-top: calc({{ section.settings.margin_top }}px * var(--desktop-scale));
+    margin-bottom: calc({{ section.settings.margin_bottom }}px * var(--desktop-scale));
   }
 
-  #birthstone-section--{{ section.id }}
-  .birthstone-container {}
-
-#birthstone-section--{{ section.id }}
-.birthstone-item {
-  display: flex;
-  align-items: center;
-  gap: clamp(20px, 5vw, 40px);
-}
-
-#birthstone-section--{{ section.id }}
-.birthstone-image-wrapper {
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#birthstone-section--{{ section.id }}
-.birthstone-content {
-  width: 60%;
-}
-
-#birthstone-section--{{ section.id }}
-.birthstone-image {
-  display: block;
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  object-fit: contain;
-}
-
-#birthstone-section--{{ section.id }}
-.birthstone-heading {
-  margin: 0 0 20px;
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 100%;
-  letter-spacing: 0;
-  color: #4A4D4F;
-}
-
-#birthstone-section--{{ section.id }}
-.birthstone-description {
-  margin: 0;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.4;
-  letter-spacing: 5%;
-  color: #4A4D4F;
-  max-width: 715px;
-
-}
-#birthstone-section--{{ section.id }}
-.birthstone-description p {
-  margin: 0;
-
-}
-#birthstone-section--{{ section.id }}
-.birthstone-description {
-;
-/* margin: 0 0 15px; */
-}
-
-#birthstone-section--{{ section.id }}.birthstone-description p:last-child {
-  margin-bottom: 0;
-}
-
-/* Image first */
-#birthstone-section--{{ section.id }} .birthstone-item.image-first {
-  flex-direction: row;
-}
-
-/* Image second */
-#birthstone-section--{{ section.id }} .birthstone-item.image-second {
-  flex-direction: row-reverse;
-}
-
-@media screen and (max-width: 749px) {
-  #birthstone-section--{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    margin-top: {{ section.settings.margin_top }}px;
-    margin-bottom: {{ section.settings.margin_bottom }}px;
+  #birthstone-section--{{ section.id }} .birthstone-container {
+    width: 100%;
   }
 
-  #birthstone-section--{{ section.id }}
-  .birthstone-container {
-  ;
-  /* padding: 0 16px; */
-}
+  #birthstone-section--{{ section.id }} .birthstone-item {
+    display: flex;
+    align-items: center;
+    gap: calc(40px * var(--desktop-scale));
+  }
 
-#birthstone-section--{{ section.id }}
-.birthstone-item
-, #birthstone-section--{{ section.id }}
-.birthstone-item.image-first
-, #birthstone-section--{{ section.id }}
-.birthstone-item.image-second {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 20px;
-}
+  #birthstone-section--{{ section.id }} .birthstone-image-wrapper {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-#birthstone-section--{{ section.id }}
-.birthstone-image-wrapper
-, #birthstone-section--{{ section.id }}
-.birthstone-content {
-  width: 100%;
-}
+  #birthstone-section--{{ section.id }} .birthstone-content {
+    width: 60%;
+  }
 
-#birthstone-section--{{ section.id }}
-.birthstone-image {
-  max-width: 380px;
-  margin: 0 auto;
-}
+  #birthstone-section--{{ section.id }} .birthstone-image {
+    display: block;
+    width: 100%;
+    max-width: calc(350px * var(--desktop-scale));
+    height: auto;
+    object-fit: contain;
+  }
 
-#birthstone-section--{{ section.id }}
-.birthstone-heading {
-  font-size: 28px;
-  margin-bottom: 24px;
-}
+  #birthstone-section--{{ section.id }} .birthstone-heading {
+    margin: 0 0 calc(20px * var(--desktop-scale));
+    font-weight: 500;
+    font-size: calc(36px * var(--desktop-scale));
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #4A4D4F;
+  }
 
-#birthstone-section--{{ section.id }}
-.birthstone-description {
-  font-size: 14px;
-}
-}
+  #birthstone-section--{{ section.id }} .birthstone-description {
+    margin: 0;
+    font-weight: 500;
+    font-size: calc(14px * var(--desktop-scale));
+    line-height: 1.4;
+    letter-spacing: 5%;
+    color: #4A4D4F;
+    max-width: calc(715px * var(--desktop-scale));
+  }
+
+  #birthstone-section--{{ section.id }} .birthstone-description p {
+    margin: 0;
+  }
+
+  #birthstone-section--{{ section.id }} .birthstone-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Image first */
+  #birthstone-section--{{ section.id }} .birthstone-item.image-first {
+    flex-direction: row;
+  }
+
+  /* Image second */
+  #birthstone-section--{{ section.id }} .birthstone-item.image-second {
+    flex-direction: row-reverse;
+  }
+
+
+  /* =========================================
+     LARGE DESKTOP
+     1441px+
+     SCALE = 1.25
+     ========================================= */
+
+  @media screen and (min-width: 1441px) {
+    #birthstone-section--{{ section.id }} {
+      --desktop-scale: 1.25;
+    }
+  }
+
+
+  /* =========================================
+     MOBILE
+     Keep mobile exactly as current design
+     ========================================= */
+
+  @media screen and (max-width: 749px) {
+
+    #birthstone-section--{{ section.id }} {
+      --desktop-scale: 1;
+
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      margin-top: {{ section.settings.margin_top }}px;
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+
+    #birthstone-section--{{ section.id }} .birthstone-container {
+      width: 100%;
+    }
+
+    #birthstone-section--{{ section.id }} .birthstone-item,
+    #birthstone-section--{{ section.id }} .birthstone-item.image-first,
+    #birthstone-section--{{ section.id }} .birthstone-item.image-second {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    #birthstone-section--{{ section.id }} .birthstone-image-wrapper,
+    #birthstone-section--{{ section.id }} .birthstone-content {
+      width: 100%;
+    }
+
+    #birthstone-section--{{ section.id }} .birthstone-image {
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    #birthstone-section--{{ section.id }} .birthstone-heading {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    #birthstone-section--{{ section.id }} .birthstone-description {
+      font-size: 14px;
+    }
+
+  }
+
 {% endstyle %}
-
 <section id="birthstone-section--{{ section.id }}">
   <div class="birthstone-container">
-
     <div class="birthstone-item {% if section.settings.image_position == 'first' %}image-first{% else %}image-second{% endif %}">
-
       <div class="birthstone-image-wrapper">
         {% if section.settings.image != blank %}
           {{
@@ -147,25 +154,19 @@
           }}
         {% endif %}
       </div>
-
       <div class="birthstone-content">
-
         {% if section.settings.heading != blank %}
           <h2 class="birthstone-heading">
             {{ section.settings.heading }}
           </h2>
         {% endif %}
-
         {% if section.settings.description != blank %}
           <div class="birthstone-description">
             {{ section.settings.description }}
           </div>
         {% endif %}
-
       </div>
-
     </div>
-
   </div>
 </section>
 <script>
