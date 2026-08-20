@@ -69,7 +69,7 @@
             "mobile_text_padding_top": 80,
             "mobile_text_padding_bottom": 118,
             "text_background": "#f8f8f6",
-            "text_color": "#4A4D4F",
+            "text_color": "#4a4d4f",
             "decorative_image_1_width": 20,
             "decorative_image_1_horizontal": "left",
             "decorative_image_1_vertical": "top",
@@ -103,14 +103,14 @@
             "heading_weight": "500",
             "heading_line_height": 1.2,
             "heading_letter_spacing": 0,
-            "heading_color": "#4A4D4F",
+            "heading_color": "#4a4d4f",
             "heading_transform": "none",
             "heading_margin": 27,
             "description_size": 16,
             "description_weight": "400",
             "description_line_height": 1.7,
             "description_letter_spacing": 0,
-            "description_color": "#4A4D4F",
+            "description_color": "#4a4d4f",
             "description_max_width": 390,
             "description_margin": 24,
             "button_font": "sans_serif_n4",
@@ -125,7 +125,7 @@
             "button_border_width": 1,
             "button_border_style": "solid",
             "button_radius": 0,
-            "button_background": "transparent",
+            "button_background": "rgba(0,0,0,0)",
             "button_text_color": "#6ab7b7",
             "button_border_color": "#9ed1d1",
             "button_hover_background": "#9ed1d1",
@@ -146,11 +146,36 @@
         "margin_top": 20,
         "margin_bottom": 20
       }
+    },
+    "quote_text_button_qC7BY4": {
+      "type": "quote-text-button",
+      "blocks": {
+        "button_MYVThV": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_MYVThV"
+      ],
+      "name": "Quote with button",
+      "settings": {
+        "quote_mark": false,
+        "quote": "<p>We make a living by what we get;<br/>We make a life by what we give.</p>",
+        "author": "Winston Churchill",
+        "background_color": "#ffffff",
+        "text_color": "#444444",
+        "accent_color": "#61c2bb"
+      }
     }
   },
   "order": [
     "main",
     "rich_text_kJnnik",
-    "image_text_cards_Q9rWtR"
+    "image_text_cards_Q9rWtR",
+    "quote_text_button_qC7BY4"
   ]
 }

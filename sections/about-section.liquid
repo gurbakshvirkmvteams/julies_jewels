@@ -1,0 +1,170 @@
+{{ 'about-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="about-hero-section" id="about-hero-{{ section.id }}" style="
+ --margin-top: {{ section.settings.margin_top }}px;
+    --margin-bottom: {{ section.settings.margin_bottom }}px;">
+  <div class="about-hero" style="
+   --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;">
+    {% if section.settings.image %}
+      <div class="about-image-container">
+        {{
+          section.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', alt: section.settings.heading
+        }}
+      </div>
+    {% endif %}
+    {% if section.settings.heading or section.settings.description %}
+      <div class="about-texts">
+        {% if section.settings.heading %}
+          <div class="about-heading">
+            {{ section.settings.heading }}
+          </div>
+        {% endif %}
+        {% if section.settings.description %}
+          <div class="about-description">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+        <div class="icons-wrapper">
+          {% if section.settings.image_one %}
+            {{
+              section.settings.image_one | image_url: width: 120 | image_tag: loading: 'lazy', class: 'about-icon'
+            }}
+          {% endif %}
+          {% if section.settings.image_two %}
+            {{
+              section.settings.image_two | image_url: width: 120 | image_tag: loading: 'lazy', class: 'about-icon'
+            }}
+          {% endif %}
+          {% if section.settings.image_three %}
+            {{
+              section.settings.image_three | image_url: width: 120 | image_tag: loading: 'lazy', class: 'about-icon'
+            }}
+          {% endif %}
+          {% if section.settings.image_four %}
+            {{
+              section.settings.image_four | image_url: width: 120 | image_tag: loading: 'lazy', class: 'about-icon'
+            }}
+          {% endif %}
+          {% if section.settings.image_five %}
+            {{
+              section.settings.image_five | image_url: width: 120 | image_tag: loading: 'lazy', class: 'about-icon'
+            }}
+          {% endif %}
+          {% if section.settings.image_six %}
+            {{
+              section.settings.image_six | image_url: width: 120 | image_tag: loading: 'lazy', class: 'about-icon'
+            }}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('about-hero-{{ section.id }}');
+      if (!header) return;
+      function updateHeaderClass() {
+        if (window.innerWidth < 1441) {
+          header.classList.add('page-width');
+          header.classList.remove('header-wide');
+        } else {
+          header.classList.remove('page-width');
+          header.classList.add('header-wide');
+        }
+      }
+      updateHeaderClass();
+      window.addEventListener('resize', updateHeaderClass);
+    });
+</script>
+{% schema %}
+  {
+    "name": "About Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Add About Image"
+      },
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Add a heading"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Add description"
+      },
+      {
+        "type": "header",
+        "content": "Add Icons"
+      }, {
+        "type": "image_picker",
+        "id": "image_one",
+        "label": "Add About Icon 1"
+      }, {
+        "type": "image_picker",
+        "id": "image_two",
+        "label": "Add About Icon 2"
+      }, {
+        "type": "image_picker",
+        "id": "image_three",
+        "label": "Add About Icon 3"
+      }, {
+        "type": "image_picker",
+        "id": "image_four",
+        "label": "Add About Icon 4"
+      }, {
+        "type": "image_picker",
+        "id": "image_five",
+        "label": "Add About Icon 5"
+      }, {
+        "type": "image_picker",
+        "id": "image_six",
+        "label": "Add About Icon 6"
+      }, {
+        "type": "header",
+        "content": "Section Gaps"
+      }, {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Margin top",
+        "min": 0,
+        "max": 200,
+        "default": 0,
+        "step": 2
+      }, {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "min": 0,
+        "max": 200,
+        "default": 0,
+        "step": 2
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 200,
+        "default": 0,
+        "step": 2
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 200,
+        "default": 0,
+        "step": 2
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Hero"
+      }
+    ]
+  }
+{% endschema %}

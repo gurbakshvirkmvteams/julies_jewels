@@ -10,13 +10,19 @@
     --desktop-scale: 1;
   }
 
-  .section-{{ section.id }}-padding {
+  /* .section-{{ section.id }}-padding {
     padding-top: calc({{ section.settings.padding_top }}px * var(--desktop-scale) * 0.75);
     padding-bottom: calc({{ section.settings.padding_bottom }}px * var(--desktop-scale) * 0.75);
-  }
-
+  } */
+.rich-text .custom-rich-text__wrapper{
+  width:100% !important;
+  background:#FAFAFA;
+}
+.custom-rich-text__blocks .rich-text__heading {
+    font-size:48px;
+}
   @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
+    .section-{{ section.id }}-padding .custom-rich-text__wrapper{
       padding-top: calc({{ section.settings.padding_top }}px * var(--desktop-scale));
       padding-bottom: calc({{ section.settings.padding_bottom }}px * var(--desktop-scale));
     }
@@ -62,7 +68,7 @@
   }
 
   #shopify-section-{{ section.id }} .rich-text__heading.h1 {
-    font-size: calc(var(--font-heading-scale) * 3rem * var(--desktop-scale));
+    font-size: calc(var(--font-heading-scale) * 4.8rem * var(--desktop-scale));
   }
 
   #shopify-section-{{ section.id }} .rich-text__heading.h0 {
@@ -77,9 +83,8 @@
 {%- endstyle -%}
 
 
-<div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
-    <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
+  <div id="richtext-{{ section.id }}" class="page-width rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+    <div class="rich-text__wrapper custom-rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
       <div class="custom-rich-text__blocks rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
@@ -127,8 +132,23 @@
       </div>
     </div>
   </div>
-</div>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('richtext-{{ section.id }}');
+      if (!header) return;
+      function updateHeaderClass() {
+        if (window.innerWidth < 1441) {
+          header.classList.add('page-width');
+          header.classList.remove('header-wide');
+        } else {
+          header.classList.remove('page-width');
+          header.classList.add('header-wide');
+        }
+      }
+      updateHeaderClass();
+      window.addEventListener('resize', updateHeaderClass);
+    });
+  </script>
 {% schema %}
   {
     "name": "Custom Rich Text",
@@ -202,12 +222,7 @@
         "default": "background-1",
         "label": "t:sections.all.colors.label"
       },
-      {
-        "type": "checkbox",
-        "id": "full_width",
-        "default": true,
-        "label": "t:sections.rich-text.settings.full_width.label"
-      }, {
+       {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
       }, {

@@ -1,27 +1,32 @@
-<section
-  class="quote-section"
-  style="
+<section id="quote-{{ section.id }}" class="quote-section page-width" style="
     --quote-bg: {{ section.settings.background_color }};
     --quote-color: {{ section.settings.text_color }};
     --accent-color: {{ section.settings.accent_color }};
-  "
->
-  <div class="quote-section__inner">
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  ">
+  <div class="quote-section__inner" style="
+  {% if section.settings.background_color %}
+  background:#FAFAFA;
+  {% endif %}">
 
     {% if section.settings.quote_mark %}
       <div class="quote-section__mark">
-        
-<svg width="67" height="53" viewBox="0 0 67 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M50.4 -0.000110149C53.4666 -0.000110149 56 0.59989 58 1.79989C60 2.99989 61.6666 4.59989 63 6.5999C64.4666 8.73323 65.4 11.1332 65.8 13.7999C66.3333 16.4666 66.6 18.8666 66.6 20.9999C66.6 27.5332 64.9333 33.5332 61.6 38.9999C58.2666 44.4666 53.0666 48.8666 46 52.1999L44.2 48.5999C48.2 46.8666 51.6666 44.1999 54.6 40.5999C57.5333 36.9999 59.1333 33.3332 59.4 29.5999C59.5333 27.5999 59.4 25.7332 59 23.9999C56.6 26.2666 53.6666 27.3999 50.2 27.3999C46.3333 27.3999 43.0666 26.1999 40.4 23.7999C37.7333 21.3999 36.4 18.0666 36.4 13.7999C36.4 9.66656 37.7333 6.33323 40.4 3.7999C43.2 1.26656 46.5333 -0.000110149 50.4 -0.000110149ZM14 -0.000110149C17.0666 -0.000110149 19.6 0.59989 21.6 1.79989C23.6 2.99989 25.2666 4.59989 26.6 6.5999C28.0666 8.73323 29 11.1332 29.4 13.7999C29.9333 16.4666 30.2 18.8666 30.2 20.9999C30.2 27.5332 28.5333 33.5332 25.2 38.9999C21.8666 44.4666 16.6666 48.8666 9.59995 52.1999L7.79995 48.5999C11.8 46.8666 15.2666 44.1999 18.2 40.5999C21.1333 36.9999 22.7333 33.3332 23 29.5999C23.1333 27.5999 23 25.7332 22.6 23.9999C20.2 26.2666 17.2666 27.3999 13.8 27.3999C9.93329 27.3999 6.66662 26.1999 3.99995 23.7999C1.33329 21.3999 -4.83394e-05 18.0666 -4.83394e-05 13.7999C-4.83394e-05 9.66656 1.33329 6.33323 3.99995 3.7999C6.79995 1.26656 10.1333 -0.000110149 14 -0.000110149Z" fill="#66C5BA"/>
-</svg>
-
+        <svg
+          width="67"
+          height="53"
+          viewBox="0 0 67 53"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M50.4 -0.000110149C53.4666 -0.000110149 56 0.59989 58 1.79989C60 2.99989 61.6666 4.59989 63 6.5999C64.4666 8.73323 65.4 11.1332 65.8 13.7999C66.3333 16.4666 66.6 18.8666 66.6 20.9999C66.6 27.5332 64.9333 33.5332 61.6 38.9999C58.2666 44.4666 53.0666 48.8666 46 52.1999L44.2 48.5999C48.2 46.8666 51.6666 44.1999 54.6 40.5999C57.5333 36.9999 59.1333 33.3332 59.4 29.5999C59.5333 27.5999 59.4 25.7332 59 23.9999C56.6 26.2666 53.6666 27.3999 50.2 27.3999C46.3333 27.3999 43.0666 26.1999 40.4 23.7999C37.7333 21.3999 36.4 18.0666 36.4 13.7999C36.4 9.66656 37.7333 6.33323 40.4 3.7999C43.2 1.26656 46.5333 -0.000110149 50.4 -0.000110149ZM14 -0.000110149C17.0666 -0.000110149 19.6 0.59989 21.6 1.79989C23.6 2.99989 25.2666 4.59989 26.6 6.5999C28.0666 8.73323 29 11.1332 29.4 13.7999C29.9333 16.4666 30.2 18.8666 30.2 20.9999C30.2 27.5332 28.5333 33.5332 25.2 38.9999C21.8666 44.4666 16.6666 48.8666 9.59995 52.1999L7.79995 48.5999C11.8 46.8666 15.2666 44.1999 18.2 40.5999C21.1333 36.9999 22.7333 33.3332 23 29.5999C23.1333 27.5999 23 25.7332 22.6 23.9999C20.2 26.2666 17.2666 27.3999 13.8 27.3999C9.93329 27.3999 6.66662 26.1999 3.99995 23.7999C1.33329 21.3999 -4.83394e-05 18.0666 -4.83394e-05 13.7999C-4.83394e-05 9.66656 1.33329 6.33323 3.99995 3.7999C6.79995 1.26656 10.1333 -0.000110149 14 -0.000110149Z" fill="#66C5BA" />
+        </svg>
       </div>
     {% endif %}
 
     {% if section.settings.quote != blank %}
       <div class="quote-section__text quote-section__text--{{ section.settings.text_size }}">
-  {{ section.settings.quote }}
-</div>
+        {{ section.settings.quote }}
+      </div>
     {% endif %}
 
     {% if section.settings.author != blank %}
@@ -34,16 +39,20 @@
       {% case block.type %}
 
         {% when 'button' %}
-          <div
-            class="quote-section__button-wrapper"
-            {{ block.shopify_attributes }}
-          >
+          <div class="quote-section__button-wrapper" {{ block.shopify_attributes }}>
             {% if block.settings.button_label != blank %}
-              <a
-                href="{{ block.settings.button_link }}"
-                class="quote-section__button"
-              >
+              <a href="{{ block.settings.button_link }}" class="quote-section__button">
                 {{ block.settings.button_label }}
+
+                <svg
+                  width="19"
+                  height="10"
+                  viewBox="0 0 19 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.5441 0C13.4197 3.033e-05 13.2981 0.0371698 13.195 0.106667C13.0918 0.176164 13.0117 0.274858 12.965 0.390122C12.9182 0.505385 12.9069 0.631976 12.9325 0.753697C12.9581 0.875419 13.0195 0.986736 13.1087 1.07341L16.2084 4.17318H0.633902C0.551082 4.17201 0.468855 4.18731 0.392 4.21819C0.315145 4.24907 0.245194 4.29492 0.186213 4.35308C0.127232 4.41123 0.0803967 4.48053 0.0484294 4.55694C0.016462 4.63335 0 4.71535 0 4.79818C0 4.88101 0.016462 4.96301 0.0484294 5.03942C0.0803967 5.11583 0.127232 5.18512 0.186213 5.24328C0.245194 5.30143 0.315145 5.34728 0.392 5.37816C0.468855 5.40905 0.551082 5.42435 0.633902 5.42318H16.2084L13.1087 8.52295C13.0487 8.58054 13.0008 8.64952 12.9678 8.72585C12.9348 8.80218 12.9174 8.88433 12.9166 8.96748C12.9157 9.05063 12.9315 9.13311 12.9629 9.21009C12.9943 9.28708 13.0408 9.35702 13.0996 9.41582C13.1584 9.47462 13.2283 9.52109 13.3053 9.55252C13.3823 9.58395 13.4648 9.5997 13.5479 9.59886C13.6311 9.59801 13.7132 9.58059 13.7896 9.5476C13.8659 9.51461 13.9349 9.46672 13.9925 9.40674L18.1591 5.24007C18.2763 5.12286 18.3421 4.96391 18.3421 4.79818C18.3421 4.63245 18.2763 4.4735 18.1591 4.35628L13.9925 0.189616C13.9342 0.129622 13.8645 0.0819272 13.7875 0.049357C13.7105 0.0167869 13.6277 3.32453e-06 13.5441 0Z" fill="white" />
+                </svg>
+
               </a>
             {% endif %}
           </div>
@@ -65,12 +74,12 @@
     max-width: 1420px;
     margin: 0 auto;
     text-align: center;
-    padding: 78px 40px 0;
+    padding: 78px 0px 0px;
+
   }
 
   .quote-section__mark {
     color: var(--accent-color);
-    font-family: Georgia, serif;
     font-size: 105px;
     line-height: 0.7;
     height: 75px;
@@ -78,31 +87,33 @@
   }
 
   .quote-section__text {
-  max-width: 720px;
-  margin: 0 auto;
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.32;
-  letter-spacing: -0.5px;
-}
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.32;
+    letter-spacing: -0.5px;
+  }
+  .quote-section__text * {
+    margin: 0 auto 38px !important;
+    color: #4A4D4F;
+  }
+  .quote-section__text--small * {
+    font-size: 25px;
+    letter-spacing: 1.5px;
+  }
 
-/* Quote text sizes */
-.quote-section__text--small {
-  font-size: 30px;
-}
+  .quote-section__text--medium * {
+    font-size: 36px;
+  }
 
-.quote-section__text--medium {
-  font-size: 38px;
-}
-
-.quote-section__text--large {
-  font-size: 46px;
-}
+  .quote-section__text--large * {
+    font-size: 46px;
+  }
 
   .quote-section__author {
-    margin-top: 0px;
-    font-family: Arial, sans-serif;
-    font-size: 23px;
+    margin-top: 51px;
+    font-size: 22px;
     line-height: 1.3;
+    color: #333333;
   }
 
   .quote-section__button-wrapper {
@@ -111,13 +122,15 @@
 
   .quote-section__button {
     display: inline-block;
-    padding: 15px 32px;
-    background: var(--accent-color);
+    gap:11px;
+    padding: 14px 24px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #51A197 17.86%, #66C5BA 89.29%);
     color: #fff;
     text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     transition: opacity 0.2s ease;
+    margin-bottom: 78px;
   }
 
   .quote-section__button:hover {
@@ -126,120 +139,138 @@
 
   @media screen and (max-width: 749px) {
     .quote-section__inner {
-    padding: 65px 20px 0;
-  }
+      padding: 65px 20px 0;
+    }
 
-  .quote-section__mark {
-    font-size: 75px;
-    height: 55px;
-    margin-bottom: 25px;
-  }
+    .quote-section__mark {
+      font-size: 75px;
+      height: 55px;
+      margin-bottom: 25px;
+    }
 
-  .quote-section__text--small {
-    font-size: 24px;
-  }
+    .quote-section__text--small * {
+      font-size: 24px;
+    }
 
-  .quote-section__text--medium {
-    font-size: 28px;
-  }
+    .quote-section__text--medium * {
+      font-size: 28px;
+    }
 
-  .quote-section__text--large {
-    font-size: 34px;
-  }
+    .quote-section__text--large * {
+      font-size: 34px;
+    }
 
-  .quote-section__author {
-    margin-top: 35px;
-    font-size: 18px;
-  } 
+    .quote-section__author {
+      margin-top: 35px;
+      font-size: 18px;
+    }
   }
 </style>
-
-{% schema %}
-{
-  "name": "Quote with button",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "quote_mark",
-      "label": "Show quotation mark",
-      "default": true
-    },
-    {
-      "type": "richtext",
-      "id": "quote",
-      "label": "Quote",
-      "default": "<p>We make a living by what we get;<br>We make a life by what we give.</p>"
-    },
-    {
-  "type": "select",
-  "id": "text_size",
-  "label": "Quote text size",
-  "options": [
-    {
-      "value": "small",
-      "label": "Small"
-    },
-    {
-      "value": "medium",
-      "label": "Medium"
-    },
-    {
-      "value": "large",
-      "label": "Large"
-    }
-  ],
-  "default": "medium"
-},
-    {
-      "type": "text",
-      "id": "author",
-      "label": "Author",
-      "default": "Winston Churchill"
-    },
-   
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#444444"
-    },
-    {
-      "type": "color",
-      "id": "accent_color",
-      "label": "Accent color",
-      "default": "#61c2bb"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "button",
-      "name": "Button",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button label",
-          "default": "Learn More"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Button link"
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('quote-{{ section.id }}');
+      if (!header) return;
+      function updateHeaderClass() {
+        if (window.innerWidth < 1441) {
+          header.classList.add('page-width');
+          header.classList.remove('header-wide');
+        } else {
+          header.classList.remove('page-width');
+          header.classList.add('header-wide');
         }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Quote with button"
-    }
-  ]
-}
+      }
+      updateHeaderClass();
+      window.addEventListener('resize', updateHeaderClass);
+    });
+  </script>
+{% schema %}
+  {
+    "name": "Quote with button",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "quote_mark",
+        "label": "Show quotation mark",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "quote",
+        "label": "Quote",
+        "default": "<p>We make a living by what we get;<br>We make a life by what we give.</p>"
+      },
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Quote text size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          }, {
+            "value": "medium",
+            "label": "Medium"
+          }, {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "text",
+        "id": "author",
+        "label": "Author",
+        "default": "Winston Churchill"
+      }, {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Margin top",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin bottom",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 60
+      }
+    ],
+    "blocks": [
+      {
+        "type": "button",
+        "name": "Button",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "Learn More"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Quote with button"
+      }
+    ]
+  }
 {% endschema %}

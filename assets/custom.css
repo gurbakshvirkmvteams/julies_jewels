@@ -203,12 +203,34 @@ font-size: clamp(28px, 5vw, calc(48px * var(--header-desktop-scale)));
 line-height: 55px;
 letter-spacing: 0%;
 }
+@media (min-width:1441px){
+  .blog__title.custom-blog__title {
+    font-size: calc(48px * var(--header-desktop-scale));
+    line-height: calc(55px * var(--header-desktop-scale));
+  }
+  .custom-title-wrapper-with-link.title-wrapper-with-link {
+  margin-bottom: calc(4rem * var(--header-desktop-scale));
+}
+.custom-card__heading.card__heading {
+  font-size: calc(22px * var(--header-desktop-scale));
+  max-width: calc(350px * var(--header-desktop-scale));
+}
+.article-card__excerpt.custom-article-card__excerpt {
+  font-size: calc(14px * var(--header-desktop-scale));
+  letter-spacing: calc(0.78px * var(--header-desktop-scale));
+  max-width: calc(360px * var(--header-desktop-scale));
+  margin-top: calc(14px * var(--header-desktop-scale));
+}
+.header__icons .header__icon .icon {
+    height: calc(2rem * var(--header-desktop-scale))!important;
+    width: calc(2rem * var(--header-desktop-scale))!important;
+}
+}
 .custom-title-wrapper-with-link.title-wrapper-with-link{
 margin-bottom: clamp(1.5rem, 5vw, 4rem);
 
 }
 .custom-card__heading.card__heading {
-  font-family: Nunito;
   font-weight: 500;
   font-size: clamp(16px, 2vw, calc(22px * var(--header-desktop-scale)));
   line-height: 100%;
@@ -218,7 +240,6 @@ margin-bottom: clamp(1.5rem, 5vw, 4rem);
 }
 
 .article-card__excerpt.custom-article-card__excerpt {
-  font-family: Nunito;
   font-weight: 400;
   font-size: clamp(12px, 3vw, calc(14px * var(--header-desktop-scale)));
   line-height: 100%;
