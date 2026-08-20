@@ -1,0 +1,293 @@
+<style>
+  .event-detail-section {
+    width: 100%;
+  }
+  .event-detail-container {
+    margin: 0 auto;
+    /* padding: 0 24px; */
+  }
+  .event-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(40px, 3vw, 65px);
+  }
+  .event-detail-image {
+    width: 100%;
+    aspect-ratio: 1.85 / 1;
+    overflow: hidden;
+  }
+  .event-detail-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .event-detail-text h1 {
+    margin: 0 0 clamp(12px, 1.5vw, 20px);
+    color: #4a4a4a;
+    font-size: clamp(34px, 1.5vw, 36px);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .event-detail-description {
+    margin-bottom: clamp(8px, 1.5vw, 20px);
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 5%;
+    max-width: 545px;
+  }
+  .event-detail-description p {
+    margin: 0;
+  }
+  .event-detail-meta {
+    margin-bottom: clamp(16px, 1.5vw, 31px);
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .event-detail-meta p {
+    margin: 0;
+  }
+  .event-detail-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 153px;   
+    padding: clamp(8px, 1.2vw, 14px) 24px;
+    border: 1px solid #51A197;
+    background: transparent;
+    color: #51A197;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 5%;
+    transition: all 0.25s ease;
+  }
+  .event-detail-button:hover {
+    background: #65b8b3;
+    color: #fff;
+  }
+  .event-detail-button svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.25s ease;
+  }
+  .event-detail-button:hover svg {
+    transform: translateX(4px);
+  }
+  @media screen and (max-width: 900px) {
+    .event-detail-content {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    .event-detail-text {
+      max-width: none;
+    }
+    .event-detail-text h1 {
+      font-size: 34px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .event-detail-section {
+      padding: 25px 0;
+    }
+    .event-detail-container {
+      padding: 0 18px;
+    }
+    .event-detail-text h1 {
+      font-size: 30px;
+    }
+    .event-detail-image {
+      aspect-ratio: 1.4 / 1;
+    }
+  }
+  
+    @media screen and (min-width: 1441px) {
+
+    .event-detail-content {
+        gap: clamp(50px, 3.75vw, 81.25px);
+    }
+
+    .event-detail-text h1 {
+        margin-bottom: clamp(15px, 1.875vw, 25px);
+        font-size: clamp(42.5px, 1.875vw, 45px);
+    }
+
+    .event-detail-description {
+        margin-bottom: clamp(10px, 1.875vw, 25px);
+        font-size: 17.5px;
+        max-width: 681.25px;
+    }
+
+    .event-detail-meta {
+        margin-bottom: clamp(20px, 1.875vw, 38.75px);
+        font-size: 17.5px;
+    }
+
+    .event-detail-button {
+        gap: 12.5px;
+        min-width: 191.25px;
+        padding: clamp(10px, 1.5vw, 17.5px) 30px;
+        font-size: 17.5px;
+    }
+
+    .event-detail-button svg {
+        width: 22.5px;
+        height: 22.5px;
+    }
+    }
+</style>
+<section id="event-detail-{{ section.id }}" class="event-detail-section page-width"
+ style="
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  ">
+  <div class="event-detail-container">
+    <div class="event-detail-content">
+      <div class="event-detail-image">
+        {% if section.settings.image != blank %}
+          {{
+            section.settings.image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800, 1000, 1200',
+              sizes: '(max-width: 900px) 100vw, 55vw',
+              alt: section.settings.image.alt
+          }}
+        {% endif %}
+      </div>
+      <div class="event-detail-text">
+        {% if section.settings.title != blank %}
+          <h1>{{ section.settings.title }}</h1>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <div class="event-detail-description">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+        <div class="event-detail-meta">
+          {% if section.settings.date != blank %}
+            <p>{{ section.settings.date }}</p>
+          {% endif %}
+          {% if section.settings.location != blank %}
+            <p>{{ section.settings.location }}</p>
+          {% endif %}
+        </div>
+        {% if section.settings.button_text != blank %}
+          <a
+            class="event-detail-button"
+            href="{{ section.settings.button_link }}"
+          >
+            {{ section.settings.button_text }}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 12H19M13 6L19 12L13 18"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('event-detail-{{ section.id }}');
+      if (!header) return;
+      function updateHeaderClass() {
+        if (window.innerWidth < 1441) {
+          header.classList.add('page-width');
+          header.classList.remove('header-wide');
+        } else {
+          header.classList.remove('page-width');
+          header.classList.add('header-wide');
+        }
+      }
+      updateHeaderClass();
+      window.addEventListener('resize', updateHeaderClass);
+    });
+  </script>
+{% schema %}
+{
+  "name": "Event Detail section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Add Event Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Event Title",
+      "default": "Lorem ipsum dolor"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Event Description",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue phasellus in fermentum semper pellentesque sed malesuada tincidunt.</p>"
+    },
+    {
+      "type": "text",
+      "id": "date",
+      "label": "Event Date",
+      "default": "Friday 10 November 2023"
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "Event Location",
+      "default": "Location Lorem ipsum dolor"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Know More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Event Detail Section"
+    }
+  ]
+}
+{% endschema %}

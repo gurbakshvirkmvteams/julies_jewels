@@ -71,7 +71,7 @@
   }
 
   .quote-section__inner {
-    max-width: 1420px;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
     padding: 78px 0px 0px;
@@ -165,8 +165,62 @@
       font-size: 18px;
     }
   }
+
+  /* =========================================
+   Quote Section — 1.25x above 1440px
+   ========================================= */
+  @media screen and (min-width: 1441px) {
+
+    .quote-section__inner {
+      padding-top: 97.5px;
+    }
+
+    .quote-section__mark {
+      font-size: 131.25px;
+      height: 93.75px;
+      margin-bottom: 43.75px;
+    }
+
+    .quote-section__text {
+      max-width: 900px;
+      letter-spacing: -0.625px;
+    }
+
+    .quote-section__text * {
+      margin-bottom: 47.5px !important;
+    }
+
+    .quote-section__text--small * {
+      font-size: 31.25px;
+      letter-spacing: 1.875px;
+    }
+
+    .quote-section__text--medium * {
+      font-size: 45px;
+    }
+
+    .quote-section__text--large * {
+      font-size: 57.5px;
+    }
+
+    .quote-section__author {
+      margin-top: 63.75px;
+      font-size: 27.5px;
+    }
+
+    .quote-section__button-wrapper {
+      margin-top: 43.75px;
+    }
+
+    .quote-section__button {
+      gap: 13.75px;
+      padding: 17.5px 30px;
+      font-size: 17.5px;
+      margin-bottom: 97.5px;
+    }
+  }
 </style>
- <script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const header = document.getElementById('quote-{{ section.id }}');
       if (!header) return;

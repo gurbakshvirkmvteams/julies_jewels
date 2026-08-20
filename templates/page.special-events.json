@@ -84,6 +84,21 @@
         "mobile_section_margin_bottom": 0
       }
     },
+    "event_image_text_X89Mb6": {
+      "type": "event-image-text",
+      "name": "Event Detail Section",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_200_1.png",
+        "title": "Lorem ipsum dolor",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue phasellus in fermentum semper pellentesque sed malesuada tincidunt. Urna cras massa nibh in sed sit.</p>",
+        "date": "Friday 10 November 2023",
+        "location": "Location Lorem ipsum dolor",
+        "button_text": "Know More",
+        "button_link": "",
+        "margin_top": 40,
+        "margin_bottom": 40
+      }
+    },
     "quote_text_button_J7rF6P": {
       "type": "quote-text-button",
       "blocks": {
@@ -165,6 +180,7 @@
   "order": [
     "main",
     "custom_promo_banner_emNmHJ",
+    "event_image_text_X89Mb6",
     "quote_text_button_J7rF6P",
     "custom_contact_section_UhAQEr"
   ]

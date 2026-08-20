@@ -42,15 +42,13 @@
           "type": "contact_detail",
           "settings": {
             "icon": "location",
-            "title": "",
-            "text": "<p>301 Haywood Road, Suite 3<br>Greenville, South Carolina 29607</p>"
+            "text": "<p>301 Haywood Road, Suite 3 Greenville, </p><p>South Carolina 29607</p>"
           }
         },
         "contact_detail_TYMVAH": {
           "type": "contact_detail",
           "settings": {
             "icon": "phone",
-            "title": "",
             "text": "<p>Tel: (864) 288-9068</p>"
           }
         },
@@ -58,7 +56,6 @@
           "type": "contact_detail",
           "settings": {
             "icon": "email",
-            "title": "",
             "text": "<p>sales@example.com</p>"
           }
         },
@@ -66,7 +63,6 @@
           "type": "contact_detail",
           "settings": {
             "icon": "clock",
-            "title": "",
             "text": "<p>Mon - Fri: 10:00am - 5:30pm<br>Saturday: 10:00am - 3:00pm<br>Sunday: Closed</p>"
           }
         },
@@ -74,24 +70,21 @@
           "type": "social_icon",
           "settings": {
             "platform": "instagram",
-            "label": "Instagram",
-            "url": ""
+            "url": "https://www.instagram.com/accounts/login/?hl=en"
           }
         },
         "social_icon_jU6VVy": {
           "type": "social_icon",
           "settings": {
             "platform": "facebook",
-            "label": "Facebook",
-            "url": ""
+            "url": "https://www.instagram.com/accounts/login/?hl=en"
           }
         },
         "social_icon_WCUbLr": {
           "type": "social_icon",
           "settings": {
             "platform": "pinterest",
-            "label": "Pinterest",
-            "url": ""
+            "url": "https://www.instagram.com/accounts/login/?hl=en"
           }
         }
       },
@@ -107,23 +100,70 @@
       "name": "Contact text image cards",
       "settings": {
         "heading": "Contact Us",
-        "description": "",
-        "max_width": 1400,
-        "content_width": 500,
-        "heading_size": 42,
-        "mobile_heading_size": 32,
-        "detail_spacing": 16,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_horizontal": 20,
-        "mobile_padding_top": 20,
-        "mobile_padding_bottom": 20,
-        "mobile_image_height": 400,
-        "background_color": "#ffffff",
-        "heading_color": "#4a4a4a",
-        "text_color": "#555555",
-        "icon_color": "#333333",
-        "border_color": "#dddddd"
+        "image": "shopify://shop_images/Rectangle_16_2.png",
+        "background_color": true,
+        "content_alignment": "center",
+        "margin_top": 40,
+        "margin_bottom": 40
+      }
+    },
+    "custom_contact_section_J3qUN7": {
+      "type": "custom-contact-section",
+      "blocks": {
+        "interest_option_68ND6h": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Diamonds"
+          }
+        },
+        "interest_option_KdkwhB": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Diamonds"
+          }
+        },
+        "interest_option_4VK6iG": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Engagement Rings"
+          }
+        },
+        "interest_option_FVacDK": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Wedding Bands"
+          }
+        },
+        "interest_option_pfkxip": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Custom Design"
+          }
+        },
+        "interest_option_HNKRqX": {
+          "type": "interest_option",
+          "settings": {
+            "label": "Repairs & Services"
+          }
+        }
+      },
+      "block_order": [
+        "interest_option_68ND6h",
+        "interest_option_KdkwhB",
+        "interest_option_4VK6iG",
+        "interest_option_FVacDK",
+        "interest_option_pfkxip",
+        "interest_option_HNKRqX"
+      ],
+      "name": "Make an appointment",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_26.png",
+        "heading": "Make An Appointment",
+        "subheading": "Visit our showroom for all your jewelry needs",
+        "description": "Please complete the required fields below to make an appointment.",
+        "interest_hint": "",
+        "start_hour": 10,
+        "end_hour": 18
       }
     }
   },
@@ -131,6 +171,7 @@
     "main",
     "form",
     "map_embed_QYjxw6",
-    "contact_image_text_PhTVQJ"
+    "contact_image_text_PhTVQJ",
+    "custom_contact_section_J3qUN7"
   ]
 }

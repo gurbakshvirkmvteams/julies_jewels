@@ -29,7 +29,6 @@
       calc(4vw * var(--vw-scale)),
       calc(37px * var(--desktop-scale))
     );
-  border: calc(1px * var(--desktop-scale)) solid #e5e5e5;
 }
 .appointment-heading {
   font-size: clamp(

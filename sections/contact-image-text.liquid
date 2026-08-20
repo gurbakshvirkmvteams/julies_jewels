@@ -1,219 +1,255 @@
-{% comment %}
-  Section: Contact Text Image Cards
-  File: sections/contact-text-image-cards.liquid
-{% endcomment %}
-
-<section class="contact-text-image-cards">
-  <div class="contact-text-image-cards__inner">
-
-    <div class="contact-text-image-cards__content">
-
-      {% if section.settings.heading != blank %}
-        <h2 class="contact-text-image-cards__heading">
-          {{ section.settings.heading }}
-        </h2>
+<section
+  id="contact-text-image-cards-{{ section.id }}"
+  class="contact-text-image-cards page-width"
+  style="
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  "
+>
+  <div
+    class="contact-text-image-cards__inner"
+    style="
+      {% if section.settings.background_color %}
+         background:#FAFAFA;
       {% endif %}
+    "
+  >
+    <div
+      class="contact-text-image-cards__content"
+      style="--content-alignment: {{ section.settings.content_alignment }};"
+    >
+      <div class="contact-text-image-cards__content-inner">
+        {% if section.settings.heading != blank %}
+          <h2 class="contact-text-image-cards__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+        <div class="contact-text-image-cards__details">
+          {% for block in section.blocks %}
+            {% if block.type == 'contact_detail' %}
+              <div class="contact-text-image-cards__detail" {{ block.shopify_attributes }}>
+                <div class="contact-text-image-cards__icon">
+                  {% case block.settings.icon %}
+                    {% when 'location' %}
+                      <svg
+                        width="14"
+                        height="17"
+                        viewBox="0 0 14 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M6.66667 8.125C7.06944 8.125 7.41319 7.98264 7.69792 7.69792C7.98264 7.41319 8.125 7.06944 8.125 6.66667C8.125 6.26389 7.98264 5.92014 7.69792 5.63542C7.41319 5.35069 7.06944 5.20833 6.66667 5.20833C6.26389 5.20833 5.92014 5.35069 5.63542 5.63542C5.35069 5.92014 5.20833 6.26389 5.20833 6.66667C5.20833 7.06944 5.35069 7.41319 5.63542 7.69792C5.92014 7.98264 6.26389 8.125 6.66667 8.125ZM6.66667 15.0208C8.51389 13.3403 9.87847 11.816 10.7604 10.4479C11.6424 9.07986 12.0833 7.875 12.0833 6.83333C12.0833 5.19444 11.559 3.85417 10.5104 2.8125C9.4618 1.77083 8.18056 1.25 6.66667 1.25C5.15278 1.25 3.87153 1.77083 2.82292 2.8125C1.77431 3.85417 1.25 5.19444 1.25 6.83333C1.25 7.875 1.70139 9.07986 2.60417 10.4479C3.50694 11.816 4.86111 13.3403 6.66667 15.0208ZM6.66667 16.6667C4.43056 14.7639 2.76042 12.9965 1.65625 11.3646C0.552083 9.73264 0 8.22222 0 6.83333C0 4.75 0.670139 3.09028 2.01042 1.85417C3.35069 0.618055 4.90278 0 6.66667 0C8.43056 0 9.98264 0.618055 11.3229 1.85417C12.6632 3.09028 13.3333 4.75 13.3333 6.83333C13.3333 8.22222 12.7812 9.73264 11.6771 11.3646C10.5729 12.9965 8.90278 14.7639 6.66667 16.6667Z" fill="black" />
+                      </svg>
 
-      <div class="contact-text-image-cards__details">
-        {% for block in section.blocks %}
-          {% if block.type == 'contact_detail' %}
-            <div
-              class="contact-text-image-cards__detail"
-              {{ block.shopify_attributes }}
-            >
-              <div class="contact-text-image-cards__icon">
-                {% case block.settings.icon %}
+                    {% when 'phone' %}
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 15 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14.0625 15C12.3681 15 10.684 14.5833 9.01042 13.75C7.33681 12.9167 5.83333 11.8333 4.5 10.5C3.16667 9.16667 2.08333 7.66319 1.25 5.98958C0.416667 4.31597 0 2.63194 0 0.9375C0 0.673611 0.0902778 0.451389 0.270833 0.270833C0.451389 0.0902778 0.673611 0 0.9375 0H3.85417C4.04861 0 4.21875 0.0659722 4.36458 0.197917C4.51042 0.329861 4.60417 0.506944 4.64583 0.729167L5.20833 3.35417C5.23611 3.54861 5.23264 3.72569 5.19792 3.88542C5.16319 4.04514 5.09028 4.18056 4.97917 4.29167L2.89583 6.39583C3.67361 7.6875 4.54514 8.8125 5.51042 9.77083C6.47569 10.7292 7.56944 11.5417 8.79167 12.2083L10.7708 10.1667C10.9097 10.0139 11.0694 9.90625 11.25 9.84375C11.4306 9.78125 11.6111 9.77083 11.7917 9.8125L14.2708 10.3542C14.4792 10.3958 14.6528 10.5 14.7917 10.6667C14.9306 10.8333 15 11.0278 15 11.25V14.0625C15 14.3264 14.9097 14.5486 14.7292 14.7292C14.5486 14.9097 14.3264 15 14.0625 15ZM2.27083 5.25L3.95833 3.54167L3.47917 1.25H1.25C1.25 1.79167 1.33333 2.38542 1.5 3.03125C1.66667 3.67708 1.92361 4.41667 2.27083 5.25ZM9.95833 12.8125C10.5278 13.0764 11.1458 13.2917 11.8125 13.4583C12.4792 13.625 13.125 13.7222 13.75 13.75V11.5208L11.6042 11.0833L9.95833 12.8125Z" fill="black" />
+                      </svg>
 
-                  {% when 'location' %}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 21s7-6.2 7-12A7 7 0 1 0 5 9c0 5.8 7 12 7 12Z"/>
-                      <circle cx="12" cy="9" r="2.5"/>
-                    </svg>
+                    {% when 'email' %}
+                      <svg
+                        width="17"
+                        height="14"
+                        viewBox="0 0 17 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M1.25 13.3333C0.916667 13.3333 0.625 13.2083 0.375 12.9583C0.125 12.7083 0 12.4167 0 12.0833V1.25C0 0.916667 0.125 0.625 0.375 0.375C0.625 0.125 0.916667 0 1.25 0H15.4167C15.75 0 16.0417 0.125 16.2917 0.375C16.5417 0.625 16.6667 0.916667 16.6667 1.25V12.0833C16.6667 12.4167 16.5417 12.7083 16.2917 12.9583C16.0417 13.2083 15.75 13.3333 15.4167 13.3333H1.25ZM8.33333 7.04167L1.25 2.39583V12.0833H15.4167V2.39583L8.33333 7.04167ZM8.33333 5.79167L15.3333 1.25H1.35417L8.33333 5.79167ZM1.25 2.39583V1.25V12.0833V2.39583Z" fill="black" />
+                      </svg>
 
-                  {% when 'phone' %}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M6.6 3.5 9 3l2 5-2.2 1.8a15 15 0 0 0 5.4 5.4L16 13l5 2 .5 2.4c.2 1-.5 2-1.5 2.2C10.8 21 3 13.2 4.4 4.9c.2-1 .9-1.6 2.2-1.4Z"/>
-                    </svg>
-
-                  {% when 'email' %}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <rect x="3" y="5" width="18" height="14" rx="1.5"/>
-                      <path d="m4 7 8 6 8-6"/>
-                    </svg>
-
-                  {% when 'clock' %}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="12" cy="12" r="9"/>
-                      <path d="M12 7v5l3 2"/>
-                    </svg>
-
-                {% endcase %}
+                    {% when 'clock' %}
+                      <svg
+                        width="17"
+                        height="17"
+                        viewBox="0 0 17 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M11.3958 12.3542L12.3333 11.4167L9.02083 8.08333V3.89583H7.77083V8.58333L11.3958 12.3542ZM8.33333 16.6667C7.19444 16.6667 6.11806 16.4479 5.10417 16.0104C4.09028 15.5729 3.20486 14.9757 2.44792 14.2188C1.69097 13.4618 1.09375 12.5764 0.65625 11.5625C0.21875 10.5486 0 9.47222 0 8.33333C0 7.19444 0.21875 6.11806 0.65625 5.10417C1.09375 4.09028 1.69097 3.20486 2.44792 2.44792C3.20486 1.69097 4.09028 1.09375 5.10417 0.65625C6.11806 0.21875 7.19444 0 8.33333 0C9.47222 0 10.5486 0.21875 11.5625 0.65625C12.5764 1.09375 13.4618 1.69097 14.2188 2.44792C14.9757 3.20486 15.5729 4.09028 16.0104 5.10417C16.4479 6.11806 16.6667 7.19444 16.6667 8.33333C16.6667 9.47222 16.4479 10.5486 16.0104 11.5625C15.5729 12.5764 14.9757 13.4618 14.2188 14.2188C13.4618 14.9757 12.5764 15.5729 11.5625 16.0104C10.5486 16.4479 9.47222 16.6667 8.33333 16.6667ZM8.33333 15.4167C10.2778 15.4167 11.9444 14.7222 13.3333 13.3333C14.7222 11.9444 15.4167 10.2778 15.4167 8.33333C15.4167 6.38889 14.7222 4.72222 13.3333 3.33333C11.9444 1.94444 10.2778 1.25 8.33333 1.25C6.38889 1.25 4.72222 1.94444 3.33333 3.33333C1.94444 4.72222 1.25 6.38889 1.25 8.33333C1.25 10.2778 1.94444 11.9444 3.33333 13.3333C4.72222 14.7222 6.38889 15.4167 8.33333 15.4167Z" fill="black" />
+                      </svg>
+                  {% endcase %}
+                </div>
+                <div class="contact-text-image-cards__text">
+                  {{ block.settings.text }}
+                </div>
               </div>
-
-              <div class="contact-text-image-cards__text">
-                {{ block.settings.text }}
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      {% assign social_blocks = section.blocks | where: 'type', 'social_icon' %}
-
-      {% if social_blocks.size > 0 %}
-        <div class="contact-text-image-cards__socials">
-          {% for block in social_blocks %}
-            {% if block.settings.url != blank %}
-              <a
-                href="{{ block.settings.url }}"
-                class="contact-text-image-cards__social"
-                target="_blank"
-                rel="noopener"
-                aria-label="{{ block.settings.platform | capitalize }}"
-                {{ block.shopify_attributes }}
-              >
-
-                {% case block.settings.platform %}
-
-                  {% when 'instagram' %}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <rect x="3" y="3" width="18" height="18" rx="5"/>
-                      <circle cx="12" cy="12" r="4"/>
-                      <circle cx="17.5" cy="6.5" r="1"/>
-                    </svg>
-
-                  {% when 'facebook' %}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="12" cy="12" r="9"/>
-                      <path d="M13.5 8H15V5.5h-1.8C10.8 5.5 10 6.8 10 8.8V11H8v2.5h2V19h3v-5.5h2.2L15.5 11H13v-2c0-.7.2-1 1-1Z"/>
-                    </svg>
-
-                  {% when 'pinterest' %}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="12" cy="12" r="9"/>
-                      <path d="M10.5 18c.8-1.2 1-2.3 1.3-3.4.5 1 1.5 1.6 2.8 1.6 2.4 0 4.2-2.1 4.2-5.1 0-2.8-2.3-5.4-5.8-5.4-4.4 0-6.7 3.1-6.7 5.7 0 1.6.6 3 1.8 3.5.2.1.4 0 .5-.3l.4-1.3c.1-.3.1-.4-.1-.7-.4-.5-.7-1.2-.7-2.1 0-2.7 2-4.9 5.2-4.9 2.8 0 4.3 1.7 4.3 3.9 0 2.9-1.3 5.4-3.2 5.4-1.1 0-2-.9-1.7-2.1l.6-2.4c.4-1.5-.2-2.7-.2-3.7Z"/>
-                    </svg>
-
-                {% endcase %}
-
-              </a>
             {% endif %}
           {% endfor %}
         </div>
-      {% endif %}
+        {% assign social_blocks = section.blocks | where: 'type', 'social_icon' %}
+        {% if social_blocks.size > 0 %}
+          <div class="contact-text-image-cards__socials">
+            {% for block in social_blocks %}
+              {% if block.settings.url != blank %}
+                <a
+                  href="{{ block.settings.url }}"
+                  class="contact-text-image-cards__social"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="{{ block.settings.platform | capitalize }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {% case block.settings.platform %}
+                    {% when 'instagram' %}
+                      <svg
+                        width="29"
+                        height="29"
+                        viewBox="0 0 29 29"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8.625 0C3.87479 0 0 3.87479 0 8.625V19.875C0 24.6246 3.87466 28.5 8.625 28.5H19.875C24.6247 28.5 28.5 24.6247 28.5 19.875V8.625C28.5 3.87466 24.6246 0 19.875 0H8.625ZM8.625 2.25H19.875C23.4084 2.25 26.25 5.09084 26.25 8.625V19.875C26.25 23.4083 23.4083 26.25 19.875 26.25H8.625C5.09084 26.25 2.25 23.4084 2.25 19.875V8.625C2.25 5.09071 5.09071 2.25 8.625 2.25ZM21.75 5.25C20.9212 5.25 20.25 5.92125 20.25 6.75C20.25 7.57875 20.9212 8.25 21.75 8.25C22.5788 8.25 23.25 7.57875 23.25 6.75C23.25 5.92125 22.5788 5.25 21.75 5.25ZM14.25 6.75C10.1214 6.75 6.75 10.1214 6.75 14.25C6.75 18.3786 10.1214 21.75 14.25 21.75C18.3786 21.75 21.75 18.3786 21.75 14.25C21.75 10.1214 18.3786 6.75 14.25 6.75ZM14.25 9C17.1624 9 19.5 11.3376 19.5 14.25C19.5 17.1624 17.1624 19.5 14.25 19.5C11.3376 19.5 9 17.1624 9 14.25C9 11.3376 11.3376 9 14.25 9Z" fill="#333333" />
+                      </svg>
 
+                    {% when 'facebook' %}
+                      <svg
+                        width="36"
+                        height="36"
+                        viewBox="0 0 36 36"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M18 3C9.72905 3 3 9.72906 3 18C3 26.2709 9.72905 33 18 33C26.271 33 33 26.2709 33 18C33 9.72906 26.271 3 18 3ZM18 5.25C25.055 5.25 30.75 10.945 30.75 18C30.75 24.2856 26.2254 29.4798 20.25 30.5405V21.75H22.9688C23.3468 21.75 23.6664 21.4673 23.7129 21.0923L23.9941 18.8423C24.0211 18.6293 23.9535 18.4154 23.811 18.2534C23.6693 18.0922 23.4653 18 23.25 18H20.25V15.375C20.25 14.5478 20.9228 13.875 21.75 13.875H23.25C23.664 13.875 24 13.5398 24 13.125V10.5938C24 10.2053 23.7036 9.88118 23.3174 9.84668C23.2731 9.84293 22.215 9.75 20.8755 9.75C17.5702 9.75 15.75 11.7121 15.75 15.2754V18H12.75C12.336 18 12 18.3353 12 18.75V21C12 21.4148 12.336 21.75 12.75 21.75H15.75V30.5405C9.77462 29.4798 5.25 24.2856 5.25 18C5.25 10.945 10.945 5.25 18 5.25Z" fill="#333333" />
+                      </svg>
+
+                    {% when 'pinterest' %}
+                      <svg
+                        width="36"
+                        height="36"
+                        viewBox="0 0 36 36"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M18 3C9.72905 3 3 9.72906 3 18C3 26.2709 9.72905 33 18 33C26.271 33 33 26.2709 33 18C33 9.72906 26.271 3 18 3ZM18 5.25C25.055 5.25 30.75 10.945 30.75 18C30.75 25.055 25.055 30.75 18 30.75C16.9249 30.75 15.8867 30.6037 14.8901 30.3545C15.25 29.6224 15.492 28.9013 15.6973 28.147L16.4707 25.0957C17.2807 25.8607 18.42 26.25 19.875 26.25C23.805 26.25 27 22.2975 27 17.4375C27 12.63 23.13 9 18 9C13.035 9 9 12.7875 9 17.4375C9 19.6725 9.86244 21.7056 11.3774 23.1606C11.5574 23.3331 11.8653 23.2351 11.9253 22.9951L12.3457 21.2476C12.3907 21.0676 12.3452 20.8806 12.2402 20.7231C11.7002 19.9581 11.25 18.8925 11.25 17.4375C11.25 14.025 14.28 11.25 18 11.25C18.615 11.25 24 11.43 24 17.625C24 20.6925 22.59 24 19.5 24C18.72 23.9475 18.1643 23.6918 17.8418 23.2793C17.2868 22.5443 17.4219 21.2995 17.5869 20.647L18.1655 18.3823C18.3155 17.7823 18.375 17.2719 18.375 16.8369C18.375 15.3744 17.49 14.625 16.5 14.625C15.165 14.625 14.25 16.042 14.25 17.4595C14.25 18.232 14.37 19.058 14.625 19.793L12.9229 26.8579C12.9229 26.8579 12.75 27.3149 12.75 28.8149C12.75 28.966 12.7764 29.3625 12.7881 29.6323C8.34297 27.643 5.25 23.195 5.25 18C5.25 10.945 10.945 5.25 18 5.25Z" fill="#333333" />
+                      </svg>
+                  {% endcase %}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
     </div>
-
     <div class="contact-text-image-cards__image">
       {% if section.settings.image != blank %}
         {{
           section.settings.image
           | image_url: width: 1600
-          | image_tag:
-            loading: 'lazy',
-            widths: '400, 600, 800, 1200, 1600',
-            sizes: '(min-width: 750px) 50vw, 100vw'
+          | image_tag: loading: 'lazy', widths: '400, 600, 800, 1200, 1600', sizes: '(min-width: 750px) 50vw, 100vw'
         }}
       {% else %}
         {{ 'image' | placeholder_svg_tag }}
       {% endif %}
     </div>
-
   </div>
 </section>
-
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('contact-text-image-cards-{{ section.id }}');
+    if (!header) return;
+    function updateHeaderClass() {
+      if (window.innerWidth < 1441) {
+        header.classList.add('page-width');
+        header.classList.remove('header-wide');
+      } else {
+        header.classList.remove('page-width');
+        header.classList.add('header-wide');
+      }
+    }
+    updateHeaderClass();
+    window.addEventListener('resize', updateHeaderClass);
+  });
+</script>
 <style>
   .contact-text-image-cards {
-    background: #fff;
   }
-
   .contact-text-image-cards__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 1400px;
     margin: 0 auto;
   }
-
   .contact-text-image-cards__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: var(--content-alignment, center);
     padding: 60px;
   }
 
+  .contact-text-image-cards__content-inner {
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .contact-text-image-cards__heading {
-    margin: 0 0 32px;
+    margin: 0 0 28px;
     color: #444;
-    font-size: 42px;
+    font-size: 48px;
     line-height: 1.1;
     font-weight: 400;
   }
-
   .contact-text-image-cards__details {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 11px;
   }
-
   .contact-text-image-cards__detail {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 17px;
   }
-
   .contact-text-image-cards__icon {
-    flex: 0 0 18px;
-    width: 18px;
-    height: 18px;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
     margin-top: 2px;
   }
-
   .contact-text-image-cards__icon svg {
     width: 100%;
     height: 100%;
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.4;
+    stroke-width: 0.4;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-
   .contact-text-image-cards__text {
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 28px;
     color: #555;
+    letter-spacing: 5%;
   }
-
   .contact-text-image-cards__text p {
     margin: 0;
   }
-
   .contact-text-image-cards__socials {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 28px;
   }
-
   .contact-text-image-cards__social {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     color: #333;
   }
-
   .contact-text-image-cards__social svg {
     width: 100%;
     height: 100%;
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.5;
+    stroke-width: 0.5;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-
   .contact-text-image-cards__image {
     min-height: 500px;
   }
-
   .contact-text-image-cards__image img,
   .contact-text-image-cards__image svg {
     display: block;
@@ -222,28 +258,83 @@
     min-height: 500px;
     object-fit: cover;
   }
-
   @media screen and (max-width: 749px) {
     .contact-text-image-cards__inner {
       grid-template-columns: 1fr;
     }
-
     .contact-text-image-cards__content {
-      padding: 40px 20px;
+      padding: clamp(20px, 3vw, 40px) clamp(10px, 3vw, 20px);
+       aspect-ratio: 1 / 1;
+        order: 2;
     }
-
     .contact-text-image-cards__heading {
-      font-size: 32px;
+      font-size: clamp(26px, 3vw, 32px);
+      margin: 0 0 clamp(10px, 3vw, 48px);
     }
-
+    .contact-text-image-cards__details {
+      gap: clamp(6px, 2vw, 11px);
+    }
+    .contact-text-image-cards__detail {
+      gap: clamp(6px, 2vw, 17px);
+      row-gap: 17px;
+      column-gap: 17px;
+    }
     .contact-text-image-cards__image,
     .contact-text-image-cards__image img,
     .contact-text-image-cards__image svg {
-      min-height: 400px;
+      min-height: auto;
+    }
+    .contact-text-image-cards__text {
+      font-size: clamp(12px, 3vw, 16px);
+      line-height: 28px;
+      color: #555;
+      letter-spacing: 5%;
     }
   }
+  @media (max-width: 400px) {
+    .contact-text-image-cards__content {
+      aspect-ratio: auto;
+    }
+  }
+  @media screen and (min-width: 1441px) {
+    .contact-text-image-cards__icon {
+      flex-basis: 22.5px;
+      width: 25px;
+      height: 25px;
+      margin-top: 2.5px;
+    }
+    .contact-text-image-cards__text {
+      font-size: 20px;
+      line-height: 35px;
+    }
+    .contact-text-image-cards__socials {
+      gap: 25px;
+      margin-top: 35px;
+    }
+    .contact-text-image-cards__social {
+      width: 35px;
+      height: 35px;
+    }
+    .contact-text-image-cards__image {
+      min-height: 625px;
+    }
+    .contact-text-image-cards__image img,
+    .contact-text-image-cards__image svg {
+      min-height: 625px;
+    }
+    .contact-text-image-cards__heading {
+      margin-bottom: 35px;
+      font-size: 60px;
+    }
+    .contact-text-image-cards__details {
+      gap: 13.75px;
+    }
+    .contact-text-image-cards__detail {
+      gap: 21.25px;
+    }
+   
+  }
 </style>
-
 {% schema %}
 {
   "name": "Contact text image cards",
@@ -258,6 +349,52 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 60
     }
   ],
   "blocks": [
