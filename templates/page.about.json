@@ -17,6 +17,25 @@
         "padding_bottom": 28
       }
     },
+    "about_section_nrVfig": {
+      "type": "about-section",
+      "name": "About Hero",
+      "settings": {
+        "image": "shopify://shop_images/image_19.png",
+        "heading": "<h1>Julie Brashier</h1>",
+        "description": "<p>The Greenville community is very near and dear to Julie's heart. In keeping with this spirit she has been involed with many community groups and functions including:</p>",
+        "image_one": "shopify://shop_images/image_20.png",
+        "image_two": "shopify://shop_images/image_21.png",
+        "image_three": "shopify://shop_images/image_22_1.png",
+        "image_four": "shopify://shop_images/image_23.png",
+        "image_five": "shopify://shop_images/image_24.png",
+        "image_six": "shopify://shop_images/image_25.png",
+        "margin_top": 0,
+        "margin_bottom": 40,
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
     "rich_text_kJnnik": {
       "type": "rich-text",
       "blocks": {
@@ -43,9 +62,20 @@
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "background-1",
-        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "quote_text_button_qC7BY4": {
+      "type": "quote-text-button",
+      "name": "Quote with button",
+      "settings": {
+        "quote_mark": true,
+        "quote": "<h1>We make a living by what we get;<br/>We make a life by what we give.</h1>",
+        "text_size": "medium",
+        "author": "Winston Churchill",
+        "margin_top": 0,
+        "margin_bottom": 60
       }
     },
     "image_text_cards_Q9rWtR": {
@@ -146,36 +176,13 @@
         "margin_top": 20,
         "margin_bottom": 20
       }
-    },
-    "quote_text_button_qC7BY4": {
-      "type": "quote-text-button",
-      "blocks": {
-        "button_MYVThV": {
-          "type": "button",
-          "settings": {
-            "button_label": "Learn More",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "button_MYVThV"
-      ],
-      "name": "Quote with button",
-      "settings": {
-        "quote_mark": false,
-        "quote": "<p>We make a living by what we get;<br/>We make a life by what we give.</p>",
-        "author": "Winston Churchill",
-        "background_color": "#ffffff",
-        "text_color": "#444444",
-        "accent_color": "#61c2bb"
-      }
     }
   },
   "order": [
     "main",
+    "about_section_nrVfig",
     "rich_text_kJnnik",
-    "image_text_cards_Q9rWtR",
-    "quote_text_button_qC7BY4"
+    "quote_text_button_qC7BY4",
+    "image_text_cards_Q9rWtR"
   ]
 }

@@ -84,6 +84,31 @@
         "mobile_section_margin_bottom": 0
       }
     },
+    "quote_text_button_J7rF6P": {
+      "type": "quote-text-button",
+      "blocks": {
+        "button_BKRNGR": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact Us Today",
+            "button_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "button_BKRNGR"
+      ],
+      "name": "Quote with button",
+      "settings": {
+        "background_color": true,
+        "quote_mark": false,
+        "quote": "<p>please join us for exciting events in our store and throughout the community! have an event you think we should be involved in?</p>",
+        "text_size": "small",
+        "author": "",
+        "margin_top": 40,
+        "margin_bottom": 40
+      }
+    },
     "custom_contact_section_UhAQEr": {
       "type": "custom-contact-section",
       "blocks": {
@@ -140,6 +165,7 @@
   "order": [
     "main",
     "custom_promo_banner_emNmHJ",
+    "quote_text_button_J7rF6P",
     "custom_contact_section_UhAQEr"
   ]
 }
