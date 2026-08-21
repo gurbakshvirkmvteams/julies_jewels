@@ -146,6 +146,45 @@
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
                       {%- endif -%}
                     </div>
+                  {%- when 'brand_info' -%}
+                    <div class="custom-footer-brand">
+                      <div class="footer-logo">
+                         {% comment %} "type": "brand_info",
+      "name": "Brand",
+      "settings": [{
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer Logo"
+      },{
+        "type": "richtext",
+        "id": "tagline",
+        "label": "Add Tagline"
+      },{
+        "type": "richtext",
+        "id": "address",
+        "label": "Add Address"
+      },{
+        "type": "richtext",
+        "id": "timings",
+        "label": "Add timings"
+      } {% endcomment %}
+                      {% if settings.footer_logo != blank %}
+                        {{
+                          settings.footer_logo
+                          | image_url: width: 400
+                          | image_tag: alt: shop.name
+                        }}
+                      {% endif %}
+                      </div>
+                      <div class="footer-brand-info">
+                         {{ block.settings.tagline }}
+                         {{ block.settings.address }}
+                      </div>
+                       <div class="footer-brand-info">
+                         {{ block.settings.hours }}
+                         {{ block.settings.timings }}
+                      </div>
+                    </div>
                 {%- endcase -%}
               </div>
             {%- endfor -%}
@@ -465,6 +504,32 @@
           "default": "center"
         }
       ]
+    },
+    {
+      "type": "brand_info",
+      "name": "Brand",
+      "settings": [{
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer Logo"
+      },{
+        "type": "richtext",
+        "id": "tagline",
+        "label": "Add Tagline"
+      },{
+        "type": "richtext",
+        "id": "address",
+        "label": "Add Address"
+      },{
+        "type": "richtext",
+        "id": "hours",
+        "label": "Timings Heading"
+      },{
+        "type": "richtext",
+        "id": "timings",
+        "label": "Add timings"
+      }
+    ] 
     }
   ],
   "settings": [

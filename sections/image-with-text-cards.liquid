@@ -13,8 +13,8 @@
     position: relative;
     display: flex;
     /* aspect-ratio: {{ section.blocks.first.settings.card_ratio_width }} / {{ section.blocks.first.settings.card_ratio_height }}; */
-    border-radius: {{ section.blocks.first.settings.card_radius }}px;
-    background-image: linear-gradient(rgba({{ section.blocks.first.settings.overlay_color | color_extract: 'red' }}, {{ section.blocks.first.settings.overlay_color | color_extract: 'green' }}, {{ section.blocks.first.settings.overlay_color | color_extract: 'blue' }}, {{ section.blocks.first.settings.overlay_opacity | divided_by: 100.0 }}), rgba({{ section.blocks.first.settings.overlay_color | color_extract: 'red' }}, {{ section.blocks.first.settings.overlay_color | color_extract: 'green' }}, {{ section.blocks.first.settings.overlay_color | color_extract: 'blue' }}, {{ section.blocks.first.settings.overlay_opacity | divided_by: 100.0 }})), url('{{ section.blocks.first.settings.background_image | image_url: width: 1600 }}');
+    /* border-radius: {{ section.blocks.first.settings.card_radius }}px; */
+    background-image:  url('{{ section.blocks.settings.background_image | image_url: width: 1600 }}');
     background-size: cover;
     background-position: center;
   }
@@ -58,17 +58,17 @@
   }
   #image_text_cards--{{ section.id }} .image-with-text-card__heading {
     margin: 0 0 clamp(8px, 1vw, {{ section.blocks.first.settings.heading_margin_bottom }}px);
-    color: {{ section.blocks.first.settings.heading_color }};
-    font-size: clamp(22px, 3vw, {{ section.blocks.first.settings.heading_size }}px);
-    font-weight: {{ section.blocks.first.settings.heading_weight }};
-    line-height: {{ section.blocks.first.settings.heading_line_height }};
+    color: white;
+    font-size: clamp(22px, 3vw, 36px);
+    /* font-weight: {{ section.blocks.first.settings.heading_weight }};
+    line-height: {{ section.blocks.first.settings.heading_line_height }}; */
   }
   #image_text_cards--{{ section.id }} .image-with-text-card__description {
     margin: 0 0 clamp(12px, 1.3vw, {{ section.blocks.first.settings.description_margin_bottom }}px);
-    color: {{ section.blocks.first.settings.description_color }};
-    font-size: clamp(11px, 1.05vw, {{ section.blocks.first.settings.description_size }}px);
-    font-weight: {{ section.blocks.first.settings.description_weight }};
-    line-height: clamp(1, 3vw, {{ section.blocks.first.settings.description_line_height }});
+    color: white;
+    font-size: clamp(11px, 1.05vw, 14px);
+    font-weight: 500;
+    line-height: 100%;
   }
   #image_text_cards--{{ section.id }} .image-with-text-card__description p {
     margin: 0;
@@ -78,16 +78,14 @@
     align-items: center;
     justify-content: center;
     align-self: flex-start;
-    gap: clamp(6px, 0.55vw, {{ section.blocks.first.settings.button_icon_gap }}px);
-    padding: clamp(8px, 0.7vw, {{ section.blocks.first.settings.button_padding_vertical }}px) clamp(12px, 1.3vw, {{ section.blocks.first.settings.button_padding_horizontal }}px);
-    color: {{ section.blocks.first.settings.button_text_color }};
-    background-color: {{ section.blocks.first.settings.button_background_color }};
-    font-size: clamp(10px, 0.9vw, {{ section.blocks.first.settings.button_font_size }}px);
-    font-weight: {{ section.blocks.first.settings.button_font_weight }};
+    gap: clamp(6px, 0.55vw, 10px);
+    padding: clamp(8px, 0.7vw, 14px) clamp(12px, 1.3vw, 24px);
+    color: white;
+    background: linear-gradient(90deg, #51A197 17.86%, #66C5BA 89.29%);
+    font-size: clamp(10px, 0.9vw, 14px);
+    font-weight:700;
     line-height: 1;
     text-decoration: none;
-    border: {{ section.blocks.first.settings.button_border_width }}px solid {{ section.blocks.first.settings.button_border_color }};
-    border-radius: {{ section.blocks.first.settings.button_radius }}px;
     transition: opacity 0.2s ease, background-color 0.2s ease;
   }
   #image_text_cards--{{ section.id }} .image-with-text-card__button:hover {
@@ -96,7 +94,6 @@
   #image_text_cards--{{ section.id }} .image-with-text-card__button svg {
     display: block;
     flex-shrink: 0;
-    width: clamp(14px, 1.2vw, {{ section.blocks.first.settings.button_icon_size }}px);
     height: auto;
   }
   @media (max-width:1000px){
@@ -129,12 +126,12 @@
     }
     #image_text_cards--{{ section.id }} .image-with-text-card__description {
       margin-bottom: clamp(10px, 3vw, {{ section.blocks.first.settings.mobile_description_margin_bottom }}px);
-      font-size: clamp(12px, 3.5vw, {{ section.blocks.first.settings.description_size }}px);
+      font-size: clamp(12px, 3.5vw, 14px);
     }
     #image_text_cards--{{ section.id }} .image-with-text-card__button {
-      gap: clamp(5px, 2vw, {{ section.blocks.first.settings.button_icon_gap }}px);
-      padding: clamp(7px, 2.5vw, {{ section.blocks.first.settings.button_padding_vertical }}px) clamp(12px, 5vw, {{ section.blocks.first.settings.button_padding_horizontal }}px);
-      font-size: clamp(10px, 3.2vw, {{ section.blocks.first.settings.button_font_size }}px);
+      gap: clamp(5px, 2vw, 10px);
+      padding: clamp(7px, 2.5vw, 14px) clamp(12px, 5vw, 24px);
+      font-size: clamp(10px, 3.2vw, 14px);
     }
   }
 {% endstyle %}
@@ -144,9 +141,8 @@
       <div
         class="image-with-text-card"
         style="
-          border-radius: {{ block.settings.card_radius }}px;
-          background-image: linear-gradient(rgba({{ block.settings.overlay_color | color_extract: 'red' }}, {{ block.settings.overlay_color | color_extract: 'green' }}, {{ block.settings.overlay_color | color_extract: 'blue' }}, {{ block.settings.overlay_opacity | divided_by: 100.0 }}), rgba({{ block.settings.overlay_color | color_extract: 'red' }}, {{ block.settings.overlay_color | color_extract: 'green' }}, {{ block.settings.overlay_color | color_extract: 'blue' }}, {{ block.settings.overlay_opacity | divided_by: 100.0 }})), url('{{ block.settings.background_image | image_url: width: 1600 }}');
-          background-position: {{ block.settings.background_position }};
+          background-image: url('{{ block.settings.background_image | image_url: width: 1600 }}');
+          background-position: center center;
         "
         {{ block.shopify_attributes }}
       >
@@ -188,10 +184,10 @@
             <h2
               class="image-with-text-card__heading"
               style="
-                color: {{ block.settings.heading_color }};
-                font-size: clamp(22px, 3vw, {{ block.settings.heading_size }}px);
-                font-weight: {{ block.settings.heading_weight }};
-                line-height: {{ block.settings.heading_line_height }};
+                color: white;
+                font-size: clamp(22px, 3vw, 36px);
+                /* font-weight: {{ block.settings.heading_weight }};
+                line-height: {{ block.settings.heading_line_height }}; */
                 margin-bottom: clamp(8px, 1vw, {{ block.settings.heading_margin_bottom }}px);
               "
             >
@@ -202,10 +198,10 @@
             <div
               class="image-with-text-card__description"
               style="
-                color: {{ block.settings.description_color }};
-                font-size: clamp(12px, 1.1vw, {{ block.settings.description_size }}px);
-                font-weight: {{ block.settings.description_weight }};
-                line-height: {{ block.settings.description_line_height }};
+                color:white;
+                font-size: clamp(12px, 1.1vw, 14px);
+                font-weight: 500;
+                line-height: 1.4;
                 margin-bottom: clamp(12px, 2.5vw, {{ block.settings.description_margin_bottom }}px);
               "
             >
@@ -217,21 +213,19 @@
               href="{{ block.settings.button_link }}"
               class="image-with-text-card__button"
               style="
-                color: {{ block.settings.button_text_color }};
-                background-color: {{ block.settings.button_background_color }};
-                font-size: clamp(10px, 0.9vw, {{ block.settings.button_font_size }}px);
-                font-weight: {{ block.settings.button_font_weight }};
-                padding: clamp(8px, 0.7vw, {{ block.settings.button_padding_vertical }}px) clamp(12px, 1.3vw, {{ block.settings.button_padding_horizontal }}px);
-                border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
-                border-radius: {{ block.settings.button_radius }}px;
-                gap: clamp(6px, 0.55vw, {{ block.settings.button_icon_gap }}px);
+                color: white;
+                background: linear-gradient(90deg, #51A197 17.86%, #66C5BA 89.29%);
+                font-size: clamp(10px, 0.9vw, 14px);
+                font-weight: 700;
+                padding: clamp(8px, 0.7vw, 14px) clamp(12px, 1.3vw, 24px);
+                gap: clamp(6px, 0.55vw, 10px);
               "
             >
               {{ block.settings.button_text }}
               <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M13.5441 0C13.4197 3.033e-05 13.2981 0.0371698 13.195 0.106667C13.0918 0.176164 13.0117 0.274858 12.965 0.390122C12.9182 0.505385 12.9069 0.631976 12.9325 0.753697C12.9581 0.875419 13.0195 0.986736 13.1087 1.07341L16.2084 4.17318H0.633902C0.551082 4.17201 0.468855 4.18731 0.392 4.21819C0.315145 4.24907 0.245194 4.29492 0.186213 4.35308C0.127232 4.41123 0.0803967 4.48053 0.0484294 4.55694C0.016462 4.63335 0 4.71535 0 4.79818C0 4.88101 0.016462 4.96301 0.0484294 5.03942C0.0803967 5.11583 0.127232 5.18512 0.186213 5.24328C0.245194 5.30143 0.315145 5.34728 0.392 5.37816C0.468855 5.40905 0.551082 5.42435 0.633902 5.42318H16.2084L13.1087 8.52295C13.0487 8.58054 13.0008 8.64952 12.9678 8.72585C12.9348 8.80218 12.9174 8.88433 12.9166 8.96748C12.9157 9.05063 12.9315 9.13311 12.9629 9.21009C12.9943 9.28708 13.0408 9.35702 13.0996 9.41582C13.1584 9.47462 13.2283 9.52109 13.3053 9.55252C13.3823 9.58395 13.4648 9.5997 13.5479 9.59886C13.6311 9.59801 13.7132 9.58059 13.7896 9.5476C13.8659 9.51461 13.9349 9.46672 13.9925 9.40674L18.1591 5.24007C18.2763 5.12286 18.3421 4.96391 18.3421 4.79818C18.3421 4.63245 18.2763 4.4735 18.1591 4.35628L13.9925 0.189616C13.9342 0.129622 13.8645 0.0819272 13.7875 0.049357C13.7105 0.0167869 13.6277 0.00000332453 13.5441 0Z"
-                  fill="{{ block.settings.button_text_color }}"
+                  fill="white"
                 />
               </svg>
             </a>
@@ -300,64 +294,6 @@
       "settings": [
         { "type": "header", "content": "Card" },
         { "type": "image_picker", "id": "background_image", "label": "Background Image" },
-        {
-          "type": "select",
-          "id": "background_position",
-          "label": "Image Position",
-          "options": [
-            { "value": "left top", "label": "Left Top" },
-            { "value": "center top", "label": "Center Top" },
-            { "value": "right top", "label": "Right Top" },
-            { "value": "left center", "label": "Left Center" },
-            { "value": "center center", "label": "Center Center" },
-            { "value": "right center", "label": "Right Center" },
-            { "value": "left bottom", "label": "Left Bottom" },
-            { "value": "center bottom", "label": "Center Bottom" },
-            { "value": "right bottom", "label": "Right Bottom" }
-          ],
-          "default": "center center"
-        },
-        { "type": "color", "id": "overlay_color", "label": "Overlay Color", "default": "#000000" },
-        {
-          "type": "range",
-          "id": "overlay_opacity",
-          "label": "Overlay Opacity",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "unit": "%",
-          "default": 0
-        },
-        {
-          "type": "range",
-          "id": "card_max_width",
-          "label": "Card Max Width",
-          "min": 70,
-          "max": 700,
-          "step": 7,
-          "unit": "px",
-          "default": 658
-        },
-        {
-          "type": "range",
-          "id": "card_max_height",
-          "label": "Card Max Height",
-          "min": 40,
-          "max": 400,
-          "step": 4,
-          "unit": "px",
-          "default": 384
-        },
-        {
-          "type": "range",
-          "id": "card_radius",
-          "label": "Card Border Radius",
-          "min": 0,
-          "max": 50,
-          "step": 1,
-          "unit": "px",
-          "default": 0
-        },
         { "type": "header", "content": "Content Position" },
         {
           "type": "select",
@@ -465,38 +401,6 @@
         },
         { "type": "header", "content": "Heading" },
         { "type": "text", "id": "heading", "label": "Heading", "default": "Card Heading" },
-        { "type": "color", "id": "heading_color", "label": "Heading Color", "default": "#FFFFFF" },
-        {
-          "type": "range",
-          "id": "heading_size",
-          "label": "Heading Size",
-          "min": 16,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "default": 32
-        },
-        {
-          "type": "select",
-          "id": "heading_weight",
-          "label": "Heading Weight",
-          "options": [
-            { "value": "400", "label": "Regular" },
-            { "value": "500", "label": "Medium" },
-            { "value": "600", "label": "Semi Bold" },
-            { "value": "700", "label": "Bold" }
-          ],
-          "default": "400"
-        },
-        {
-          "type": "range",
-          "id": "heading_line_height",
-          "label": "Heading Line Height",
-          "min": 0.8,
-          "max": 2,
-          "step": 0.1,
-          "default": 1.1
-        },
         {
           "type": "range",
           "id": "heading_margin_bottom",
@@ -519,38 +423,6 @@
         },
         { "type": "header", "content": "Description" },
         { "type": "richtext", "id": "description", "label": "Description", "default": "<p>Card description.</p>" },
-        { "type": "color", "id": "description_color", "label": "Description Color", "default": "#FFFFFF" },
-        {
-          "type": "range",
-          "id": "description_size",
-          "label": "Description Size",
-          "min": 8,
-          "max": 40,
-          "step": 1,
-          "unit": "px",
-          "default": 14
-        },
-        {
-          "type": "select",
-          "id": "description_weight",
-          "label": "Description Weight",
-          "options": [
-            { "value": "400", "label": "Regular" },
-            { "value": "500", "label": "Medium" },
-            { "value": "600", "label": "Semi Bold" },
-            { "value": "700", "label": "Bold" }
-          ],
-          "default": "400"
-        },
-        {
-          "type": "range",
-          "id": "description_line_height",
-          "label": "Description Line Height",
-          "min": 1,
-          "max": 2,
-          "step": 0.1,
-          "default": 1.4
-        },
         {
           "type": "range",
           "id": "description_margin_bottom",
@@ -574,91 +446,6 @@
         { "type": "header", "content": "Button" },
         { "type": "text", "id": "button_text", "label": "Button Text", "default": "Know More" },
         { "type": "url", "id": "button_link", "label": "Button Link" },
-        { "type": "color", "id": "button_text_color", "label": "Button Text Color", "default": "#FFFFFF" },
-        { "type": "color", "id": "button_background_color", "label": "Button Background Color", "default": "#51A197" },
-        {
-          "type": "range",
-          "id": "button_font_size",
-          "label": "Button Font Size",
-          "min": 8,
-          "max": 40,
-          "step": 1,
-          "unit": "px",
-          "default": 14
-        },
-        {
-          "type": "select",
-          "id": "button_font_weight",
-          "label": "Button Font Weight",
-          "options": [
-            { "value": "400", "label": "Regular" },
-            { "value": "500", "label": "Medium" },
-            { "value": "600", "label": "Semi Bold" },
-            { "value": "700", "label": "Bold" }
-          ],
-          "default": "500"
-        },
-        {
-          "type": "range",
-          "id": "button_padding_vertical",
-          "label": "Button Vertical Padding",
-          "min": 4,
-          "max": 40,
-          "step": 1,
-          "unit": "px",
-          "default": 12
-        },
-        {
-          "type": "range",
-          "id": "button_padding_horizontal",
-          "label": "Button Horizontal Padding",
-          "min": 8,
-          "max": 80,
-          "step": 1,
-          "unit": "px",
-          "default": 20
-        },
-        {
-          "type": "range",
-          "id": "button_radius",
-          "label": "Button Border Radius",
-          "min": 0,
-          "max": 50,
-          "step": 1,
-          "unit": "px",
-          "default": 0
-        },
-        { "type": "color", "id": "button_border_color", "label": "Button Border Color", "default": "#5CC2B8" },
-        {
-          "type": "range",
-          "id": "button_border_width",
-          "label": "Button Border Width",
-          "min": 0,
-          "max": 5,
-          "step": 1,
-          "unit": "px",
-          "default": 0
-        },
-        {
-          "type": "range",
-          "id": "button_icon_gap",
-          "label": "Button Icon Gap",
-          "min": 0,
-          "max": 30,
-          "step": 1,
-          "unit": "px",
-          "default": 8
-        },
-        {
-          "type": "range",
-          "id": "button_icon_size",
-          "label": "Button Icon Size",
-          "min": 10,
-          "max": 40,
-          "step": 1,
-          "unit": "px",
-          "default": 19
-        }   
       ]
     }
   ],

@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}" media="print" onload="this.media='all'">
-
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -16,7 +15,6 @@
 {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
   {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
 {%- endif -%}
-
 {%- if settings.cart_type == "drawer" -%}
   {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
   {{ 'component-cart.css' | asset_url | stylesheet_tag }}
@@ -25,26 +23,21 @@
   {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
-
 <noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
-
 <style>
   header-drawer {
     justify-self: start;
     margin-left: -1.2rem;
   }
-
-
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
     }
   {%- endif -%}
-
   {%- if section.settings.menu_type_desktop != "drawer" -%}
     @media screen and (min-width: 990px) {
       header-drawer {
@@ -52,39 +45,32 @@
       }
     }
   {%- endif -%}
-
   .menu-drawer-container {
     display: flex;
   }
-
   .list-menu {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-
   .list-menu--inline {
     display: inline-flex;
     flex-wrap: wrap;
   }
-
   summary.list-menu__item {
     padding-right: 2.7rem;
   }
-
   .list-menu__item {
     display: flex;
     align-items: center;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
   }
-
   .list-menu__item--link {
     text-decoration: none;
     padding-bottom: 1rem;
     padding-top: 1rem;
     line-height: calc(1 + 0.8 / var(--font-body-scale));
   }
-
   @media screen and (min-width: 750px) {
     .list-menu__item--link {
       padding-bottom: 0.5rem;
@@ -92,33 +78,27 @@
     }
   }
 </style>
-
 {%- style -%}
   .header {
     padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
   }
-
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
     .section-header {
       margin-bottom: {{ section.settings.margin_bottom }}px;
     }
   }
-
   @media screen and (min-width: 990px) {
     .header {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
 {%- endstyle -%}
-
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -129,23 +109,19 @@
 {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
   <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
   </symbol>
-
   <symbol id="icon-reset" class="icon icon-close"  fill="none" viewBox="0 0 18 18" stroke="currentColor">
     <circle r="8.5" cy="9" cx="9" stroke-opacity="0.2"/>
     <path d="M6.82972 6.82915L1.17193 1.17097" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
     <path d="M1.22896 6.88502L6.77288 1.11523" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
   </symbol>
-
   <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
     <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
   </symbol>
 </svg>
-
 {%- liquid
   for block in section.blocks
     if block.type == '@app'
@@ -153,7 +129,6 @@
     endif
   endfor
 -%}
-
   <{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
     <header  id="HeaderContainer" class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}">
       {%- if section.settings.menu != blank -%}
@@ -256,7 +231,6 @@
                             {%- endform -%}
                           </localization-form>
                         {% endif %}
-
                         {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
                           <localization-form>
                             {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
@@ -350,7 +324,6 @@
           </details>
         </header-drawer>
       {%- endif -%}
-
       {%- if section.settings.logo_position == 'top-center' or section.settings.menu == blank -%}
         <div class="header__left-actions">
         <details-modal class="header__search">
@@ -407,7 +380,6 @@
                           </svg>
                         </button>
                       </div>
-
                       {%- if settings.predictive_search_enabled -%}
                         <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
                           <div class="predictive-search__loading-state">
@@ -416,7 +388,6 @@
                             </svg>
                           </div>
                         </div>
-
                         <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
                       {%- endif -%}
                     </form>
@@ -454,7 +425,6 @@
       >
         {%- if block.settings.show_icon -%}
           <span class="header-left-action__icon">
-
 <svg  width="{{ block.settings.icon_size }}"
               height="{{ block.settings.icon_size }}" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.75 0C3.03223 0 0 3.03223 0 6.75C0 7.80469 0.427735 9.01465 1.00781 10.3359C1.58789 11.6572 2.33496 13.0605 3.09375 14.3672C4.61133 16.9834 6.14062 19.1719 6.14062 19.1719L6.75 20.0625L7.35938 19.1719C7.35938 19.1719 8.88867 16.9834 10.4062 14.3672C11.165 13.0605 11.9121 11.6572 12.4922 10.3359C13.0723 9.01465 13.5 7.80469 13.5 6.75C13.5 3.03223 10.4678 0 6.75 0ZM6.75 1.5C9.65918 1.5 12 3.84082 12 6.75C12 7.35059 11.6777 8.4873 11.1328 9.72656C10.5879 10.9658 9.83496 12.3398 9.09375 13.6172C7.91602 15.6504 7.18359 16.7256 6.75 17.3672C6.31641 16.7256 5.58398 15.6504 4.40625 13.6172C3.66504 12.3398 2.91211 10.9658 2.36719 9.72656C1.82227 8.4873 1.5 7.35059 1.5 6.75C1.5 3.84082 3.84082 1.5 6.75 1.5ZM6.75 5.25C5.9209 5.25 5.25 5.9209 5.25 6.75C5.25 7.5791 5.9209 8.25 6.75 8.25C7.5791 8.25 8.25 7.5791 8.25 6.75C8.25 5.9209 7.5791 5.25 6.75 5.25Z" fill="#4A4D4F"/>
@@ -494,10 +464,8 @@
       </a>
   {%- endcase -%}
 {%- endfor -%}
-
         </div>
       {%- endif -%}
-
       {%- if section.settings.logo_position != 'middle-center' -%}
         {%- if request.page_type == 'index' -%}
           <h1 class="header__heading">
@@ -527,7 +495,6 @@
           </h1>
         {%- endif -%}
       {%- endif -%}
-
       {%- if section.settings.menu != blank -%}
         {%- if section.settings.menu_type_desktop == 'dropdown' -%}
           <nav class="header__inline-menu">
@@ -626,7 +593,6 @@
           </nav>
         {%- endif -%}
       {%- endif -%}
-
       {%- if section.settings.logo_position == 'middle-center' -%}
         {%- if request.page_type == 'index' -%}
           <h1 class="header__heading">
@@ -656,7 +622,6 @@
           </h1>
         {%- endif -%}
       {%- endif -%}
-
       <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header__localization{% endif %}">
         <div class="desktop-localization-wrapper">
           {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -669,7 +634,6 @@
               {%- endform -%}
             </localization-form>
           {% endif %}
-
           {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
             <localization-form class="small-hide medium-hide">
               {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
@@ -735,7 +699,6 @@
                           </svg>
                         </button>
                       </div>
-
                       {%- if settings.predictive_search_enabled -%}
                         <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
                           <div class="predictive-search__loading-state">
@@ -744,7 +707,6 @@
                             </svg>
                           </div>
                         </div>
-
                         <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
                       {%- endif -%}
                     </form>
@@ -764,12 +726,9 @@
         </details-modal>
 {%- for block in section.blocks -%}
   {%- case block.type -%}
-
     {%- when '@app' -%}
       {% render block %}
-
     {%- when 'appointment_button' -%}
-
       <a
         href="{{ block.settings.link }}"
         class="header-appointment-button{% if block.settings.desktop_visibility == 'hide' %} appointment-desktop-hidden{% endif %}{% if block.settings.mobile_visibility == 'hide' %} appointment-mobile-hidden{% endif %}"
@@ -793,7 +752,6 @@
           --appointment-border-radius: {{ block.settings.border_radius }}px;
         "
       >
-
         {% if block.settings.show_icon %}
           <span class="header-appointment-button__icon">
             <svg
@@ -813,55 +771,47 @@
                 stroke="currentColor"
                 stroke-width="1.5"
               />
-
               <path
                 d="M16 2V6"
                 stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
               />
-
               <path
                 d="M8 2V6"
                 stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
               />
-
               <path
                 d="M3 9H21"
                 stroke="currentColor"
                 stroke-width="1.5"
               />
-
               <path
                 d="M8 13H8.01"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
               />
-
               <path
                 d="M12 13H12.01"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
               />
-
               <path
                 d="M16 13H16.01"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
               />
-
               <path
                 d="M8 17H8.01"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
               />
-
               <path
                 d="M12 17H12.01"
                 stroke="currentColor"
@@ -871,16 +821,12 @@
             </svg>
           </span>
         {% endif %}
-
         <span class="header-appointment-button__text">
           {{ block.settings.text }}
         </span>
-
       </a>
-
   {%- endcase -%}
 {%- endfor -%}
-
         {%- if shop.customer_accounts_enabled -%}
           <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
             {% render 'icon-account' %}
@@ -895,14 +841,12 @@
             </span>
           </a>
         {%- endif -%}
-
         {% comment %} {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
           {%- endcase -%}
         {%- endfor -%} {% endcomment %}
-
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {%- liquid
             if cart == empty
@@ -924,66 +868,49 @@
       </div>
     </header>
   </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
-
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
-
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
     }
-
     connectedCallback() {
       this.header = document.querySelector('.section-header');
       this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
-
       this.setHeaderHeight();
-
       window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
-
       if (this.headerIsAlwaysSticky) {
         this.header.classList.add('shopify-section-header-sticky');
       };
-
       this.currentScrollTop = 0;
       this.preventReveal = false;
       this.predictiveSearch = this.querySelector('predictive-search');
-
       this.onScrollHandler = this.onScroll.bind(this);
       this.hideHeaderOnScrollUp = () => this.preventReveal = true;
-
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.addEventListener('scroll', this.onScrollHandler, false);
-
       this.createObserver();
     }
-
     setHeaderHeight() {
       document.documentElement.style.setProperty('--header-height', `${this.header.offsetHeight}px`);
     }
-
     disconnectedCallback() {
       this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.removeEventListener('scroll', this.onScrollHandler);
     }
-
     createObserver() {
       let observer = new IntersectionObserver((entries, observer) => {
         this.headerBounds = entries[0].intersectionRect;
         observer.disconnect();
       });
-
       observer.observe(this.header);
     }
-
     onScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
-
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
         if (this.preventHide) return;
@@ -994,53 +921,43 @@
           requestAnimationFrame(this.reveal.bind(this));
         } else {
           window.clearTimeout(this.isScrolling);
-
           this.isScrolling = setTimeout(() => {
             this.preventReveal = false;
           }, 66);
-
           requestAnimationFrame(this.hide.bind(this));
         }
       } else if (scrollTop <= this.headerBounds.top) {
         this.header.classList.remove('scrolled-past-header');
         requestAnimationFrame(this.reset.bind(this));
       }
-
       this.currentScrollTop = scrollTop;
     }
-
     hide() {
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
       this.closeMenuDisclosure();
       this.closeSearchModal();
     }
-
     reveal() {
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.add('shopify-section-header-sticky', 'animate');
       this.header.classList.remove('shopify-section-header-hidden');
     }
-
     reset() {
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
     }
-
     closeMenuDisclosure() {
       this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
       this.disclosures.forEach(disclosure => disclosure.close());
     }
-
     closeSearchModal() {
       this.searchModal = this.searchModal || this.header.querySelector('details-modal');
       this.searchModal.close(false);
     }
   }
-
   customElements.define('sticky-header', StickyHeader);
 {% endjavascript %}
-
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -1063,7 +980,6 @@
     "url": {{ request.origin | append: page.url | json }}
   }
 </script>
-
 {%- if request.page_type == 'index' -%}
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
@@ -1083,9 +999,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('HeaderContainer');
-
   if (!header) return;
-
   function updateHeaderClass() {
     if (window.innerWidth < 1441) {
       header.classList.add('page-width');
@@ -1095,7 +1009,6 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.add('header-wide');
     }
   }
-
   updateHeaderClass();
   window.addEventListener('resize', updateHeaderClass);
 });
@@ -1337,12 +1250,6 @@ document.addEventListener('DOMContentLoaded', () => {
           "default": 18
         },
         {
-          "type": "color",
-          "id": "icon_color",
-          "label": "Icon color",
-          "default": "#4A4D4F"
-        },
-        {
           "type": "header",
           "content": "Typography"
         },
@@ -1379,12 +1286,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           ],
           "default": "400"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text color",
-          "default": "#4A4D4F"
         },
         {
           "type": "header",
@@ -1472,18 +1373,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
           "type": "color",
-          "id": "hover_text_color",
-          "label": "Hover text color",
-          "default": "#4A4D4F"
-        },
-        {
-          "type": "color",
-          "id": "hover_icon_color",
-          "label": "Hover icon color",
-          "default": "#4A4D4F"
-        },
-        {
-          "type": "color",
           "id": "hover_background_color",
           "label": "Hover background",
           "default": "transparent"
@@ -1558,12 +1447,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "default": 20
     },
     {
-      "type": "color",
-      "id": "icon_color",
-      "label": "Icon color",
-      "default": "#4A4D4F"
-    },
-    {
       "type": "range",
       "id": "font_size",
       "label": "Font size",
@@ -1596,12 +1479,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       ],
       "default": "400"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#4A4D4F"
     },
     {
       "type": "range",
@@ -1663,12 +1540,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "default": 20
     },
     {
-      "type": "color",
-      "id": "icon_color",
-      "label": "Icon color",
-      "default": "#4A4D4F"
-    },
-    {
       "type": "range",
       "id": "font_size",
       "label": "Font size",
@@ -1701,12 +1572,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       ],
       "default": "400"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#4A4D4F"
     },
     {
       "type": "range",
