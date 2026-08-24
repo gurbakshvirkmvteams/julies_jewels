@@ -1,55 +1,56 @@
 # Today's update:
-  # Diamify
-  -- Fixed footer layout and text issues 
-  -- adjusted layout padding issues
-  -- adjusted decorative layout dividers in homepage 
-  -- common shopify filters
+# Diamify
+-- Fixed footer layout and text issues
+-- adjusted layout padding issues
+-- adjusted decorative layout dividers in homepage
+-- common shopify filters
 
 
 # Julie's Jewels & Gifts
-  -- Started a new task "Julie's Jewels & Gifts"
-  -- Customized header according to figma design 
-  -- added custom buttons to header
-  -- added logo, color variables and margin paddings
+-- Started a new task "Julie's Jewels & Gifts"
+-- Customized header according to figma design
+-- added custom buttons to header
+-- added logo, color variables and margin paddings
 
 
 
 # Today's update:
 # Julie's Jewels & Gifts
-  -- Added custom buttons to header grid
-  -- Adjusted header design acording to figma
-  -- Custom hero silder section with swiperjs
-  -- added mobile images support for hero swiper silder
-  -- Created product slider section for product cards
-  -- Created card text with image banner section
-  -- Added font settings for texts descriptions and buttons
+-- Added custom buttons to header grid
+-- Adjusted header design acording to figma
+-- Custom hero silder section with swiperjs
+-- added mobile images support for hero swiper silder
+-- Created product slider section for product cards
+-- Created card text with image banner section
+-- Added font settings for texts descriptions and buttons
 
 
 # Today's update:
 # Julie's Jewels & Gifts
-  -- Adjusted card text with image banner section monbile floating decorative images
-  -- Added font settings for texts descriptions and buttons
-  -- Created a new banner text section with gradient bg for both mobile and desktop
-  -- Created contact form section for book an appointment
+-- Adjusted card text with image banner section monbile floating decorative images
+-- Added font settings for texts descriptions and buttons
+-- Created a new banner text section with gradient bg for both mobile and desktop
+-- Created contact form section for book an appointment
 
 
 # Today's update:
 # Julie's Jewels & Gifts
-  -- adjusted z index issue of image-text-banners section's decorative images 
-  -- Created a new page "Designers" in website Added 16 custom sections with images, logo, texts and gradients according to figma design.
+-- adjusted z index issue of image-text-banners section's decorative images
+-- Created a new page "Designers" in website Added 16 custom sections with images, logo, texts and gradients according
+to figma design.
 
 # Sergio's project
- -- Worked on #Sergio's project 
- -- Added metafields to 65 Products
+-- Worked on #Sergio's project
+-- Added metafields to 65 Products
 
 
 # Today's update:
 # Julie's Jewels & Gifts
-  -- adjusted mobile responsiveness of "Designers page"
+-- adjusted mobile responsiveness of "Designers page"
 
 # Sergio's project
- -- Worked on #Sergio's project 
- -- Added 109 menu items (Images, Title, Descriptions)
+-- Worked on #Sergio's project
+-- Added 109 menu items (Images, Title, Descriptions)
 
 
 background: linear-gradient(360deg, #ffe1e9 29%, #ffe1e9 79%, rgba(0, 0, 0, 0) 89%);
@@ -57,30 +58,30 @@ background: linear-gradient(360deg, #ffe1e9 29%, #ffe1e9 79%, rgba(0, 0, 0, 0) 8
 
 # Today's update:
 # Julie's Jewels & Gifts
-  -- adjusted mobile linear-gradients of "Designers page"
-  -- created a new services page 
-  -- added blogposts section and adjusted accordingto figma
-  -- created a cards section for services page
-  -- added custom card block section in page
-  -- craeted custom testimonials section for page with swiper js and adjusted it according to figma 
-  -- added appointment section 
-  -- created a new page birthstones of the month
+-- adjusted mobile linear-gradients of "Designers page"
+-- created a new services page
+-- added blogposts section and adjusted accordingto figma
+-- created a cards section for services page
+-- added custom card block section in page
+-- craeted custom testimonials section for page with swiper js and adjusted it according to figma
+-- added appointment section
+-- created a new page birthstones of the month
 
 
 
 # Today's update:
 # Julie's Jewels & Gifts
 -- Recreated homepage responsiveness for mobile in slider section and text with image card section
--- made newsletter section responsive for mobile and added in about page 
+-- made newsletter section responsive for mobile and added in about page
 -- created new page "Special Events" added hero seciton and newsletter section
 -- added 12 sections into " birthstones Of the month Page"
--- added sections in about page 
--- adjusted decorative images of image text card section 
+-- added sections in about page
+-- adjusted decorative images of image text card section
 
 
 # Today's update:
 # Neurobiologix pro
--- added metaobjects to "sergio's website" 
+-- added metaobjects to "sergio's website"
 
 # Julie's Jewels & Gifts
 -- added remaining sections to about page
@@ -90,50 +91,59 @@ background: linear-gradient(360deg, #ffe1e9 29%, #ffe1e9 79%, rgba(0, 0, 0, 0) 8
 
 
 # Julie's Jewels & Gifts
--- made about hero section 
--- Made upcoming events section 
+-- made about hero section
+-- Made upcoming events section
 -- made contact image text card blocks section
--- made quote card banner section 
+-- made quote card banner section
 -- made contact page sections, about page sections responsive
 -- made margin paddings all section adjustments
 
 
 
-    "colors_outline_button_labels": "#51A197",
-    background-color: var(--border-bottom-hover);
+"colors_outline_button_labels": "#51A197",
+background-color: var(--border-bottom-hover);
 
 color: rgba(var(--color-foreground), 1);
 
-    var(--color-base-accent-1) !important 4A4D4F
-//  autoplay: {
-        //  delay: 5000,
-        //  disableOnInteraction: false
-        //  },
+var(--color-base-accent-1) !important 4A4D4F
+// autoplay: {
+// delay: 5000,
+// disableOnInteraction: false
+// },
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const header = document.getElementById('hero-slider-{{ section.id }}');
-      if (!header) return;
-      function updateHeaderClass() {
-        if (window.innerWidth < 1441) {
-          header.classList.add('page-width');
-          header.classList.remove('header-wide');
-        } else {
-          header.classList.remove('page-width');
-          header.classList.add('header-wide');
-        }
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('hero-slider-{{ section.id }}');
+    if (!header) return;
+    function updateHeaderClass() {
+      if (window.innerWidth < 1441) {
+        header.classList.add('page-width');
+        header.classList.remove('header-wide');
+      } else {
+        header.classList.remove('page-width');
+        header.classList.add('header-wide');
       }
-      updateHeaderClass();
-      window.addEventListener('resize', updateHeaderClass);
-    });
+    }
+    updateHeaderClass();
+    window.addEventListener('resize', updateHeaderClass);
+  });
 </script>
 
 # Julie's Jewels & Gifts
--- fixed homepage hero section slider images width issue
--- fixed image card banner resize issue in responsiveness
--- added customizeable settings for colors in promo banner setion and heading description large and small settings 
--- added hover effets in navbar, fixed navbar underline issue, added active page underline in navbar
--- changed text-color variables of all pages to use theme setting colors
--- created footer menus 
--- added custom brand info and timings block
+  -- fixed homepage hero section slider images width issue
+  -- fixed image card banner resize issue in responsiveness
+  -- added customizeable settings for colors in promo banner setion and heading description large and small settings
+  -- added hover effets in navbar, fixed navbar underline issue, added active page underline in navbar
+  -- changed text-color variables of all pages to use theme setting colors
+  -- created footer menus
+  -- added custom brand info and timings block
+
+
+# Julie's Jewels & Gifts
+  -- Created footer according to figma design
+  -- Added backgound image support to text cards section for home page
+  -- adjusted decorative images code to keep responsiveness on different screens
+  -- Created topbar according to figma design 
+  -- added light dark text color toggles to the sections
+  -- Added newsletter block to the figma design

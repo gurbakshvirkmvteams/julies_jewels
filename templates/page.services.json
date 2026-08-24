@@ -26,7 +26,6 @@
         "gradient_overlap_max_range": 60,
         "gradient_spread": 75,
         "gradient_overlap_min_range": 65,
-        "wrapper_background": "#ffffff",
         "desktop_layout": "text-first",
         "content_horizontal_alignment": "right",
         "content_vertical_alignment": "center",
@@ -81,6 +80,7 @@
             "description": "<p>Julie's Jewels & Gifts established in 1939, has</p><p> worked hard to earn a reputation as a leader in</p><p> jewelry repair, and building the trust and loyalty </p><p>of numerous customers. </p>",
             "description_margin_bottom": 36,
             "mobile_description_margin_bottom": 18,
+            "text_color_mode": "light",
             "button_text": "Know More",
             "button_link": "shopify://blogs/jewelry"
           }
@@ -106,6 +106,7 @@
             "description": "<p>We offer insurance Appraisals for </p><p>jewelry and watches, regardless of </p><p>where the item was purchased. </p>",
             "description_margin_bottom": 36,
             "mobile_description_margin_bottom": 18,
+            "text_color_mode": "light",
             "button_text": "Know More",
             "button_link": "shopify://collections/all"
           }
@@ -131,6 +132,7 @@
             "description": "<p>Julie's Jewels & Gifts s offers a</p><p> wide range of watch repair </p><p>services. We offer preliminary </p><p>estimates on repair at the intake </p><p>of your timepiece and upon</p><p> further inspection, contact you </p><p>with the final estimate. If the </p><p>actual cost of the repair is more </p><p>than you would like to spend we </p><p>will return your watch unrepaired</p><p> and your deposit in full. </p>",
             "description_margin_bottom": 0,
             "mobile_description_margin_bottom": 0,
+            "text_color_mode": "dark",
             "button_text": "Know More",
             "button_link": ""
           }
@@ -156,6 +158,7 @@
             "description": "<p>Julie's Jewels & Gifts  offers a diamond concierge service. If you have </p><p>something particulary special in mind Julie will scour the world to find you </p><p>the perfect diamond. Julie will hand select the perfect diamond to meet your </p><p>contracted specifications.<br/><br/>Whether you send Julie on a personal buying mission, or purchase one of </p><p>the diamonds she has already hand-selected, you can rest assured that </p><p>you’ll be getting stunning quality at very reasonable prices any time of year.</p><p><br/> To take advantage of the concierge diamond buying service, please make an </p><p>appointment with Julie to enjoy her undivided attention. Contact Julie today! </p>",
             "description_margin_bottom": 0,
             "mobile_description_margin_bottom": 0,
+            "text_color_mode": "dark",
             "button_text": "Know More",
             "button_link": ""
           }

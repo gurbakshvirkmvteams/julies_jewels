@@ -14,18 +14,22 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
+        "announcement_m633dU": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "(864) 288-9068",
             "text_alignment": "center",
             "color_scheme": "background-1",
+            "buttononename": "Financing",
+            "buttonone": "shopify://pages/about",
+            "buttontwoname": "Events",
+            "buttontwo": "shopify://pages/events",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement_m633dU"
       ],
       "settings": {}
     },
