@@ -24,7 +24,7 @@
     width: 100%;
     max-width: clamp(280px, 100vw, calc(1440px * var(--promo-scale)));
     margin: 0 auto;
-    background: {{ section.settings.wrapper_background }};
+    background: {{ section.settings.banner_gradient }};
     overflow: hidden;
     aspect-ratio:2.70/1;
     max-height: clamp(
@@ -80,15 +80,15 @@
   #promo-banner--{{ section.id }}
   .promo-banner__text {
     justify-content: {% case section.settings.content_vertical_alignment %}
-          {% when 'top' %}flex-start
-          {% when 'bottom' %}flex-end
-          {% else %}center
-          {% endcase %};
+                      {% when 'top' %}flex-start
+                      {% when 'bottom' %}flex-end
+                      {% else %}center
+                     {% endcase %};
     align-items: {% case section.settings.content_horizontal_alignment %}
-          {% when 'left' %}flex-start
-          {% when 'right' %}flex-end
-          {% else %}center
-          {% endcase %};
+                  {% when 'left' %}flex-start
+                  {% when 'right' %}flex-end
+                  {% else %}center
+                 {% endcase %};
     text-align: {{ section.settings.text_alignment }};
   }
   #promo-banner--{{ section.id }}
@@ -379,12 +379,14 @@
         "step": 5,
         "unit": "%",
         "default": 20
-      }, {
-        "type": "color",
-        "id": "wrapper_background",
-        "label": "Background color",
-        "default": "#FFFFFF"
-      }, {
+      },
+      //  {
+      //   "type": "color",
+      //   "id": "wrapper_background",
+      //   "label": "Background color",
+      //   "default": "#FFFFFF"
+      // }, 
+      {
         "type": "header",
         "content": "Layout"
       }, {

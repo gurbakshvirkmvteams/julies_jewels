@@ -1,3 +1,63 @@
+<style>
+  .announcement-container{
+    padding: 11px 0;
+  }
+  .announcementbar-custom-buttons-container,  .announcement-container, .announcement-container .header-icons{
+    display: flex;
+    align-items: center;
+  }
+  .announcementbar-custom-buttons-container{
+    gap: 36px;
+  }
+  .announcementbar-custom-buttons-container .announcementbar-custom-buttons{
+    cursor: pointer;
+  }
+  .announcement-container  .footer__list-social .list-social__item a{
+padding:0;
+  }
+  .header-icons p{
+    margin: 0;
+  }
+  .announcement-container .header-icons{
+gap: 10px ;
+margin-right: 38px;
+  }
+  .announcementbar-custom-buttons{
+    all: unset;
+font-weight: 400;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 5%;
+  }
+  .phone-number{
+    font-weight: 700;
+  }
+  .announcement-container .list-social{
+    gap: 10px ;
+  }
+  @media(max-width:750px){
+    .page-width.announcement-container{
+      justify-content: space-between !important;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    .announcementbar-custom-buttons-container{
+    display: none;
+  }
+  .announcement-container .header-icons {
+    gap:5px;
+    margin-right: 0px;
+}
+  }
+  @media (max-width:380px){
+.header-icons.social{
+  display: none;
+}
+    .page-width.announcement-container{
+  justify-content: center !important;
+}
+  }
+</style>
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
@@ -7,22 +67,30 @@
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ block.shopify_attributes }}>
         {%- if block.settings.text != blank -%}
-          {%- if block.settings.link != blank -%}
-            <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
-          {%- endif -%}
-          <div class="page-width">
-            <p class="announcement-bar__message {{ block.settings.text_alignment }} h5">
-              <span>{{ block.settings.text | escape }}</span>
+          <div class="page-width announcement-container" style=" justify-content: {{ block.settings.text_alignment }};">
+              <div class="header-icons social"><p class="announcementbar-custom-buttons">Find Us:</p>
+              {%- render 'social-icons' -%}</div>
+              <div class="header-icons"><p class="announcementbar-custom-buttons">Call us at: </p>
+              <span class="announcementbar-custom-buttons phone-number">{{ block.settings.text | escape }}</span></div>
               {%- if block.settings.link != blank -%}
                 {% render 'icon-arrow' %}
               {%- endif -%}
-            </p>
+              <div class="announcementbar-custom-buttons-container">
+                {% if block.settings.buttonone != blank and block.settings.buttononename != blank %}
+                <a href="{{ block.settings.buttonone }}" class="announcementbar-custom-buttons">
+                  <span>{{ block.settings.buttononename }}</span>
+                </a>
+              {% endif %}
+              {% if block.settings.buttontwo != blank and block.settings.buttontwoname != blank %}
+                <a href="{{ block.settings.buttontwo }}" class="announcementbar-custom-buttons">
+                  <span>{{ block.settings.buttontwoname }}</span>
+                </a>
+              {% endif %}
+              </div>
           </div>
-          {%- if block.settings.link != blank -%}
-            </a>
-          {%- endif -%}
         {%- endif -%}
       </div>
+    
   {%- endcase -%}
 {%- endfor -%}
 
@@ -39,20 +107,20 @@
           {
             "type": "text",
             "id": "text",
-            "default": "Welcome to our store",
+            "default": "(864) 288-9068",
             "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
           }, {
             "type": "select",
             "id": "text_alignment",
             "options": [
               {
-                "value": "left",
+                "value": "flex-start",
                 "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__1.label"
               }, {
                 "value": "center",
                 "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__2.label"
               }, {
-                "value": "right",
+                "value": "flex-end",
                 "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__3.label"
               }
             ],
@@ -84,13 +152,34 @@
             ],
             "default": "accent-1",
             "label": "t:sections.all.colors.label"
-          }, {
+          },{
+            "type": "text",
+            "id": "buttononename",
+            "label": "Button Label",
+            "default":"Financing"
+          },
+          {
+            "type": "url",
+            "id": "buttonone",
+            "label": "Button Link"
+          },{
+            "type": "text",
+            "id": "buttontwoname",
+            "label": "Button Label",
+            "default":"Events"
+          },
+          {
+            "type": "url",
+            "id": "buttontwo",
+            "label": "Button Link"
+          },{
             "type": "url",
             "id": "link",
             "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
           }
         ]
       }
+      
     ],
     "default": {
       "blocks": [

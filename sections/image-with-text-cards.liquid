@@ -58,14 +58,12 @@
   }
   #image_text_cards--{{ section.id }} .image-with-text-card__heading {
     margin: 0 0 clamp(8px, 1vw, {{ section.blocks.first.settings.heading_margin_bottom }}px);
-    color: white;
     font-size: clamp(22px, 3vw, 36px);
     /* font-weight: {{ section.blocks.first.settings.heading_weight }};
     line-height: {{ section.blocks.first.settings.heading_line_height }}; */
   }
   #image_text_cards--{{ section.id }} .image-with-text-card__description {
     margin: 0 0 clamp(12px, 1.3vw, {{ section.blocks.first.settings.description_margin_bottom }}px);
-    color: white;
     font-size: clamp(11px, 1.05vw, 14px);
     font-weight: 500;
     line-height: 100%;
@@ -80,7 +78,7 @@
     align-self: flex-start;
     gap: clamp(6px, 0.55vw, 10px);
     padding: clamp(8px, 0.7vw, 14px) clamp(12px, 1.3vw, 24px);
-    color: white;
+   color: rgba(var(--color-foreground), 1);
     background: linear-gradient(90deg, #51A197 17.86%, #66C5BA 89.29%);
     font-size: clamp(10px, 0.9vw, 14px);
     font-weight:700;
@@ -173,9 +171,9 @@
             <div
               class="image-with-text-card__logo"
                style="
-    --logo-width: clamp(100px, 60vw, {{ block.settings.logo_width }}px);
-    --logo-margin-bottom: {{ block.settings.logo_margin_bottom }}px;
-  "
+                  --logo-width: clamp(100px, 60vw, {{ block.settings.logo_width }}px);
+                  --logo-margin-bottom: {{ block.settings.logo_margin_bottom }}px;
+                "
             >
               {{ block.settings.logo | image_url: width: 500 | image_tag: loading: 'lazy' }}
             </div>
@@ -184,7 +182,7 @@
             <h2
               class="image-with-text-card__heading"
               style="
-                color: white;
+                  color: {% if block.settings.text_color_mode == 'dark' %}#000000{% else %}rgba(var(--color-foreground), 1){% endif %};
                 font-size: clamp(22px, 3vw, 36px);
                 /* font-weight: {{ block.settings.heading_weight }};
                 line-height: {{ block.settings.heading_line_height }}; */
@@ -198,7 +196,8 @@
             <div
               class="image-with-text-card__description"
               style="
-                color:white;
+                color: {% if block.settings.text_color_mode == 'dark' %}#000000{% else %}white{% endif %};
+
                 font-size: clamp(12px, 1.1vw, 14px);
                 font-weight: 500;
                 line-height: 1.4;
@@ -213,7 +212,7 @@
               href="{{ block.settings.button_link }}"
               class="image-with-text-card__button"
               style="
-                color: white;
+               color: white;
                 background: linear-gradient(90deg, #51A197 17.86%, #66C5BA 89.29%);
                 font-size: clamp(10px, 0.9vw, 14px);
                 font-weight: 700;
@@ -442,6 +441,21 @@
           "step": 1,
           "unit": "px",
           "default": 18
+        },{
+          "type": "select",
+          "id": "text_color_mode",
+          "label": "Text Color",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            }
+          ],
+          "default": "light"
         },
         { "type": "header", "content": "Button" },
         { "type": "text", "id": "button_text", "label": "Button Text", "default": "Know More" },

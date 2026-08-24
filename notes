@@ -102,7 +102,7 @@ background: linear-gradient(360deg, #ffe1e9 29%, #ffe1e9 79%, rgba(0, 0, 0, 0) 8
     "colors_outline_button_labels": "#51A197",
     background-color: var(--border-bottom-hover);
 
-
+color: rgba(var(--color-foreground), 1);
 
     var(--color-base-accent-1) !important 4A4D4F
 //  autoplay: {
