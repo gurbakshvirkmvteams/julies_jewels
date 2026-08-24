@@ -28,9 +28,129 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  
 {%- endstyle -%}
+<style>
+  .footer-logo{
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .footer-logo img{
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+  .footer-block__details-content .list-menu__item--link{
+    color: rgba(var(--color-foreground), 1);
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  }
+  .footer-brand-info .company-address *,  .footer-brand-info .company-timings *, .footer-brand-info .company-tagline *,.footer-block .footer-block__heading *, .footer-block__heading{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 5%;
+  }
+  .footer-brand-info .company-tagline *, .footer-block__heading *, .footer-block__heading{
+    font-weight: 700 !important;
+    margin: 0;
+    color: rgba(var(--color-foreground), 1);
+
+  }
+  .footer-brand-info .company-address{
+    margin-bottom: 26px;
+  }
+  .footer-brand-info .company-timings{
+    margin-top: 16px;
+  }
+  .footer-block__heading{
+    margin-top: 25px;
+    margin-bottom: 16px;
+  }
+  .custom-footer-brand{
+    order:1;
+  }
+  .custom-footer-block__newsletter .newsletter-form{
+    margin: 0;
+  }
+  .custom-footer-block__newsletter .footer__list-social{
+    justify-content: flex-start;
+    gap: 18px ;
+  }
+  .custom-footer-block__newsletter .footer__list-social .list-social__item a{
+    padding: 0 !important;
+  }
+  .social-heading{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    margin-top: 56PX;
+  }
+  
+  .custom-field::after{
+  box-shadow: none;
+  border-bottom: 1px solid  rgba(var(--color-foreground), 1);
+
+  }
+      
+  .custom-field .field__label{
+left:0;
+color: rgba(var(--color-foreground), 1);
+  }
+  .newsletter-form__field-wrapper .field__input {
+    padding-right: 9rem;
+}
+  .field__input:focus ~ .field__label, .field__input:not(:placeholder-shown) ~ .field__label, .field__input:-webkit-autofill ~ .field__label, .customer .field input:focus ~ label, .customer .field input:not(:placeholder-shown) ~ label, .customer .field input:-webkit-autofill ~ label
+ {
+    font-size: 1rem;
+    top: calc(var(--inputs-border-width) + 0.5rem);
+    left:0;
+    letter-spacing: 0.08rem;/
+}
+
+
+.field__input:focus, .field__input:not(:placeholder-shown), .field__input:-webkit-autofill, .customer .field input:focus, .customer .field input:not(:placeholder-shown), .customer .field input:-webkit-autofill {
+    padding: 2.2rem 1.5rem 0.8rem 0.5rem;
+    margin: var(--inputs-border-width);
+}
+  @media(max-width:750px){
+    .custom-footer__blocks-wrapper{
+      display: flex !important;
+    }
+    .footer-block:has(.custom-footer-brand) {
+      order: 4;
+      margin-top: 43px !important;
+    }
+    .footer.header-wide{
+      padding-left:clamp(28px, 3vw,  30px) !important;
+      padding-right:clamp(28px, 3vw,  30px) !important;
+    }
+        .footer__content-top {
+        padding: auto calc(0.5rem / var(--font-body-scale));
+    }
+    .footer-block.grid__item {
+      width: 100%;
+      padding: 0px;
+      margin: 0rem 0px;
+    }
+    .footer-block__heading{
+      margin-top: 0px;
+      margin-bottom: 16px;
+    }
+    .custom-footer-brand{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-brand-info:last-child{
+      grid-column: span 2;
+      place-items: center;
+      text-align: center;
+    }
+  }
+</style>
+<footer class="footer header-wide color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -62,14 +182,14 @@
               assign footer_grid_class = 'grid--3-col-tablet'
             endif
           -%}
-          <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
+          <div class="custom-footer__blocks-wrapper footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
             {%- for block in section.blocks -%}
               <div
                 class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                  <p class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</p>
                 {%- endif -%}
 
                 {%- case block.type -%}
@@ -149,43 +269,98 @@
                   {%- when 'brand_info' -%}
                     <div class="custom-footer-brand">
                       <div class="footer-logo">
-                         {% comment %} "type": "brand_info",
-      "name": "Brand",
-      "settings": [{
-        "type": "image_picker",
-        "id": "footer_logo",
-        "label": "Footer Logo"
-      },{
-        "type": "richtext",
-        "id": "tagline",
-        "label": "Add Tagline"
-      },{
-        "type": "richtext",
-        "id": "address",
-        "label": "Add Address"
-      },{
-        "type": "richtext",
-        "id": "timings",
-        "label": "Add timings"
-      } {% endcomment %}
-                      {% if settings.footer_logo != blank %}
+                      {% if block.settings.footer_logo != blank %}
                         {{
-                          settings.footer_logo
-                          | image_url: width: 400
+                          block.settings.footer_logo
+                          | image_url: width: 200
                           | image_tag: alt: shop.name
                         }}
                       {% endif %}
                       </div>
                       <div class="footer-brand-info">
-                         {{ block.settings.tagline }}
-                         {{ block.settings.address }}
+                        <div class="company-tagline">
+                            {{ block.settings.tagline }}
+                        </div>
+                        <div class="company-address">
+                           {{ block.settings.address }}
+                        </div>
                       </div>
                        <div class="footer-brand-info">
-                         {{ block.settings.hours }}
-                         {{ block.settings.timings }}
+                        <div class="company-tagline">
+                            {{ block.settings.hours }}
+                        </div>
+                        <div class="company-timings">
+                            {{ block.settings.timings }}
+                        </div>
                       </div>
                     </div>
-                {%- endcase -%}
+                  {%-  when 'custom_newsletter' -%}
+                    <div class="custom-footer-block__newsletter footer-block__newsletter">
+                      {%- if block.settings.custom_newsletter_heading != blank -%}
+                        <div class="footer-block__heading inline-richtext">{{ block.settings.custom_newsletter_heading }}</div>
+                        <p class="custom-footer-tagline">Subscribe to our mailing list to get the best deals first!</p>
+                      {%- endif -%}
+                      {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                        <input type="hidden" name="contact[tags]" value="newsletter">
+                        <div class="newsletter-form__field-wrapper">
+                          <div class="custom-field field">
+                            <input
+                              id="NewsletterForm--{{ section.id }}"
+                              type="email"
+                              name="contact[email]"
+                              class="field__input"
+                              value="{{ form.email }}"
+                              aria-required="true"
+                              autocorrect="off"
+                              autocapitalize="off"
+                              autocomplete="email"
+                              {% if form.errors %}
+                                autofocus
+                                aria-invalid="true"
+                                aria-describedby="ContactFooter-error"
+                              {% elsif form.posted_successfully? %}
+                                aria-describedby="ContactFooter-success"
+                              {% endif %}
+                              placeholder="{{ 'newsletter.label' | t }}"
+                              required
+                            >
+                            <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                              Email address*
+                            </label>
+                            <button
+                              type="submit"
+                              class="newsletter-form__button custom-newsletter-form__button field__button"
+                              name="commit"
+                              id="Subscribe"
+                              aria-label="Join Now"
+                              >
+                              Join Now
+                            </button>
+                          </div>
+                          {%- if form.errors -%}
+                            <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                              {%- render 'icon-error' -%}
+                              {{- form.errors.translated_fields.email | capitalize }}
+                              {{ form.errors.messages.email -}}
+                            </small>
+                          {%- endif -%}
+                        </div>
+                        {%- if form.posted_successfully? -%}
+                          <h3
+                            class="newsletter-form__message newsletter-form__message--success form__message"
+                            id="ContactFooter-success"
+                            tabindex="-1"
+                            autofocus
+                          >
+                            {% render 'icon-success' -%}
+                            {{- 'newsletter.success' | t }}
+                          </h3>
+                        {%- endif -%}
+                      {%- endform -%}
+                      <p class="social-heading">Get Social</p>
+                        {%- render 'social-icons' -%}
+                    </div>
+                  {%- endcase -%}
               </div>
             {%- endfor -%}
           </div>
@@ -530,6 +705,15 @@
         "label": "Add timings"
       }
     ] 
+    },{
+      "type": "custom_newsletter",
+      "name": "OUR NEWSLETTER",
+      "settings": [{
+        "type": "richtext",
+        "id":"custom_newsletter_heading",
+        "label":"Add Newsletter Heading",
+        "default":"<p>OUR NEWSLETTER</p>"
+      }]
     }
   ],
   "settings": [

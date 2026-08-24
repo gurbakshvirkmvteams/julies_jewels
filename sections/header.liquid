@@ -997,21 +997,21 @@
   </script>
 {%- endif -%}
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.getElementById('HeaderContainer');
-  if (!header) return;
-  function updateHeaderClass() {
-    if (window.innerWidth < 1441) {
-      header.classList.add('page-width');
-      header.classList.remove('header-wide');
-    } else {
-      header.classList.remove('page-width');
-      header.classList.add('header-wide');
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('HeaderContainer');
+    if (!header) return;
+    function updateHeaderClass() {
+      if (window.innerWidth < 1441) {
+        header.classList.add('page-width');
+        header.classList.remove('header-wide');
+      } else {
+        header.classList.remove('page-width');
+        header.classList.add('header-wide');
+      }
     }
-  }
-  updateHeaderClass();
-  window.addEventListener('resize', updateHeaderClass);
-});
+    updateHeaderClass();
+    window.addEventListener('resize', updateHeaderClass);
+  });
 </script>
 {% schema %}
 {

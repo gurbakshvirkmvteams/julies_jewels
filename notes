@@ -128,3 +128,12 @@ background: linear-gradient(360deg, #ffe1e9 29%, #ffe1e9 79%, rgba(0, 0, 0, 0) 8
       window.addEventListener('resize', updateHeaderClass);
     });
 </script>
+
+# Julie's Jewels & Gifts
+-- fixed homepage hero section slider images width issue
+-- fixed image card banner resize issue in responsiveness
+-- added customizeable settings for colors in promo banner setion and heading description large and small settings 
+-- added hover effets in navbar, fixed navbar underline issue, added active page underline in navbar
+-- changed text-color variables of all pages to use theme setting colors
+-- created footer menus 
+-- added custom brand info and timings block
