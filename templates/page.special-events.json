@@ -26,7 +26,6 @@
         "gradient_overlap_max_range": 65,
         "gradient_spread": 75,
         "gradient_overlap_min_range": 55,
-        "wrapper_background": "#0a1a61",
         "desktop_layout": "text-first",
         "content_horizontal_alignment": "right",
         "content_vertical_alignment": "center",
@@ -50,7 +49,7 @@
         "padding_right": 0,
         "section_margin_top": 0,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -98,45 +97,6 @@
     },
     "custom_contact_section_UhAQEr": {
       "type": "custom-contact-section",
-      "blocks": {
-        "interest_option_bWtywE": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Diamonds"
-          }
-        },
-        "interest_option_3rwEVp": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Engagement Rings"
-          }
-        },
-        "interest_option_gVYCxq": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Wedding Bands"
-          }
-        },
-        "interest_option_TJartP": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Custom Design"
-          }
-        },
-        "interest_option_RQ6G98": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Repairs & Services"
-          }
-        }
-      },
-      "block_order": [
-        "interest_option_bWtywE",
-        "interest_option_3rwEVp",
-        "interest_option_gVYCxq",
-        "interest_option_TJartP",
-        "interest_option_RQ6G98"
-      ],
       "name": "Make an appointment",
       "settings": {
         "image": "shopify://shop_images/Rectangle_26.png",

@@ -31,9 +31,7 @@
                 --mobile-background-image:url('{{ block.settings.mobile_text_card_bg | image_url: width: 800 }}}}');
               {% endif %}
             "
-          
            >
-          
             <div
               class="image-text-card__content"
               style="
@@ -67,7 +65,6 @@
                 </a>
               {% endif %}
             </div>
-          
           {% if block.settings.decorative_image_1 != blank %}
             <div
               class="decorative-image decorative-image--one"
@@ -182,7 +179,6 @@
       background: #FAFAFA;
       background-image: var(--background-image);
       object-fit: cover;
-
       background-repeat: no-repeat;
       /* aspect-ratio: 1 / 1; */
       aspect-ratio: auto;
@@ -387,8 +383,8 @@
       { "type": "range", "id": "section_width", "label": "Section width", "min": 800, "max": 1800, "step": 20, "default": 1400, "unit": "px" },
       { "type": "range", "id": "row_gap", "label": "Desktop row gap", "min": 0, "max": 60, "step": 2, "default": 20, "unit": "px" },
       { "type": "range", "id": "mobile_gap", "label": "Mobile row gap", "min": 0, "max": 40, "step": 2, "default": 10, "unit": "px" },
-      { "type": "range", "id": "margin_top", "label": "Margin top", "min": 2, "max": 200, "step": 2, "default": 20, "unit": "px" },
-      { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 2, "max": 200, "step": 2, "default": 20, "unit": "px" }
+      { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 200, "step": 2, "default": 20, "unit": "px" },
+      { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 200, "step": 2, "default": 20, "unit": "px" }
     ],
     "blocks": [
       {

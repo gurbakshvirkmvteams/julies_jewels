@@ -167,7 +167,7 @@
         "padding_right": 0,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -245,7 +245,7 @@
         "padding_right": 130,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -284,7 +284,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -323,7 +323,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -362,7 +362,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -401,7 +401,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -440,7 +440,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -479,7 +479,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -557,7 +557,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -596,7 +596,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -635,7 +635,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0
@@ -674,7 +674,7 @@
         "padding_right": 50,
         "section_margin_top": 30,
         "section_margin_bottom": 0,
-        "mobile_gradient_enable": true,
+        "mobile_gradient_enable": false,
         "mobile_layout": "image-first",
         "mobile_section_margin_top": 0,
         "mobile_section_margin_bottom": 0

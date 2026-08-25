@@ -218,7 +218,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.getElementById('image_text_cards--{{ section.id }}');
     if (!section) return;
-
     function updateSectionClass() {
       if (window.innerWidth < 1441) {
         section.classList.add('page-width');
@@ -228,12 +227,10 @@
         section.classList.add('header-wide');
       }
     }
-
     updateSectionClass();
     window.addEventListener('resize', updateSectionClass);
   });
 </script>
-
 {% schema %}
 {
   "name": "Text Cards",

@@ -42,11 +42,6 @@
             "text": "",
             "link": "shopify://blogs/jewelry",
             "show_icon": true,
-            "icon_size": 20,
-            "font_size": 16,
-            "font_weight": "500",
-            "gap": 0,
-            "margin_right": 0,
             "hide_mobile": true
           }
         },
@@ -54,7 +49,7 @@
           "type": "contact_us",
           "settings": {
             "text": "Contact us",
-            "link": "",
+            "link": "shopify://pages/contact",
             "show_icon": true,
             "hide_mobile": true
           }
@@ -63,20 +58,10 @@
           "type": "appointment_button",
           "settings": {
             "text": "Book an Appointment",
-            "link": "",
+            "link": "shopify://pages/contact",
             "show_icon": true,
-            "font_weight": "400",
-            "gap": 8,
-            "margin_left": 8,
             "padding_horizontal": 0,
-            "padding_vertical": 0,
-            "background_color": "rgba(0,0,0,0)",
-            "border_color": "rgba(0,0,0,0)",
-            "border_width": 0,
-            "border_radius": 0,
-            "hover_background_color": "rgba(0,0,0,0)",
-            "desktop_visibility": "show",
-            "mobile_visibility": "hide"
+            "padding_vertical": 0
           }
         },
         "magic_wishlist_wishlist_header_button_Kr4ywz": {
