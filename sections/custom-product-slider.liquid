@@ -80,7 +80,6 @@
     --image-padding: 24px;
     width: 100%;
   }
-
   #product-slider-{{ section.id }}
   .product-slider-wrapper {
     width: 100%;
@@ -160,7 +159,6 @@
     object-position: center;
     mix-blend-mode: multiply;
   }
-
   #product-slider-{{ section.id }}
   .product-wishlist {
     position: absolute;
@@ -208,19 +206,16 @@
     width: calc(10px * var(--desktop-scale));
     height: calc(18px * var(--desktop-scale));
   }
-
   #product-slider-{{ section.id }}
   .swiper-button-disabled {
     opacity: 0.25;
     cursor: default;
   }
-
   @media screen and (min-width: 1441px) {
     #product-slider-{{ section.id }} {
       --desktop-scale: 1.25;
     }
   }
-
   @media screen and (max-width: 1199px) {
     #product-slider-{{ section.id }} .product-slider-container {
       height: 280px;
@@ -230,30 +225,24 @@
       width: 25%;
     }
   }
-
 @media screen and (max-width: 749px) {
-
   #product-slider-{{ section.id }} {
     --desktop-scale: 1;
   }
-
   #product-slider-{{ section.id }} .product-slider-wrapper {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
   }
-
   #product-slider-{{ section.id }} .product-slider-container {
     height: 274px;
   }
-
   #product-slider-{{ section.id }} .product-slider {
     width: 100%;
     height: 274px;
     overflow: hidden;
   }
-
   /*
     IMPORTANT:
     Mobile slide is square like Figma
@@ -264,34 +253,28 @@
     flex-shrink: 0;
     border-right: 1px solid var(--card-border);
   }
-
   #product-slider-{{ section.id }} .product-card {
     width: 274px;
     height: 274px;
   }
-
   #product-slider-{{ section.id }} .product-image-wrapper {
     width: 274px;
     height: 274px;
     padding: 24px;
     box-sizing: border-box;
   }
-
   #product-slider-{{ section.id }} .product-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
-
   #product-slider-{{ section.id }} .product-slider-arrow {
     width: 28px;
     height: 28px;
   }
-
   #product-slider-{{ section.id }} .product-slider-prev {
     left: -10px;
   }
-
   #product-slider-{{ section.id }} .product-slider-next {
     right: -10px;
   }
@@ -325,19 +308,16 @@
             slidesPerGroup: 1,
             centeredSlides: true
         },
-
         480: {
             slidesPerView: 'auto',
             slidesPerGroup: 1,
             centeredSlides: true
         },
-
         750: {
             slidesPerView: 3,
             slidesPerGroup: 1,
             centeredSlides: false
         },
-
         1200: {
             slidesPerView: 4,
             slidesPerGroup: 1,
@@ -350,9 +330,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('product-slider-{{ section.id }}');
-
     if (!header) return;
-
     function updateHeaderClass() {
         if (window.innerWidth < 1441) {
         header.classList.add('page-width');
@@ -362,7 +340,6 @@
         header.classList.add('header-wide');
         }
     }
-
     updateHeaderClass();
     window.addEventListener('resize', updateHeaderClass);
     });

@@ -28,7 +28,11 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-  
+  @media (max-width:750px){
+    .footer-block__details-content {
+        margin-bottom: 3.5rem !important;
+    }
+  }
 {%- endstyle -%}
 
 <footer class="footer header-wide color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">

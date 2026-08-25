@@ -163,7 +163,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    gap:clamp(20px , 4.5vw, 87px);
+    gap:clamp(20px , 3.5vw, 87px);
   }
   #testimonials--{{ section.id }} .testimonials-banner {
     max-width: calc(493px * var(--testimonial-scale));
@@ -212,6 +212,7 @@
     max-width: calc(610px * var(--testimonial-scale));
     font-size: calc(14px * var(--testimonial-scale));
     line-height: 1.5;
+      color: rgba(var(--color-foreground), 1)!important;
   }
   #testimonials--{{ section.id }} .testimonial-description p {
     margin: 0;

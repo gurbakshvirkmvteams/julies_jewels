@@ -1,225 +1,204 @@
 {% style %}
   #image_text_cards--{{ section.id }} {
+    --desktop-scale: 1;
     --cards-gap: {{ section.settings.gap }}px;
-    margin-top:{{ section.settings.margin_top }}px;
-    margin-bottom:{{ section.settings.margin_bottom }}px;
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-cards-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--cards-gap);
+    gap: calc(var(--cards-gap) * var(--desktop-scale));
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card {
     position: relative;
     display: flex;
-    /* aspect-ratio: {{ section.blocks.first.settings.card_ratio_width }} / {{ section.blocks.first.settings.card_ratio_height }}; */
-    /* border-radius: {{ section.blocks.first.settings.card_radius }}px; */
-    background-image:  url('{{ section.blocks.settings.background_image | image_url: width: 1600 }}');
     background-size: cover;
     background-position: center;
+    min-height: calc(384px * var(--desktop-scale));
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__content {
     position: relative;
-     min-height: clamp(320px, 40vw, 384px);
     z-index: 2;
-    width: 100%;
-    max-width: {{ section.blocks.first.settings.content_width }}%;
-    padding: clamp(20px, 3.33vw, {{ section.blocks.first.settings.content_padding }}px);
     display: flex;
     flex-direction: column;
-    {% case section.blocks.first.settings.content_vertical %}
-      {% when 'top' %}
-        justify-content: flex-start;
-      {% when 'center' %}
-        justify-content: center;
-      {% when 'bottom' %}
-        justify-content: flex-end;
-    {% endcase %}
-    {% case section.blocks.first.settings.content_horizontal %}
-      {% when 'left' %}
-        margin-right: auto;
-        margin-left: 0;
-      {% when 'center' %}
-        margin-left: auto;
-        margin-right: auto;
-      {% when 'right' %}
-        margin-left: auto;
-        margin-right: 0;
-    {% endcase %}
+    width: 100%;
+    max-width: var(--content-width);
+    margin-left: var(--content-margin-left);
+    margin-right: var(--content-margin-right);
+    padding: clamp(20px, 3.33vw, calc(var(--content-padding) * var(--desktop-scale)));
+    justify-content: var(--content-justify);
+    color: var(--text-color);
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__logo {
-    margin-bottom: clamp(8px, 1vw, {{ section.blocks.first.settings.logo_margin_bottom }}px);
+    margin-bottom: clamp(8px, 1vw, calc(var(--logo-margin-bottom) * var(--desktop-scale)));
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__logo img {
     display: block;
-     width: var(--logo-width);
+    width: clamp(100px, 60vw, calc(var(--logo-width) * var(--desktop-scale)));
     max-width: 100%;
     height: auto;
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__heading {
-    margin: 0 0 clamp(8px, 1vw, {{ section.blocks.first.settings.heading_margin_bottom }}px);
-    font-size: clamp(22px, 3vw, 36px);
-    /* font-weight: {{ section.blocks.first.settings.heading_weight }};
-    line-height: {{ section.blocks.first.settings.heading_line_height }}; */
+    margin: 0 0 clamp(8px, 1vw, var(--heading-margin-bottom));
+    font-size: clamp(18px, 1.8vw, calc(28px * var(--desktop-scale)));
+    color: inherit;
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__description {
-    margin: 0 0 clamp(12px, 1.3vw, {{ section.blocks.first.settings.description_margin_bottom }}px);
-    font-size: clamp(11px, 1.05vw, 14px);
+    margin-bottom: clamp(12px, 2.5vw, calc(var(--description-margin-bottom) * var(--desktop-scale)));
+    font-size: clamp(12px, 1.1vw, calc(14px * var(--desktop-scale)));
     font-weight: 500;
-    line-height: 100%;
+    line-height: 1.4;
+    color: inherit;
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__description p {
     margin: 0;
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     align-self: flex-start;
     gap: clamp(6px, 0.55vw, 10px);
-    padding: clamp(8px, 0.7vw, 14px) clamp(12px, 1.3vw, 24px);
-   color: rgba(var(--color-foreground), 1);
+    padding: clamp(8px, 0.7vw, calc(14px * var(--desktop-scale))) clamp(12px, 1.3vw, calc(24px * var(--desktop-scale)));
     background: linear-gradient(90deg, #51A197 17.86%, #66C5BA 89.29%);
-    font-size: clamp(10px, 0.9vw, 14px);
-    font-weight:700;
+    color: #ffffff;
+    font-size: clamp(10px, 0.9vw, calc(14px * var(--desktop-scale)));
+    font-weight: 700;
     line-height: 1;
     text-decoration: none;
-    transition: opacity 0.2s ease, background-color 0.2s ease;
+    transition: opacity 0.2s ease;
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__button:hover {
     opacity: 0.85;
   }
+
   #image_text_cards--{{ section.id }} .image-with-text-card__button svg {
     display: block;
     flex-shrink: 0;
     height: auto;
   }
-  @media (max-width:1000px){
- #image_text_cards--{{ section.id }} .image-with-text-cards-grid {
+
+  @media (max-width: 1000px) {
+    #image_text_cards--{{ section.id }} .image-with-text-cards-grid {
       grid-template-columns: 1fr;
     }
   }
+
   @media screen and (max-width: 749px) {
     #image_text_cards--{{ section.id }} {
-        padding-left:0px;
-        padding-right:0px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
-    #image_text_cards--{{ section.id }} .image-with-text-card {
-    }
+
     #image_text_cards--{{ section.id }} .image-with-text-card__content {
-      max-width: {{ section.blocks.first.settings.mobile_content_width }}% !important;
-      width:100%;
-      padding: clamp(16px, 5vw, {{ section.blocks.first.settings.mobile_content_padding }}px);
+      max-width: var(--mobile-content-width);
+      padding: clamp(16px, 5vw, var(--mobile-content-padding));
     }
-    #image_text_cards--{{ section.id }} .image-with-text-card__logo {
-        margin-bottom: var(--logo-margin-bottom);
-    }
-    #image_text_cards--{{ section.id }} .image-with-text-card__logo img {
-         width: var(--logo-width);
-    max-width: 100%;
-    }
+
     #image_text_cards--{{ section.id }} .image-with-text-card__heading {
-      margin-bottom: clamp(6px, 2vw, {{ section.blocks.first.settings.mobile_heading_margin_bottom }}px);
-      font-size: clamp(20px, 7vw, {{ section.blocks.first.settings.heading_size }}px);
+      margin-bottom: clamp(6px, 2vw, var(--mobile-heading-margin-bottom));
+      font-size: clamp(20px, 6vw, 28px);
     }
+
     #image_text_cards--{{ section.id }} .image-with-text-card__description {
-      margin-bottom: clamp(10px, 3vw, {{ section.blocks.first.settings.mobile_description_margin_bottom }}px);
+      margin-bottom: clamp(10px, 3vw, var(--mobile-description-margin-bottom));
       font-size: clamp(12px, 3.5vw, 14px);
     }
+
     #image_text_cards--{{ section.id }} .image-with-text-card__button {
       gap: clamp(5px, 2vw, 10px);
       padding: clamp(7px, 2.5vw, 14px) clamp(12px, 5vw, 24px);
       font-size: clamp(10px, 3.2vw, 14px);
     }
   }
+
+  @media screen and (min-width: 1441px) {
+    #image_text_cards--{{ section.id }} {
+      --desktop-scale: 1.25;
+    }
+  }
 {% endstyle %}
+
 <section id="image_text_cards--{{ section.id }}" class="image-with-text-cards">
   <div class="image-with-text-cards-grid">
     {% for block in section.blocks %}
+      {% liquid
+        case block.settings.content_vertical
+          when 'top'
+            assign content_justify = 'flex-start'
+          when 'bottom'
+            assign content_justify = 'flex-end'
+          else
+            assign content_justify = 'center'
+        endcase
+
+        case block.settings.content_horizontal
+          when 'left'
+            assign content_margin_left = '0'
+            assign content_margin_right = 'auto'
+          when 'right'
+            assign content_margin_left = 'auto'
+            assign content_margin_right = '0'
+          else
+            assign content_margin_left = 'auto'
+            assign content_margin_right = 'auto'
+        endcase
+
+        if block.settings.text_color_mode == 'dark'
+          assign text_color = '#000000'
+        else
+          assign text_color = '#ffffff'
+        endif
+      %}
       <div
         class="image-with-text-card"
         style="
           background-image: url('{{ block.settings.background_image | image_url: width: 1600 }}');
-          background-position: center center;
+          --content-width: {{ block.settings.content_width }}%;
+          --content-padding: {{ block.settings.content_padding }}px;
+          --mobile-content-width: {{ block.settings.mobile_content_width }}%;
+          --mobile-content-padding: {{ block.settings.mobile_content_padding }}px;
+          --content-justify: {{ content_justify }};
+          --content-margin-left: {{ content_margin_left }};
+          --content-margin-right: {{ content_margin_right }};
+          --logo-width: {{ block.settings.logo_width }}px;
+          --logo-margin-bottom: {{ block.settings.logo_margin_bottom }}px;
+          --heading-margin-bottom: {{ block.settings.heading_margin_bottom }}px;
+          --mobile-heading-margin-bottom: {{ block.settings.mobile_heading_margin_bottom }}px;
+          --description-margin-bottom: {{ block.settings.description_margin_bottom }}px;
+          --mobile-description-margin-bottom: {{ block.settings.mobile_description_margin_bottom }}px;
+          --text-color: {{ text_color }};
         "
         {{ block.shopify_attributes }}
       >
-        <div
-          class="image-with-text-card__content"
-          style="
-            max-width: {{ block.settings.content_width }}%;
-            {% if block.settings.content_horizontal == 'left' %}
-              margin-left: 0;
-              margin-right: auto;
-            {% elsif block.settings.content_horizontal == 'center' %}
-              margin-left: auto;
-              margin-right: auto;
-            {% elsif block.settings.content_horizontal == 'right' %}
-              margin-left: auto;
-              margin-right: 0;
-            {% endif %}
-            {% if block.settings.content_vertical == 'top' %}
-              align-self: flex-start;
-            {% elsif block.settings.content_vertical == 'center' %}
-              align-self: center;
-            {% elsif block.settings.content_vertical == 'bottom' %}
-              align-self: flex-end;
-            {% endif %}
-          "
-        >
+        <div class="image-with-text-card__content">
           {% if block.settings.logo != blank %}
-            <div
-              class="image-with-text-card__logo"
-               style="
-                  --logo-width: clamp(100px, 60vw, {{ block.settings.logo_width }}px);
-                  --logo-margin-bottom: {{ block.settings.logo_margin_bottom }}px;
-                "
-            >
+            <div class="image-with-text-card__logo">
               {{ block.settings.logo | image_url: width: 500 | image_tag: loading: 'lazy' }}
             </div>
           {% endif %}
-          {% if block.settings.heading != blank %}
-            <h2
-              class="image-with-text-card__heading"
-              style="
-                  color: {% if block.settings.text_color_mode == 'dark' %}#000000{% else %}rgba(var(--color-foreground), 1){% endif %};
-                font-size: clamp(22px, 3vw, 36px);
-                /* font-weight: {{ block.settings.heading_weight }};
-                line-height: {{ block.settings.heading_line_height }}; */
-                margin-bottom: clamp(8px, 1vw, {{ block.settings.heading_margin_bottom }}px);
-              "
-            >
-              {{ block.settings.heading }}
-            </h2>
-          {% endif %}
-          {% if block.settings.description != blank %}
-            <div
-              class="image-with-text-card__description"
-              style="
-                color: {% if block.settings.text_color_mode == 'dark' %}#000000{% else %}white{% endif %};
 
-                font-size: clamp(12px, 1.1vw, 14px);
-                font-weight: 500;
-                line-height: 1.4;
-                margin-bottom: clamp(12px, 2.5vw, {{ block.settings.description_margin_bottom }}px);
-              "
-            >
-              {{ block.settings.description }}
-            </div>
+          {% if block.settings.heading != blank %}
+            <h2 class="image-with-text-card__heading">{{ block.settings.heading }}</h2>
           {% endif %}
+
+          {% if block.settings.description != blank %}
+            <div class="image-with-text-card__description">{{ block.settings.description }}</div>
+          {% endif %}
+
           {% if block.settings.button_text != blank and block.settings.button_link != blank %}
-            <a
-              href="{{ block.settings.button_link }}"
-              class="image-with-text-card__button"
-              style="
-               color: white;
-                background: linear-gradient(90deg, #51A197 17.86%, #66C5BA 89.29%);
-                font-size: clamp(10px, 0.9vw, 14px);
-                font-weight: 700;
-                padding: clamp(8px, 0.7vw, 14px) clamp(12px, 1.3vw, 24px);
-                gap: clamp(6px, 0.55vw, 10px);
-              "
-            >
+            <a href="{{ block.settings.button_link }}" class="image-with-text-card__button">
               {{ block.settings.button_text }}
               <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -234,10 +213,12 @@
     {% endfor %}
   </div>
 </section>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.getElementById('image_text_cards--{{ section.id }}');
     if (!section) return;
+
     function updateSectionClass() {
       if (window.innerWidth < 1441) {
         section.classList.add('page-width');
@@ -247,10 +228,12 @@
         section.classList.add('header-wide');
       }
     }
+
     updateSectionClass();
     window.addEventListener('resize', updateSectionClass);
   });
 </script>
+
 {% schema %}
 {
   "name": "Text Cards",
@@ -293,6 +276,7 @@
       "settings": [
         { "type": "header", "content": "Card" },
         { "type": "image_picker", "id": "background_image", "label": "Background Image" },
+
         { "type": "header", "content": "Content Position" },
         {
           "type": "select",
@@ -356,6 +340,7 @@
           "unit": "px",
           "default": 24
         },
+
         { "type": "header", "content": "Logo" },
         { "type": "image_picker", "id": "logo", "label": "Logo" },
         {
@@ -378,26 +363,7 @@
           "unit": "px",
           "default": 20
         },
-        {
-          "type": "range",
-          "id": "mobile_logo_width",
-          "label": "Mobile Logo Width",
-          "min": 20,
-          "max": 200,
-          "step": 2,
-          "unit": "px",
-          "default": 100
-        },
-        {
-          "type": "range",
-          "id": "mobile_logo_margin_bottom",
-          "label": "Mobile Logo Bottom Margin",
-          "min": 0,
-          "max": 50,
-          "step": 1,
-          "unit": "px",
-          "default": 12
-        },
+
         { "type": "header", "content": "Heading" },
         { "type": "text", "id": "heading", "label": "Heading", "default": "Card Heading" },
         {
@@ -420,6 +386,7 @@
           "unit": "px",
           "default": 10
         },
+
         { "type": "header", "content": "Description" },
         { "type": "richtext", "id": "description", "label": "Description", "default": "<p>Card description.</p>" },
         {
@@ -441,25 +408,21 @@
           "step": 1,
           "unit": "px",
           "default": 18
-        },{
+        },
+        {
           "type": "select",
           "id": "text_color_mode",
           "label": "Text Color",
           "options": [
-            {
-              "value": "light",
-              "label": "Light"
-            },
-            {
-              "value": "dark",
-              "label": "Dark"
-            }
+            { "value": "light", "label": "Light" },
+            { "value": "dark", "label": "Dark" }
           ],
           "default": "light"
         },
+
         { "type": "header", "content": "Button" },
         { "type": "text", "id": "button_text", "label": "Button Text", "default": "Know More" },
-        { "type": "url", "id": "button_link", "label": "Button Link" },
+        { "type": "url", "id": "button_link", "label": "Button Link" }
       ]
     }
   ],

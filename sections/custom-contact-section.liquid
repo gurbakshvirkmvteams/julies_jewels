@@ -1,9 +1,6 @@
 {{ 'custom-contact.css' | asset_url | stylesheet_tag }}
-
-
 <section  id="appointment-section--{{ section.id }}" class="appointment-section page-width">
   <div  class="appointment-wrapper">
-
     {% if section.settings.image != blank %}
       <div class="appointment-image">
         <img
@@ -15,24 +12,18 @@
         >
       </div>
     {% endif %}
-
     <div class="appointment-form-panel">
       <h2 class="appointment-heading">{{ section.settings.heading }}</h2>
-
       {% if section.settings.subheading != blank %}
         <p class="appointment-subheading">{{ section.settings.subheading }}</p>
       {% endif %}
-
       {% if section.settings.description != blank %}
         <p class="appointment-description">{{ section.settings.description }}</p>
       {% endif %}
-
       {% form 'contact', class: 'appointment-form' %}
-
         {% if form.posted_successfully? %}
           <p class="appointment-success">Thanks — your appointment request has been sent. We'll be in touch shortly.</p>
         {% endif %}
-
         {% if form.errors %}
           <ul class="appointment-errors">
             {% for field in form.errors %}
@@ -46,7 +37,6 @@
             {% endfor %}
           </ul>
         {% endif %}
-
         <div class="form-row">
           <div class="form-field">
             <label for="AppointmentFirstName">First Name*</label>
@@ -68,7 +58,6 @@
             >
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-field">
             <label for="AppointmentEmail">Email address*</label>
@@ -93,7 +82,6 @@
             >
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-field">
             <label for="AppointmentDate">Date*</label>
@@ -124,21 +112,15 @@
             </select>
           </div>
         </div>
-
         <div class="form-field form-field--full">
           <label for="AppointmentInterest">Interested in*</label>
           <p class="form-field-hint">
             {{ section.settings.interest_hint | default: "To help us better serve you during your visit, please tell us a little bit about what you're interested in:" }}
           </p>
           <select id="AppointmentInterest" name="contact[interested_in]" required>
-            {% for block in section.blocks %}
-              {% if block.type == 'interest_option' %}
-                <option value="{{ block.settings.label }}">{{ block.settings.label }}</option>
-              {% endif %}
-            {% endfor %}
+                <option value="Diamonds">Diamonds</option>
           </select>
         </div>
-
         <div class="form-field form-field--full">
           <label for="AppointmentNotes">Additional notes</label>
           <textarea
@@ -147,7 +129,6 @@
             rows="3"
           >{{ form.body }}</textarea>
         </div>
-
         <div class="form-submit-row">
           <button type="submit" class="appointment-submit">
             Submit
@@ -157,10 +138,8 @@
             </svg>
           </button>
         </div>
-
       {% endform %}
     </div>
-
   </div>
 </section>
 <script>
@@ -192,25 +171,9 @@
     { "type": "number", "id": "start_hour", "label": "Earliest hour (24h)", "default": 10 },
     { "type": "number", "id": "end_hour", "label": "Latest hour (24h)", "default": 18 }
   ],
-  "blocks": [
-    {
-      "type": "interest_option",
-      "name": "Interest option",
-      "settings": [
-        { "type": "text", "id": "label", "label": "Label", "default": "Diamonds" }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "Make an appointment",
-      "blocks": [
-        { "type": "interest_option", "settings": { "label": "Diamonds" } },
-        { "type": "interest_option", "settings": { "label": "Engagement Rings" } },
-        { "type": "interest_option", "settings": { "label": "Wedding Bands" } },
-        { "type": "interest_option", "settings": { "label": "Custom Design" } },
-        { "type": "interest_option", "settings": { "label": "Repairs & Services" } }
-      ]
+      "name": "Make an appointment"
     }
   ]
 }

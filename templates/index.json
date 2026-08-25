@@ -581,7 +581,6 @@
         "gradient_overlap_max_range": 50,
         "gradient_spread": 100,
         "gradient_overlap_min_range": 45,
-        "wrapper_background": "#e2e1db",
         "desktop_layout": "text-first",
         "content_horizontal_alignment": "center",
         "content_vertical_alignment": "center",
