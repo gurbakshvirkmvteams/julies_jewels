@@ -48,7 +48,7 @@
         "button_margin_top": 0,
         "padding_left": 50,
         "padding_right": 50,
-        "section_margin_top": 30,
+        "section_margin_top": 0,
         "section_margin_bottom": 0,
         "mobile_gradient_enable": true,
         "mobile_layout": "image-first",
@@ -72,8 +72,6 @@
             "logo": "shopify://shop_images/Repair.svg",
             "logo_width": 96,
             "logo_margin_bottom": 20,
-            "mobile_logo_width": 100,
-            "mobile_logo_margin_bottom": 6,
             "heading": "",
             "heading_margin_bottom": 14,
             "mobile_heading_margin_bottom": 10,
@@ -98,8 +96,6 @@
             "logo": "shopify://shop_images/Appraisals_1.svg",
             "logo_width": 200,
             "logo_margin_bottom": 20,
-            "mobile_logo_width": 100,
-            "mobile_logo_margin_bottom": 20,
             "heading": "",
             "heading_margin_bottom": 14,
             "mobile_heading_margin_bottom": 10,
@@ -117,15 +113,13 @@
             "background_image": "shopify://shop_images/Group_286.png",
             "content_horizontal": "center",
             "content_vertical": "center",
-            "content_width": 80,
+            "content_width": 87,
             "content_padding": 48,
             "mobile_content_width": 80,
             "mobile_content_padding": 24,
             "logo": "shopify://shop_images/Watch_Repair.svg",
             "logo_width": 188,
             "logo_margin_bottom": 20,
-            "mobile_logo_width": 100,
-            "mobile_logo_margin_bottom": 20,
             "heading": "",
             "heading_margin_bottom": 14,
             "mobile_heading_margin_bottom": 10,
@@ -150,8 +144,6 @@
             "logo": "shopify://shop_images/Diamond_Buying.svg",
             "logo_width": 256,
             "logo_margin_bottom": 20,
-            "mobile_logo_width": 100,
-            "mobile_logo_margin_bottom": 12,
             "heading": "",
             "heading_margin_bottom": 0,
             "mobile_heading_margin_bottom": 0,
@@ -204,7 +196,7 @@
       "name": "Image with Testimonials",
       "settings": {
         "margin_top": 41,
-        "margin_bottom": 30
+        "margin_bottom": 40
       }
     },
     "featured_blog_Qwnr89": {
@@ -229,45 +221,6 @@
     },
     "custom_contact_section_eFdJA3": {
       "type": "custom-contact-section",
-      "blocks": {
-        "interest_option_Kpqi99": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Diamonds"
-          }
-        },
-        "interest_option_axQXnq": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Engagement Rings"
-          }
-        },
-        "interest_option_6JwEHR": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Wedding Bands"
-          }
-        },
-        "interest_option_RWDUUd": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Custom Design"
-          }
-        },
-        "interest_option_L6MdNn": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Repairs & Services"
-          }
-        }
-      },
-      "block_order": [
-        "interest_option_Kpqi99",
-        "interest_option_axQXnq",
-        "interest_option_6JwEHR",
-        "interest_option_RWDUUd",
-        "interest_option_L6MdNn"
-      ],
       "name": "Make an appointment",
       "settings": {
         "image": "shopify://shop_images/Rectangle_26.png",

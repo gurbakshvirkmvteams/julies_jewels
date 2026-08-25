@@ -480,10 +480,11 @@
             "button_text": "Explore Exotic Watches",
             "button_link": "",
             "text_alignment": "left",
+            "text_card_bg": "shopify://shop_images/whatchbg.png",
+            "mobile_text_card_bg": "shopify://shop_images/watch-mobile-bg.png",
             "content_width": 65,
             "mobile_text_padding_top": 94,
             "mobile_text_padding_bottom": 166,
-            "decorative_image_1": "shopify://shop_images/image_6_3.png",
             "decorative_image_1_width": 18,
             "decorative_image_1_horizontal": "left",
             "decorative_image_1_vertical": "top",
@@ -493,7 +494,6 @@
             "decorative_image_1_mobile_vertical": "top",
             "decorative_image_1_mobile_offset_x": 0,
             "decorative_image_1_mobile_offset_y": 0,
-            "decorative_image_2": "shopify://shop_images/image_6__2___1_-removebg-preview.png",
             "decorative_image_2_width": 28,
             "decorative_image_2_horizontal": "right",
             "decorative_image_2_vertical": "bottom",
@@ -612,45 +612,6 @@
     },
     "custom_contact_section_pdCrKC": {
       "type": "custom-contact-section",
-      "blocks": {
-        "interest_option_8HYQRW": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Diamonds"
-          }
-        },
-        "interest_option_UrDwBL": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Engagement Rings"
-          }
-        },
-        "interest_option_Rzffqe": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Wedding Bands"
-          }
-        },
-        "interest_option_4FW4ye": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Custom Design"
-          }
-        },
-        "interest_option_QBJKJD": {
-          "type": "interest_option",
-          "settings": {
-            "label": "Repairs & Services"
-          }
-        }
-      },
-      "block_order": [
-        "interest_option_8HYQRW",
-        "interest_option_UrDwBL",
-        "interest_option_Rzffqe",
-        "interest_option_4FW4ye",
-        "interest_option_QBJKJD"
-      ],
       "name": "Make an appointment",
       "settings": {
         "image": "shopify://shop_images/Rectangle_26.png",
