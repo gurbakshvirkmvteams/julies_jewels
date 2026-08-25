@@ -71,7 +71,6 @@
   #product-slider-{{ section.id }} {
     --desktop-scale: 1;
     --slider-height: 328px;
-    --card-border: #eeeeee;
     --arrow-size: 32px;
     --image-padding: 24px;
     width: 100%;
@@ -117,7 +116,6 @@
   .product-slider-slide {
     height: 100%;
     box-sizing: border-box;
-    border-right: 1px solid var(--card-border);
   }
   #product-slider-{{ section.id }}.product-slider-slide:last-child {
     border-right: none;
@@ -127,7 +125,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #FAFAFA;
   }
   #product-slider-{{ section.id }}
   .product-card-link {
@@ -244,7 +242,6 @@
     width: 274px !important;
     height: 274px !important;
     flex-shrink: 0;
-    border-right: 1px solid var(--card-border);
   }
   #product-slider-{{ section.id }} .product-card {
     width: 274px;

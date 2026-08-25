@@ -318,25 +318,31 @@
         "product_nednGh": {
           "type": "product",
           "settings": {
-            "product": "azulene-moisturizing-ampoules"
+            "product": "this-is-the-gabriel-co-delilah-vintage-style"
+          }
+        },
+        "product_rExe3T": {
+          "type": "product",
+          "settings": {
+            "product": ""
           }
         },
         "product_baXtGA": {
           "type": "product",
           "settings": {
-            "product": "cluster-flower-drop-earrings"
+            "product": "gabriel-co-starburst-halo-diamond-engagement-ring"
           }
         },
         "product_9WjfJX": {
           "type": "product",
           "settings": {
-            "product": "inside-out-hoop-earrings"
+            "product": "gabriel-co-14k-white-gold"
           }
         },
         "product_a3pbCG": {
           "type": "product",
           "settings": {
-            "product": "marquise-and-rounds-bezel-eternity"
+            "product": "the-gabriel-co-oval-halo-diamond-engagement-ring"
           }
         },
         "product_8tJtb8": {
@@ -348,6 +354,7 @@
       },
       "block_order": [
         "product_nednGh",
+        "product_rExe3T",
         "product_baXtGA",
         "product_9WjfJX",
         "product_a3pbCG",
@@ -423,25 +430,25 @@
         "product_EfQLNP": {
           "type": "product",
           "settings": {
-            "product": "azulene-moisturizing-ampoules"
+            "product": "gabriel-co-14k-yellow-gold-prong-set"
           }
         },
         "product_F7YWqP": {
           "type": "product",
           "settings": {
-            "product": "cluster-flower-drop-earrings"
+            "product": "gabriel-co-bujukan-two-tone-diamond-open-bypass-ring"
           }
         },
         "product_TGVrwq": {
           "type": "product",
           "settings": {
-            "product": "inside-out-hoop-earrings"
+            "product": "yellow-white-gold-diamond-pave"
           }
         },
         "product_b4kiQ9": {
           "type": "product",
           "settings": {
-            "product": "marquise-and-rounds-bezel-eternity"
+            "product": "yellow-gold-bujukan-diamond-bangle-bracelet"
           }
         },
         "product_XULkX4": {
@@ -528,31 +535,31 @@
         "product_hzGcGm": {
           "type": "product",
           "settings": {
-            "product": "azulene-moisturizing-ampoules"
+            "product": "citizen-cz-smart-hybrid-44mm-smartwatch"
           }
         },
         "product_8QD7MQ": {
           "type": "product",
           "settings": {
-            "product": "cluster-flower-drop-earrings"
+            "product": "citizen-mens-sport-casual-avion-eco-drive-chronograph"
           }
         },
         "product_YUUR83": {
           "type": "product",
           "settings": {
-            "product": "inside-out-hoop-earrings"
+            "product": "the-citizen-calibre-2100-limited-edition-av0090-50a"
           }
         },
         "product_ngRywd": {
           "type": "product",
           "settings": {
-            "product": "marquise-and-rounds-bezel-eternity"
+            "product": "citizen-cz-smart-hybrid-44mm-smartwatch"
           }
         },
         "product_iWeeWB": {
           "type": "product",
           "settings": {
-            "product": "baguette-dangle-earrings"
+            "product": "the-citizen-mens-peyten-eco-drive-chronograph-model-ca4512-50e"
           }
         }
       },
