@@ -1,35 +1,35 @@
   <section id="image-text-cards-{{ section.id }}" class="image-text-cards-section header-wide">
     <div class="image-text-cards__container">
-      {% for block in section.blocks %}
+      {%- for block in section.blocks -%}
         <div
           id="image-text-row-{{ section.id }}-{{ block.id }}"
           class="image-text-row image-text-row--{{ block.settings.desktop_layout }}"
           {{ block.shopify_attributes }}
         >
           <div class="image-text-card image-text-card--image">
-            {% if block.settings.main_image != blank %}
+            {%- if block.settings.main_image != blank -%}
               {{
                 block.settings.main_image
                 | image_url: width: 2000
                 | image_tag: loading: 'lazy', class: 'image-text-card__main-image'
               }}
-            {% else %}
+            {%- else -%}
               <div class="image-text-card__placeholder">
                 {{ 'image' | placeholder_svg_tag }}
               </div>
-            {% endif %}
+            {%- endif -%}
           </div>
           <div
             class="image-text-card image-text-card--text"
             style="
               --mobile-text-padding-top: {{ block.settings.mobile_text_padding_top }}px;
               --mobile-text-padding-bottom: {{ block.settings.mobile_text_padding_bottom }}px;
-              {% if block.settings.text_card_bg != blank %}
+              {%- if block.settings.text_card_bg != blank -%}
                 --background-image:url('{{ block.settings.text_card_bg | image_url: width: 2000 }}}}');
-              {% endif %}
-              {% if block.settings.mobile_text_card_bg != blank %}
+              {%- endif -%}
+              {%- if block.settings.mobile_text_card_bg != blank -%}
                 --mobile-background-image:url('{{ block.settings.mobile_text_card_bg | image_url: width: 800 }}}}');
-              {% endif %}
+              {%- endif -%}
             "
            >
             <div
@@ -39,16 +39,16 @@
                 --content-width: {{ block.settings.content_width }}%;
                 text-align: {{ block.settings.text_alignment }};
               "
-            >
-              {% if block.settings.heading != blank %}
+              >
+              {%- if block.settings.heading != blank -%}
                 <div
                   class="image-text-card__heading"
                   style="--heading-margin: {{ block.settings.heading_margin }}px;"
                 >
                   {{ block.settings.heading }}
                 </div>
-              {% endif %}
-              {% if block.settings.description != blank %}
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
                 <div
                   class="image-text-card__description"
                   style="
@@ -58,30 +58,30 @@
                 >
                   {{ block.settings.description }}
                 </div>
-              {% endif %}
-              {% if block.settings.button_text != blank %}
+              {%- endif -%}
+              {%- if block.settings.button_text != blank -%}
                 <a href="{{ block.settings.button_link }}" class="image-text-card__button">
                   {{ block.settings.button_text }}
                 </a>
-              {% endif %}
+              {%- endif -%}
             </div>
-          {% if block.settings.decorative_image_1 != blank %}
+          {%- if block.settings.decorative_image_1 != blank -%}
             <div
               class="decorative-image decorative-image--one"
               style="
                 --decorative-width: {{ block.settings.decorative_image_1_width }}%;
-                --desktop-left: {% if block.settings.decorative_image_1_horizontal == 'left' %}{{ block.settings.decorative_image_1_offset_x }}%{% elsif block.settings.decorative_image_1_horizontal == 'center' %}50%{% else %}auto{% endif %};
-                --desktop-right: {% if block.settings.decorative_image_1_horizontal == 'right' %}{{ block.settings.decorative_image_1_offset_x }}%{% else %}auto{% endif %};
-                --desktop-top: {% if block.settings.decorative_image_1_vertical == 'top' %}{{ block.settings.decorative_image_1_offset_y }}%{% elsif block.settings.decorative_image_1_vertical == 'center' %}50%{% else %}auto{% endif %};
-                --desktop-bottom: {% if block.settings.decorative_image_1_vertical == 'bottom' %}{{ block.settings.decorative_image_1_offset_y }}%{% else %}auto{% endif %};
-                --desktop-x: {% if block.settings.decorative_image_1_horizontal == 'center' %}calc(-50% + {{ block.settings.decorative_image_1_offset_x }}%){% else %}0{% endif %};
-                --desktop-y: {% if block.settings.decorative_image_1_vertical == 'center' %}calc(-50% + {{ block.settings.decorative_image_1_offset_y }}%){% else %}0{% endif %};
-                --mobile-left: {% if block.settings.decorative_image_1_mobile_horizontal == 'left' %}{{ block.settings.decorative_image_1_mobile_offset_x }}%{% elsif block.settings.decorative_image_1_mobile_horizontal == 'center' %}50%{% else %}auto{% endif %};
-                --mobile-right: {% if block.settings.decorative_image_1_mobile_horizontal == 'right' %}{{ block.settings.decorative_image_1_mobile_offset_x }}%{% else %}auto{% endif %};
-                --mobile-top: {% if block.settings.decorative_image_1_mobile_vertical == 'top' %}{{ block.settings.decorative_image_1_mobile_offset_y }}%{% elsif block.settings.decorative_image_1_mobile_vertical == 'center' %}50%{% else %}auto{% endif %};
-                --mobile-bottom: {% if block.settings.decorative_image_1_mobile_vertical == 'bottom' %}{{ block.settings.decorative_image_1_mobile_offset_y }}%{% else %}auto{% endif %};
-                --mobile-x: {% if block.settings.decorative_image_1_mobile_horizontal == 'center' %}calc(-50% + {{ block.settings.decorative_image_1_mobile_offset_x }}%){% else %}0{% endif %};
-                --mobile-y: {% if block.settings.decorative_image_1_mobile_vertical == 'center' %}calc(-50% + {{ block.settings.decorative_image_1_mobile_offset_y }}%){% else %}0{% endif %};
+                --desktop-left: {%- if block.settings.decorative_image_1_horizontal == 'left' -%}{{ block.settings.decorative_image_1_offset_x }}%{%- elsif block.settings.decorative_image_1_horizontal == 'center' -%}50%{%- else -%}auto{%- endif -%};
+                --desktop-right: {%- if block.settings.decorative_image_1_horizontal == 'right' -%}{{ block.settings.decorative_image_1_offset_x }}%{%- else -%}auto{%- endif -%};
+                --desktop-top: {%- if block.settings.decorative_image_1_vertical == 'top' -%}{{ block.settings.decorative_image_1_offset_y }}%{%- elsif block.settings.decorative_image_1_vertical == 'center' -%}50%{%- else -%}auto{%- endif -%};
+                --desktop-bottom: {%- if block.settings.decorative_image_1_vertical == 'bottom' -%}{{ block.settings.decorative_image_1_offset_y }}%{%- else -%}auto{%- endif -%};
+                --desktop-x: {%- if block.settings.decorative_image_1_horizontal == 'center' -%}calc(-50% + {{ block.settings.decorative_image_1_offset_x }}%){%- else -%}0{%- endif -%};
+                --desktop-y: {%- if block.settings.decorative_image_1_vertical == 'center' -%}calc(-50% + {{ block.settings.decorative_image_1_offset_y }}%){%- else -%}0{%- endif -%};
+                --mobile-left: {%- if block.settings.decorative_image_1_mobile_horizontal == 'left' -%}{{ block.settings.decorative_image_1_mobile_offset_x }}%{%- elsif block.settings.decorative_image_1_mobile_horizontal == 'center' -%}50%{%- else -%}auto{%- endif -%};
+                --mobile-right: {%- if block.settings.decorative_image_1_mobile_horizontal == 'right' -%}{{ block.settings.decorative_image_1_mobile_offset_x }}%{%- else -%}auto{%- endif -%};
+                --mobile-top: {%- if block.settings.decorative_image_1_mobile_vertical == 'top' -%}{{ block.settings.decorative_image_1_mobile_offset_y }}%{%- elsif block.settings.decorative_image_1_mobile_vertical == 'center' -%}50%{%- else -%}auto{%- endif -%};
+                --mobile-bottom: {%- if block.settings.decorative_image_1_mobile_vertical == 'bottom' -%}{{ block.settings.decorative_image_1_mobile_offset_y }}%{%- else -%}auto{%- endif -%};
+                --mobile-x: {%- if block.settings.decorative_image_1_mobile_horizontal == 'center' -%}calc(-50% + {{ block.settings.decorative_image_1_mobile_offset_x }}%){%- else -%}0{%- endif -%};
+                --mobile-y: {%- if block.settings.decorative_image_1_mobile_vertical == 'center' -%}calc(-50% + {{ block.settings.decorative_image_1_mobile_offset_y }}%){%- else -%}0{%- endif -%};
               "
             >
               {{
@@ -90,28 +90,28 @@
                 | image_tag: loading: 'lazy', class: 'decorative-image__img'
               }}
             </div>
-          {% endif %}
-          {% if block.settings.decorative_image_2 != blank %}
+          {%- endif -%}
+          {%- if block.settings.decorative_image_2 != blank -%}
             <div
               class="decorative-image decorative-image--two"
               style="
                 --decorative-width: {{ block.settings.decorative_image_2_width }}%;
-                --desktop-left: {% if block.settings.decorative_image_2_horizontal == 'left' %}{{ block.settings.decorative_image_2_offset_x }}%{% else %}auto{% endif %};
-                --desktop-right: {% if block.settings.decorative_image_2_horizontal == 'right' %}{{ block.settings.decorative_image_2_offset_x }}%{% else %}auto{% endif %};
-                --desktop-top: {% if block.settings.decorative_image_2_vertical == 'top' %}{{ block.settings.decorative_image_2_offset_y }}%{% else %}auto{% endif %};
-                --desktop-bottom: {% if block.settings.decorative_image_2_vertical == 'bottom' %}{{ block.settings.decorative_image_2_offset_y }}%{% else %}auto{% endif %};
-                --desktop-left-anchor: {% if block.settings.decorative_image_2_horizontal == 'center' %}calc(50% + {{ block.settings.decorative_image_2_offset_x }}%){% else %}auto{% endif %};
-                --desktop-x: {% if block.settings.decorative_image_2_horizontal == 'center' %}calc(-50% + {{ block.settings.decorative_image_2_offset_x }}%){% else %}0{% endif %};
-                --desktop-top-anchor: {% if block.settings.decorative_image_2_vertical == 'center' %}calc(50% + {{ block.settings.decorative_image_2_offset_y }}%){% else %}auto{% endif %};
-                --desktop-y: {% if block.settings.decorative_image_2_vertical == 'center' %}calc(-50% + {{ block.settings.decorative_image_2_offset_y }}%){% else %}0{% endif %};
-                --mobile-left: {% if block.settings.decorative_image_2_mobile_horizontal == 'left' %}{{ block.settings.decorative_image_2_mobile_offset_x }}%{% else %}auto{% endif %};
-                --mobile-right: {% if block.settings.decorative_image_2_mobile_horizontal == 'right' %}{{ block.settings.decorative_image_2_mobile_offset_x }}%{% else %}auto{% endif %};
-                --mobile-top: {% if block.settings.decorative_image_2_mobile_vertical == 'top' %}{{ block.settings.decorative_image_2_mobile_offset_y }}%{% else %}auto{% endif %};
-                --mobile-bottom: {% if block.settings.decorative_image_2_mobile_vertical == 'bottom' %}{{ block.settings.decorative_image_2_mobile_offset_y }}%{% else %}auto{% endif %};
-                --mobile-left-anchor: {% if block.settings.decorative_image_2_mobile_horizontal == 'center' %}calc(50% + {{ block.settings.decorative_image_2_mobile_offset_x }}%){% else %}auto{% endif %};
-                --mobile-x: {% if block.settings.decorative_image_2_mobile_horizontal == 'center' %}-50%{% else %}0{% endif %};
-                --mobile-top-anchor: {% if block.settings.decorative_image_2_mobile_vertical == 'center' %}50%{% else %}auto{% endif %};
-                --mobile-y: {% if block.settings.decorative_image_2_mobile_vertical == 'center' %}-50%{% else %}0{% endif %};
+                --desktop-left: {%- if block.settings.decorative_image_2_horizontal == 'left' -%}{{ block.settings.decorative_image_2_offset_x }}%{%- else -%}auto{%- endif -%};
+                --desktop-right: {%- if block.settings.decorative_image_2_horizontal == 'right' -%}{{ block.settings.decorative_image_2_offset_x }}%{%- else -%}auto{%- endif -%};
+                --desktop-top: {%- if block.settings.decorative_image_2_vertical == 'top' -%}{{ block.settings.decorative_image_2_offset_y }}%{%- else -%}auto{%- endif -%};
+                --desktop-bottom: {%- if block.settings.decorative_image_2_vertical == 'bottom' -%}{{ block.settings.decorative_image_2_offset_y }}%{%- else -%}auto{%- endif -%};
+                --desktop-left-anchor: {%- if block.settings.decorative_image_2_horizontal == 'center' -%}calc(50% + {{ block.settings.decorative_image_2_offset_x }}%){%- else -%}auto{%- endif -%};
+                --desktop-x: {%- if block.settings.decorative_image_2_horizontal == 'center' -%}calc(-50% + {{ block.settings.decorative_image_2_offset_x }}%){%- else -%}0{%- endif -%};
+                --desktop-top-anchor: {%- if block.settings.decorative_image_2_vertical == 'center' -%}calc(50% + {{ block.settings.decorative_image_2_offset_y }}%){%- else -%}auto{%- endif -%};
+                --desktop-y: {%- if block.settings.decorative_image_2_vertical == 'center' -%}calc(-50% + {{ block.settings.decorative_image_2_offset_y }}%){%- else -%}0{%- endif -%};
+                --mobile-left: {%- if block.settings.decorative_image_2_mobile_horizontal == 'left' -%}{{ block.settings.decorative_image_2_mobile_offset_x }}%{%- else -%}auto{%- endif -%};
+                --mobile-right: {%- if block.settings.decorative_image_2_mobile_horizontal == 'right' -%}{{ block.settings.decorative_image_2_mobile_offset_x }}%{%- else -%}auto{%- endif -%};
+                --mobile-top: {%- if block.settings.decorative_image_2_mobile_vertical == 'top' -%}{{ block.settings.decorative_image_2_mobile_offset_y }}%{%- else -%}auto{%- endif -%};
+                --mobile-bottom: {%- if block.settings.decorative_image_2_mobile_vertical == 'bottom' -%}{{ block.settings.decorative_image_2_mobile_offset_y }}%{%- else -%}auto{%- endif -%};
+                --mobile-left-anchor: {%- if block.settings.decorative_image_2_mobile_horizontal == 'center' -%}calc(50% + {{ block.settings.decorative_image_2_mobile_offset_x }}%){%- else -%}auto{%- endif -%};
+                --mobile-x: {%- if block.settings.decorative_image_2_mobile_horizontal == 'center' -%}-50%{%- else -%}0{%- endif -%};
+                --mobile-top-anchor: {%- if block.settings.decorative_image_2_mobile_vertical == 'center' -%}50%{%- else -%}auto{%- endif -%};
+                --mobile-y: {%- if block.settings.decorative_image_2_mobile_vertical == 'center' -%}-50%{%- else -%}0{%- endif -%};
               "
             >
               {{
@@ -120,10 +120,10 @@
                 | image_tag: loading: 'lazy', class: 'decorative-image__img'
               }}
             </div>
-          {% endif %}
+          {%- endif -%}
           </div>
         </div>
-      {% endfor %}
+      {%- endfor -%}
     </div>
   </section>
   <style>
@@ -376,7 +376,7 @@
       window.addEventListener('resize', updateHeaderClass);
     });
   </script>
-  {% schema %}
+  {%- schema -%}
   {
     "name": "Image Text Cards",
     "settings": [
@@ -550,4 +550,4 @@
       { "name": "Image Text Cards", "blocks": [ { "type": "content_row" } ] }
     ]
   }
-  {% endschema %}
+  {%- endschema -%}
